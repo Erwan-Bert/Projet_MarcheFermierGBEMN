@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/Producteurs/Producteur.java" line="5" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0b12d0a5-82e7-43f5-8374-4fc242b94615" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Acheteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Acteurs/Acheteur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Acteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Acteurs/Acteur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Apiculteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Producteurs/Apiculteur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Arboriculteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Producteurs/Arboriculteur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Cochon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Produit/Cochon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Controleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Acteurs/Controleur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Epinards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Produit/Epinards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Fromage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Produit/Fromage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Fruit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Produit/Fruit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/HistoriqueOffre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Marche/HistoriqueOffre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Horticulteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Producteurs/Horticulteur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Lait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Produit/Lait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/LivreDuMarche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Marche/LivreDuMarche.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Miel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Produit/Miel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Offre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Marche/Offre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Pomme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Produit/Pomme.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Producteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Producteurs/Producteur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/ProducteurDeViande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Producteurs/ProducteurDeViande.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/ProducteurLaitier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Producteurs/ProducteurLaitier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Produit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Produit/Produit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/ProduitsLaitier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Produit/ProduitsLaitier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Stock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Tradeur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Acteurs/Tradeur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/UniteDeProduction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UnitedeProduction/UniteDeProduction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/UniteDeProductionApiculteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UnitedeProduction/UniteDeProductionApiculteur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/UniteDeProductionArboriculteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UnitedeProduction/UniteDeProductionArboriculteur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/UniteDeProductionHorticulteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UnitedeProduction/UniteDeProductionHorticulteur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/UniteDeProductionLaitier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UnitedeProduction/UniteDeProductionLaitier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/UniteDeProductionProducteurDeViande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UnitedeProduction/UniteDeProductionProducteurDeViande.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/VendeurAcheteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Acteurs/VendeurAcheteur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/Viande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Produit/Viande.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acteur/vache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Produit/vache.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,19 +77,33 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1877264391">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="Producteurs" value="1" />
+          <entry key="java" value="48" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="48" />
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="151" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="151" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/acteur/Class1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,6 +112,18 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/Produit/vache.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Produit/Produit.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Produit/Lait.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Produit/Cochon.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Producteurs/Producteur.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Acteurs/Acheteur.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Acteurs/Acteur.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Acteurs/Tradeur.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Acteurs/Controleur.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Acteurs/VendeurAcheteur.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Marche/LivreDuMarche.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Marche/Offre.java" />
       </list>
     </option>
   </component>
@@ -91,7 +152,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -121,11 +182,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544004202786" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -157,22 +219,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="351000" />
+    <option name="totallyTimeSpent" value="1308000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="140" y="43" width="1400" height="983" extended-state="0" />
+    <frame x="140" y="47" width="1400" height="983" extended-state="0" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962853" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32982457" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -180,15 +238,19 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32936978" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,10 +267,243 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/acteur/Class1.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/acteur/Class1.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/acteur/Producteurs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Produit/ProduitsLaitier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Produit/Pomme.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Produit/Miel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Produit/Fruit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Produit/Epinards.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Produit/Fromage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Produit/Viande.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Produit/Lait.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Produit/Cochon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Produit/Produit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Produit/vache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/UnitedeProduction/UniteDeProductionProducteurDeViande.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/UnitedeProduction/UniteDeProductionLaitier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/UnitedeProduction/UniteDeProductionHorticulteur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/UnitedeProduction/UniteDeProductionArboriculteur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/UnitedeProduction/UniteDeProductionApiculteur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/UnitedeProduction/UniteDeProduction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Acteurs/Stock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Acteurs/Acheteur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Acteurs/Controleur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-62">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Acteurs/Acteur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Acteurs/VendeurAcheteur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Acteurs/Tradeur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Marche/HistoriqueOffre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Marche/LivreDuMarche.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Marche/Offre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Producteurs/Apiculteur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Producteurs/Arboriculteur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Producteurs/Horticulteur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Producteurs/Producteur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Producteurs/ProducteurDeViande.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Producteurs/ProducteurLaitier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
