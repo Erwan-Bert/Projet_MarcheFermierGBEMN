@@ -8,7 +8,8 @@ public class Horticulteur extends Producteur {
     /**
      * Default constructor
      */
-    public Horticulteur() {
+    public Horticulteur(int limite) {
+        super(limite);
     }
 
 }

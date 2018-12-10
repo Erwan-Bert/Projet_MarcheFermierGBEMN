@@ -3,12 +3,15 @@ package marche.traitement.Producteurs;
 /**
  * 
  */
-public class Apiculteur extends Producteur {
+public class Apiculteur extends Producteur  {
 
     /**
      * Default constructor
      */
-    public Apiculteur() {
+    public Apiculteur(int limite)
+    {
+        super(limite);
+
     }
 
 }
