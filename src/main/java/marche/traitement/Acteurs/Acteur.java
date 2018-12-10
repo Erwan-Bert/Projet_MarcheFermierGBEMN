@@ -11,26 +11,46 @@ public class Acteur {
     /**
      * Default constructor
      */
-    public Acteur() {
+    public Acteur(double solde) {
+    }
+
+    public double getSolde() {
+        return solde;
+    }
+
+    public void setSolde(double solde) {
+        this.solde = solde;
+    }
+
+    public Date getDateFinCotisation() {
+        return dateFinCotisation;
+    }
+
+    protected void setDateFinCotisation(Date dateFinCotisation) {
+        this.dateFinCotisation = dateFinCotisation;
     }
 
     /**
      * 
      */
-    public double solde;
+    private double solde;
 
     /**
      * 
      */
-    public Date dateFinCotisation;
+    private Date dateFinCotisation;
 
 
     /**
-     * @param Offre 
+     * @param Offre
      * @return
      */
     public boolean acheter(Offre o) {
-        // TODO implement here
+        if( o.getPrix() < solde){
+            setSolde( solde - o.getPrix());
+            o.addAcheteurPotentiel(this);
+            return true;
+        }
         return false;
     }
 
