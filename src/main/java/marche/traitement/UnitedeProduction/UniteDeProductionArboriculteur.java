@@ -1,30 +1,36 @@
 package marche.traitement.UnitedeProduction;
 
-import marche.traitement.Produit.Fruit;
+
+import marche.traitement.Producteurs.Arboriculteur;
+
+import marche.traitement.Produit.Fruit.Fruit;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * 
  */
 public class UniteDeProductionArboriculteur extends UniteDeProduction {
 
+    public ArrayList<Arboriculteur> producteurs;
+
     /**
      * Default constructor
      */
     public UniteDeProductionArboriculteur() {
+        super();
     }
 
     /**
      * 
      */
-    public void ArrayList Arboriculteur producteurs;
 
-    /**
-     * @param int quantite 
-     * @return
-     */
-    public Fruit produire(void int quantite) {
+
+
+    public Fruit produire(int quantite) {
         // TODO implement here
-        return null;
+        return new Fruit(quantite,new Date(System.currentTimeMillis()));
     }
 
 }

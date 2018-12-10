@@ -1,10 +1,19 @@
 package marche.traitement.UnitedeProduction;
 
+import marche.traitement.Producteurs.ProducteurLaitier;
+import marche.traitement.Produit.ProduitsLaitiers.ProduitsLaitier;
+
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  * 
  */
-public class UniteDeProductionLaitier extends UniteDeProduction {
+public class UniteDeProductionLaitier extends UniteDeProduction
+{
 
+
+    public ArrayList<ProducteurLaitier> producteurs;
     /**
      * Default constructor
      */
@@ -14,15 +23,12 @@ public class UniteDeProductionLaitier extends UniteDeProduction {
     /**
      * 
      */
-    public void ArrayList ProducteurLaitier producteurs;
 
-    /**
-     * @param int quantite 
-     * @return
-     */
-    public ProduitLaitier produire(void int quantite) {
+
+
+    public ProduitsLaitier produire(int quantite) {
         // TODO implement here
-        return null;
+        return new ProduitsLaitier(quantite,new Date(System.currentTimeMillis()));
     }
 
 }

@@ -29,7 +29,10 @@ public class Producteur extends VendeurAcheteur
 
 
 
-
+    public void getLimite()
+    {
+        System.out.println("La limite de ce producteur est de "+ this.limiteDeCapacite);
+    }
 
 
 
