@@ -1,15 +1,17 @@
-package marche.traitement.Produit;
+package marche.traitement.Produit.Viande;
+
+import marche.traitement.Produit.Produit;
 
 import java.util.Date;
 
 /**
  * 
  */
-public class Miel extends Produit {
+public class vache extends Viande {
 
     public String Unite;
 
-    public Miel(int quantite, Date dateDePeremption, String unite) {
+    public vache(int quantite, Date dateDePeremption, String unite) {
         super(quantite, dateDePeremption);
         Unite = unite;
     }

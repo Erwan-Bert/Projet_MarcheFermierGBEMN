@@ -1,19 +1,22 @@
 package marche.traitement.Produit;
 
+import marche.traitement.Produit.ProduitsLaitiers.ProduitsLaitier;
+
+import java.util.Date;
+
 /**
  * 
  */
-public class Epinards {
+public class Epinards extends Produit {
 
-    /**
-     * Default constructor
-     */
-    public Epinards() {
+    public String Unite;
+
+    public Epinards(int quantite, Date dateDePeremption, String unite) {
+        super(quantite, dateDePeremption);
+        Unite = unite;
     }
 
-    /**
-     * 
-     */
-    public void public static String Unite;
-
+    public String getUnite() {
+        return Unite;
+    }
 }

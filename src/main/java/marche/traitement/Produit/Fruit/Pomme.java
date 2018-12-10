@@ -1,15 +1,15 @@
-package marche.traitement.Produit;
+package marche.traitement.Produit.Fruit;
 
 import java.util.Date;
 
 /**
  * 
  */
-public class Miel extends Produit {
+public class Pomme extends Fruit {
 
-    public String Unite;
+    private String Unite;
 
-    public Miel(int quantite, Date dateDePeremption, String unite) {
+    public Pomme(int quantite, Date dateDePeremption, String unite) {
         super(quantite, dateDePeremption);
         Unite = unite;
     }
