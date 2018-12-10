@@ -18,7 +18,7 @@ public class VendeurAcheteur extends Acteur {
     /**
      * 
      */
-    public ArrayList<Produit> stocks;
+    public ArrayList<Produit> stocks = new ArrayList<Produit>();
 
 
 
@@ -31,6 +31,9 @@ public class VendeurAcheteur extends Acteur {
     public Offre creeUneOffre(int quantite,int prix, Produit produit) {
         // TODO implement here
         return null;
+    }
+
+    public void addToStock(Produit produit){//
     }
 
 }

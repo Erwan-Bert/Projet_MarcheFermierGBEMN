@@ -17,9 +17,11 @@ public class Acteur {
     public double getSolde() {
         return solde;
     }
-
-    public void setSolde(double solde) {
-        this.solde = solde;
+    public void crediter(double montant){
+        this.solde += montant;
+    }
+    public void debiter(double montant){
+        this.solde += montant;
     }
 
     public Date getDateFinCotisation() {
@@ -46,7 +48,7 @@ public class Acteur {
      * @return
      */
     public boolean acheter(Offre o) {
-        if( o.getPrix() < solde){
+        if( o.getPrix() <= solde){
             setSolde( solde - o.getPrix());
             o.addAcheteurPotentiel(this);
             return true;
