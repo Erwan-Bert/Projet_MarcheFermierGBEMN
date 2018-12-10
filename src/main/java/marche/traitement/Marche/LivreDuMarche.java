@@ -7,6 +7,10 @@ import java.util.ArrayList;
  */
 public class LivreDuMarche {
 
+
+    private ArrayList<Offre> livre;
+
+
     /**
      * Default constructor
      */
@@ -14,16 +18,14 @@ public class LivreDuMarche {
     }
 
     /**
-     * 
+     * function ajouterOffre
      */
-    public ArrayList<Offre> livre;
-
-
-    /**
-     * @param Offre
-     */
-    public void AjouterOffre(Offre o) {
-        // TODO implement here
+    public void ajouterOffre(Offre o)
+    {
+        livre.add(o);
     }
 
+    public ArrayList<Offre> getLivre() {
+        return livre;
+    }
 }
