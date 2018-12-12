@@ -27,9 +27,9 @@ public class UniteDeProductionHorticulteur extends UniteDeProduction {
 
 
 
-    public Epinards produire(int quantite) {
+    public Epinards produire(int quantite, String type, String peremption) {
         // TODO implement here
-        return new Epinards(quantite,new Date(System.currentTimeMillis()),"Kilogrammes");
+        return new Epinards(quantite,peremption,"Kilogrammes");
     }
 
 }

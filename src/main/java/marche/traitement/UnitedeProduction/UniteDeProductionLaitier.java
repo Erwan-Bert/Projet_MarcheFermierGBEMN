@@ -1,6 +1,8 @@
 package marche.traitement.UnitedeProduction;
 
 import marche.traitement.Producteurs.ProducteurLaitier;
+import marche.traitement.Produit.ProduitsLaitiers.Fromage;
+import marche.traitement.Produit.ProduitsLaitiers.Lait;
 import marche.traitement.Produit.ProduitsLaitiers.ProduitsLaitier;
 
 import java.util.ArrayList;
@@ -26,9 +28,12 @@ public class UniteDeProductionLaitier extends UniteDeProduction
 
 
 
-    public ProduitsLaitier produire(int quantite) {
-        // TODO implement here
-        return new ProduitsLaitier(quantite,new Date(System.currentTimeMillis()));
+    public ProduitsLaitier produire(int quantite, String type, String peremption)
+    {
+        if (type.equals("lait"))
+            return new Lait(quantite,peremption, "Litres");
+        else
+            return  new Fromage(quantite, peremption, "Kilogrammes");
     }
 
 }

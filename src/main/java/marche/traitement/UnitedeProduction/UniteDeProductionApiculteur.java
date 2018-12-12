@@ -26,10 +26,10 @@ public class UniteDeProductionApiculteur extends UniteDeProduction {
      * 
      */
 
-
-    public Miel produire(int quantite) {
+    @Override
+    public Miel produire(int quantite, String type, String peremption) {
         // TODO implement here
-        return new Miel(quantite,new Date(System.currentTimeMillis()),"Kilogrammes");
+        return new Miel(quantite,peremption,"Kilogrammes");
     }
 
 }
