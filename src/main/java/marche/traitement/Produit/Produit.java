@@ -25,9 +25,10 @@ public class Produit {
         return dateDePeremption;
     }//getDateDePeremption
 
+    //Convertire la string Date en Date
     public Date convertDate(String dateDeP) throws ParseException {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = simpleDateFormat.parse(dateDeP);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy"); //Format d'affichage de la date
+        Date date = simpleDateFormat.parse(dateDeP);//Convertir le string en date
         return date;
     }
 
