@@ -13,6 +13,7 @@ public class Acteur {
      */
     public Acteur(double solde) {
     }
+    public Acteur(){}
 
     public double getSolde() {
         return solde;

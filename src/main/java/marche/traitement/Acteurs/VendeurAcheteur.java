@@ -15,7 +15,8 @@ public class VendeurAcheteur extends Acteur {
     public VendeurAcheteur(double solde) {
         super(solde);
     }
-
+    public VendeurAcheteur() {
+    }
     /**
      * 
      */
