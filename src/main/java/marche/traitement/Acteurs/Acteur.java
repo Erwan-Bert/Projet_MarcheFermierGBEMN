@@ -8,12 +8,13 @@ import java.util.*;
  */
 public class Acteur {
 
-    /**
-     * Default constructor
-     */
-    public Acteur(double solde) {
-    }
     public Acteur(){}
+
+    public Acteur(double solde, String nom) {
+        this.solde = solde;
+        this.nom = nom;
+        this.dateFinCotisation = "01/01/2000";
+    }
 
     public double getSolde() {
         return solde;
@@ -25,11 +26,11 @@ public class Acteur {
         this.solde += montant;
     }
 
-    public Date getDateFinCotisation() {
+    public String getDateFinCotisation() {
         return dateFinCotisation;
     }
 
-    protected void setDateFinCotisation(Date dateFinCotisation) {
+    protected void setDateFinCotisation(String dateFinCotisation) {
         this.dateFinCotisation = dateFinCotisation;
     }
 
@@ -37,11 +38,11 @@ public class Acteur {
      * 
      */
     private double solde;
-
+    private String nom;
     /**
      * 
      */
-    private Date dateFinCotisation;
+    private String dateFinCotisation;
 
 
     /**

@@ -12,8 +12,8 @@ public class VendeurAcheteur extends Acteur {
     /**
      * Default constructor
      */
-    public VendeurAcheteur(double solde) {
-        super(solde);
+    public VendeurAcheteur(double solde, String nom) {
+        super(solde, nom);
     }
     public VendeurAcheteur() {
     }
@@ -35,7 +35,11 @@ public class VendeurAcheteur extends Acteur {
         return null;
     }
 
-    public void addToStock(Produit produit){//
+    public void addToStock(Produit produit){
+        for (Produit stock: stocks ) {
+            //if(stock instanceof )
+        }
+        stocks.add(produit);
     }
 
 }
