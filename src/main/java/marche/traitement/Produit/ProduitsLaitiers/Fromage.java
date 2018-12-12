@@ -10,7 +10,7 @@ public class Fromage extends ProduitsLaitier {
 
     public String unite;
 
-    public Fromage(int quantite, Date dateDePeremption, String unite) {
+    public Fromage(int quantite, String dateDePeremption, String unite) {
         super(quantite, dateDePeremption);
         this.unite = unite;
     }

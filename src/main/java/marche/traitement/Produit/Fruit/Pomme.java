@@ -9,7 +9,7 @@ public class Pomme extends Fruit {
 
     private String Unite;
 
-    public Pomme(int quantite, Date dateDePeremption, String unite) {
+    public Pomme(int quantite, String dateDePeremption, String unite) {
         super(quantite, dateDePeremption);
         Unite = unite;
     }

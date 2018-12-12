@@ -11,7 +11,7 @@ public class Lait extends ProduitsLaitier {
 
     public String unite;
 
-    public Lait(int quantite, Date dateDePeremption, String unite) {
+    public Lait(int quantite, String dateDePeremption, String unite) {
         super(quantite, dateDePeremption);
         this.unite = unite;
     }

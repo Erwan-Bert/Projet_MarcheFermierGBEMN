@@ -11,7 +11,7 @@ public class Epinards extends Produit {
 
     public String Unite;
 
-    public Epinards(int quantite, Date dateDePeremption, String unite) {
+    public Epinards(int quantite, String dateDePeremption, String unite) {
         super(quantite, dateDePeremption);
         Unite = unite;
     }

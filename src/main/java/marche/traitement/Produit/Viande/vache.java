@@ -11,7 +11,7 @@ public class vache extends Viande {
 
     public String Unite;
 
-    public vache(int quantite, Date dateDePeremption, String unite) {
+    public vache(int quantite, String dateDePeremption, String unite) {
         super(quantite, dateDePeremption);
         Unite = unite;
     }

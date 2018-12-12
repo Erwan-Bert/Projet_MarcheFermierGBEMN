@@ -10,7 +10,7 @@ import java.util.Date;
  */
 public class Viande extends Produit {
 
-    public Viande(int quantite, Date dateDePeremption) {
+    public Viande(int quantite, String dateDePeremption) {
         super(quantite, dateDePeremption);
     }
 }

@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class Fruit extends Produit {
 
-    public Fruit(int quantite, Date dateDePeremption) {
+    public Fruit(int quantite, String dateDePeremption) {
         super(quantite, dateDePeremption);
     }
 

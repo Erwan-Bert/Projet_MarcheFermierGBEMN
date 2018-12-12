@@ -11,7 +11,7 @@ public class Cochon extends Viande {
     public String unite;
 
 
-    public Cochon(int quantite, Date dateDePeremption, String unite) {
+    public Cochon(int quantite, String dateDePeremption, String unite) {
         super(quantite, dateDePeremption);
         this.unite = unite;
     }

@@ -10,7 +10,7 @@ import java.util.Date;
 public class ProduitsLaitier extends Produit {
 
 
-    public ProduitsLaitier(int quantite, Date dateDePeremption) {
+    public ProduitsLaitier(int quantite,String dateDePeremption) {
         super(quantite, dateDePeremption);
 
     }
