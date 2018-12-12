@@ -18,6 +18,8 @@ public class UniteDeProductionHorticulteur extends UniteDeProduction {
      */
     public UniteDeProductionHorticulteur() {
         super();
+        this.producteurs = new ArrayList<Horticulteur>();
+
     }
 
     /**
@@ -25,7 +27,14 @@ public class UniteDeProductionHorticulteur extends UniteDeProduction {
      */
 
 
+    public void AddMembre(Horticulteur H)
+    {
+        if (H instanceof Horticulteur)
+        {
+            this.producteurs.add(H);
+        }
 
+    }
 
     public Epinards produire(int quantite, String type, String peremption) {
         // TODO implement here
