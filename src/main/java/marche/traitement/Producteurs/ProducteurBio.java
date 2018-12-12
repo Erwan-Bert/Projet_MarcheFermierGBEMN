@@ -6,9 +6,9 @@ public class ProducteurBio extends Producteur
     private Producteur producteur;
 
     //constructeur
-    public ProducteurBio (Producteur prod)
+    public ProducteurBio (double solde,int limite,Producteur prod)
     {
-
+        super(solde,limite);
       this.producteur = prod;
 
     }

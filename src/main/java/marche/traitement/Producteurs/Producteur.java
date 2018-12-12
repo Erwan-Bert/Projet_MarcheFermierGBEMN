@@ -14,18 +14,13 @@ public class Producteur extends VendeurAcheteur
     /**
      * Default constructor
      */
-    public Producteur()
+    public Producteur(double solde,int limite)
     {
-
-    }
-
-
-
-    public Producteur(int limite)
-    {
+        super(solde);
         this.limiteDeCapacite = limite;
-
     }
+
+
 
 
 

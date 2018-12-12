@@ -8,7 +8,8 @@ public class Tradeur extends VendeurAcheteur {
     /**
      * Default constructor
      */
-    public Tradeur() {
+    public Tradeur(double solde) {
+        super(solde);
     }
 
 }

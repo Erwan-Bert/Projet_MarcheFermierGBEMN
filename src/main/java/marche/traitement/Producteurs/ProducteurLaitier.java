@@ -8,8 +8,8 @@ public class ProducteurLaitier extends Producteur {
     /**
      * Default constructor
      */
-    public ProducteurLaitier(int limite) {
-        super(limite);
+    public ProducteurLaitier(double solde, int limite) {
+        super(solde,limite);
     }
 
 }

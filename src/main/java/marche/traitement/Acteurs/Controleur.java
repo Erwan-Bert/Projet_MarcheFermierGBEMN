@@ -30,9 +30,10 @@ public class Controleur {
     public void choisirAcheteur(Offre o) {
         Acteur acheteur = o.getAcheteurPotentiel().get(0);
         acheteur.debiter(o.getPrix());
-        if(acheteur instanceof VendeurAcheteur){
+        /*if(acheteur instanceof VendeurAcheteur){
             acheteur.
-        }
+        } */
+
 
     }
 

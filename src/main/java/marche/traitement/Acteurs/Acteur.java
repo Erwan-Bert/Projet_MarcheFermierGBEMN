@@ -44,12 +44,12 @@ public class Acteur {
 
 
     /**
-     * @param Offre
+     * @param //Offre
      * @return
      */
     public boolean acheter(Offre o) {
         if( o.getPrix() <= solde){
-            setSolde( solde - o.getPrix());
+            debiter(o.getPrix());
             o.addAcheteurPotentiel(this);
             return true;
         }

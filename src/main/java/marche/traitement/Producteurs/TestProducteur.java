@@ -4,11 +4,9 @@ public class TestProducteur {
 
     public static void main(String[] args)
     {
-        ProducteurDeViande pr = new ProducteurDeViande(1500);
-        ProducteurBio prb = new ProducteurBio(pr);
-        prb.getLimite();
-        prb.certifierBio();
-        Apiculteur api = new Apiculteur(200);
+        ProducteurDeViande pr = new ProducteurDeViande(1500,100);
+        pr.getLimite();
+        Apiculteur api = new Apiculteur(200,100);
         api.getLimite();
     }
 }

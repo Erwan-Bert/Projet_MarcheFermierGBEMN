@@ -12,7 +12,8 @@ public class VendeurAcheteur extends Acteur {
     /**
      * Default constructor
      */
-    public VendeurAcheteur() {
+    public VendeurAcheteur(double solde) {
+        super(solde);
     }
 
     /**
@@ -23,9 +24,9 @@ public class VendeurAcheteur extends Acteur {
 
 
     /**
-     * @param int quantite 
-     * @param int prix 
-     * @param Produit produit 
+     * @param //int quantite
+     * @param //int prix
+     * @param //Produit produit
      * @return
      */
     public Offre creeUneOffre(int quantite,int prix, Produit produit) {
