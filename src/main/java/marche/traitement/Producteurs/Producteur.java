@@ -3,7 +3,7 @@ package marche.traitement.Producteurs;
 
 import marche.traitement.Acteurs.VendeurAcheteur;
 
-public class Producteur extends VendeurAcheteur
+public abstract class Producteur extends VendeurAcheteur
 
 {
     /**attributs*/
@@ -11,9 +11,15 @@ public class Producteur extends VendeurAcheteur
     private int limiteDeCapacite;
 
 
+
     /**
      * Default constructor
      */
+    public Producteur()
+    {
+
+    }
+
     public Producteur(double solde,int limite)
     {
         super(solde);

@@ -1,15 +1,16 @@
-package marche.traitement.Producteurs;
+package marche.traitement.Producteurs.DecorateurProducteur;
 
-public class ProducteurBio extends Producteur
+import marche.traitement.Producteurs.Producteur;
+
+public class ProducteurBio extends DecorateurProducteur
 {
     //prend un attribut producteur
     private Producteur producteur;
 
     //constructeur
-    public ProducteurBio (double solde,int limite,Producteur prod)
+    public ProducteurBio (Producteur prod)
     {
-        super(solde,limite);
-      this.producteur = prod;
+        super(prod);
 
     }
 
