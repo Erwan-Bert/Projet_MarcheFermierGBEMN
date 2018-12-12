@@ -37,7 +37,6 @@ public class Produit {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         long Ajd = System.currentTimeMillis();
         Date dateA = new Date(Ajd);
-        System.out.println(dateA);
 
         // Test de la validite de la date de péremption
         if (convertDate(dateDePeremption).compareTo(dateA) == 1) {
