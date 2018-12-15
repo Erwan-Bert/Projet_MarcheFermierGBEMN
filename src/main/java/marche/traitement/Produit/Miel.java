@@ -1,5 +1,6 @@
 package marche.traitement.Produit;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -7,14 +8,9 @@ import java.util.Date;
  */
 public class Miel extends Produit {
 
-    public String Unite;
 
-    public Miel(int quantite, String dateDePeremption, String unite) {
-        super(quantite, dateDePeremption);
-        Unite = unite;
+    public Miel(int quantite, LocalDate dateDePeremption, String unite) {
+        super(quantite, dateDePeremption, unite);
     }
 
-    public String getUnite() {
-        return Unite;
-    }
 }

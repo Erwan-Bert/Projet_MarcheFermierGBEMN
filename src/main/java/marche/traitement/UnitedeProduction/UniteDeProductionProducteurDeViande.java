@@ -5,6 +5,7 @@ import marche.traitement.Produit.Viande.Cochon;
 import marche.traitement.Produit.Viande.Viande;
 import marche.traitement.Produit.Viande.vache;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -29,7 +30,7 @@ public class UniteDeProductionProducteurDeViande extends UniteDeProduction {
 
 
 
-    public Viande produire(int quantite, String type, String peremption)
+    public Viande produire(int quantite, String type, LocalDate peremption)
     {
         if (type.equals("cochon"))
             return new Cochon(quantite, peremption, "Kilogrammes");

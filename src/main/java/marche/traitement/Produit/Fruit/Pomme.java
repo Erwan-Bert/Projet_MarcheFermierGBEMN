@@ -1,5 +1,8 @@
 package marche.traitement.Produit.Fruit;
 
+import marche.traitement.Produit.Produit;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -7,14 +10,9 @@ import java.util.Date;
  */
 public class Pomme extends Fruit {
 
-    private String Unite;
 
-    public Pomme(int quantite, String dateDePeremption, String unite) {
-        super(quantite, dateDePeremption);
-        Unite = unite;
+    public Pomme(int quantite, LocalDate dateDePeremption, String unite) {
+        super(quantite, dateDePeremption,unite);
     }
 
-    public String getUnite() {
-        return Unite;
-    }
 }

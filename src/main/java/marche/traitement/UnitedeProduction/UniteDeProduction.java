@@ -7,6 +7,7 @@ import marche.traitement.Produit.Produit;
 import marche.traitement.Produit.ProduitsLaitiers.Lait;
 import marche.traitement.Produit.ProduitsLaitiers.ProduitsLaitier;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -25,7 +26,7 @@ public abstract class UniteDeProduction {
 
     }
 
-    public Produit fabriquer(String type, Integer quantite, String peremption)
+    public Produit fabriquer(String type, Integer quantite, LocalDate peremption)
     {
         try
         {
@@ -38,7 +39,7 @@ public abstract class UniteDeProduction {
         return null;
     }
 
-    private Produit creer (String type, Integer quantite, String peremption) throws ClassNotFoundException
+    private Produit creer (String type, Integer quantite, LocalDate peremption) throws ClassNotFoundException
     {
         UniteDeProductionLaitier uniteDeProductionLaitier = new UniteDeProductionLaitier();
         UniteDeProductionArboriculteur uniteDeProductionArboriculteur = new UniteDeProductionArboriculteur();
@@ -66,7 +67,7 @@ public abstract class UniteDeProduction {
         }
     }
 
-    public abstract Produit produire(int quantite, String type, String peremption);
+    public abstract Produit produire(int quantite, String type, LocalDate peremption);
 
 
 

@@ -24,7 +24,7 @@ public class Offre
     {
         this.prix = prix;
         this.quantite = quantite;
-        this.produit = produit;
+        //Produit produitPartiel = new Produit(produit);
     }
 
     /**

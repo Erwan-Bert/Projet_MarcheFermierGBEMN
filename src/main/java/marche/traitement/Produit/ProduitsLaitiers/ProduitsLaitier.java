@@ -2,16 +2,19 @@ package marche.traitement.Produit.ProduitsLaitiers;
 
 import marche.traitement.Produit.Produit;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
  * 
  */
-public class ProduitsLaitier extends Produit {
+public abstract class ProduitsLaitier extends Produit {
 
 
-    public ProduitsLaitier(int quantite,String dateDePeremption) {
-        super(quantite, dateDePeremption);
+    public ProduitsLaitier() {
+    }
 
+    public ProduitsLaitier(int quantite, LocalDate dateDePeremption, String unite) {
+        super(quantite, dateDePeremption, unite);
     }
 }

@@ -3,22 +3,37 @@ package marche.traitement.Produit;
 public class ProduitBio extends DecorateurProduit {
     private boolean certification = false; // Certification du produit , valeur de base nulle
 
-    public ProduitBio(int quantite, String dateDePeremption, Produit produit, boolean certificaion) {
-        super(quantite, dateDePeremption, produit);
-        this.certification = certificaion;
+    /**
+     * Constructeur lorsque qu'on veut initialiser la certification aussi
+     * @param produit
+     * @param certification
+     */
+    public ProduitBio( Produit produit, boolean certification ) {
+        super( produit);
+        this.certification = certification;
     }
 
-    public boolean isCertificaion() {
+    /**
+     *
+     * @param produit
+     */
+    public ProduitBio( Produit produit) {
+        super( produit);
+    }
+
+    /**
+     *
+     * @return boolean
+     */
+    public boolean isCertifie() {
         return certification;
     }
 
     public void certifier(){
-        System.out.println(this.getProduit() + "est bio");
         certification = true;
     }
 
     public void decertifier(){
-        System.out.println(this.getProduit() + "n'est pas bio");
         certification = false;
     }
 }

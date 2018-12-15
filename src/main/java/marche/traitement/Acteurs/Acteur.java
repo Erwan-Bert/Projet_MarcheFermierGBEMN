@@ -28,12 +28,16 @@ public class Acteur {
 
 
 
-
+    /**
+    *fait payer l'utilisateur et lui ajoute un nombre de jour sur sa période de cotisation
+     * retourne si la cotisation a été un succès
+     */
     public boolean cotiser(){
 
         if( solde > 100){
             debiter(100);
-            dateFinCotisation = LocalDate.now();
+            if( dateFinCotisation.isBefore(LocalDate.now()))
+                dateFinCotisation = LocalDate.now();
             ajouterJoursDateFinCotisation(365);
             return true;
         }
@@ -72,6 +76,9 @@ public class Acteur {
     }
     public double getSolde() {
         return solde;
+    }
+    public String getNom() {
+        return nom;
     }
     public void crediter(double montant){
         this.solde += montant;

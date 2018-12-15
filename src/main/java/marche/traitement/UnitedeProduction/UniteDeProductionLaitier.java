@@ -5,6 +5,7 @@ import marche.traitement.Produit.ProduitsLaitiers.Fromage;
 import marche.traitement.Produit.ProduitsLaitiers.Lait;
 import marche.traitement.Produit.ProduitsLaitiers.ProduitsLaitier;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -28,7 +29,7 @@ public class UniteDeProductionLaitier extends UniteDeProduction
 
 
 
-    public ProduitsLaitier produire(int quantite, String type, String peremption)
+    public ProduitsLaitier produire(int quantite, String type, LocalDate peremption)
     {
         if (type.equals("lait"))
             return new Lait(quantite,peremption, "Litres");

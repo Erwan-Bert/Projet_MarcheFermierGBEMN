@@ -1,6 +1,7 @@
 package marche.traitement.Produit.ProduitsLaitiers;
 
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -8,11 +9,9 @@ import java.util.Date;
  */
 public class Fromage extends ProduitsLaitier {
 
-    public String unite;
 
-    public Fromage(int quantite, String dateDePeremption, String unite) {
-        super(quantite, dateDePeremption);
-        this.unite = unite;
+    public Fromage(int quantite, LocalDate dateDePeremption, String unite) {
+        super(quantite, dateDePeremption, unite);
     }
 
     public String getUnite() {

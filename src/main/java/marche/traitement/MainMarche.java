@@ -1,6 +1,7 @@
 package marche.traitement;
 
 
+import marche.traitement.Produit.Fruit.Pomme;
 import marche.traitement.Produit.Produit;
 import marche.traitement.UnitedeProduction.UniteDeProduction;
 import marche.traitement.UnitedeProduction.UniteDeProductionApiculteur;
@@ -8,10 +9,12 @@ import marche.traitement.UnitedeProduction.UniteDeProductionApiculteur;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.time.LocalDate;
 
 public class MainMarche {
     public static void main(String[] args)
     {
+        Produit pomme = new Pomme(1, LocalDate.now().plusDays(14),"Tonne");
 
 
 

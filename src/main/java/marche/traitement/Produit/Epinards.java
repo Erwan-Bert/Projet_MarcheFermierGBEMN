@@ -2,6 +2,7 @@ package marche.traitement.Produit;
 
 import marche.traitement.Produit.ProduitsLaitiers.ProduitsLaitier;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -9,14 +10,9 @@ import java.util.Date;
  */
 public class Epinards extends Produit {
 
-    public String Unite;
 
-    public Epinards(int quantite, String dateDePeremption, String unite) {
-        super(quantite, dateDePeremption);
-        Unite = unite;
+    public Epinards(int quantite, LocalDate dateDePeremption, String unite) {
+        super(quantite, dateDePeremption, unite);
     }
 
-    public String getUnite() {
-        return Unite;
-    }
 }
