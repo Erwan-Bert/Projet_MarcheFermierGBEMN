@@ -1,7 +1,9 @@
 package marche.traitement;
 
 
+import marche.traitement.Produit.Produit;
 import marche.traitement.UnitedeProduction.UniteDeProduction;
+import marche.traitement.UnitedeProduction.UniteDeProductionApiculteur;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,6 +12,14 @@ import java.io.InputStreamReader;
 public class MainMarche {
     public static void main(String[] args)
     {
+
+
+
+
+
+
+
+        /*
         String temp ="";
         int avancement = 1;
         String produit = "";
@@ -53,5 +63,6 @@ public class MainMarche {
             System.out.println("Problème de saisie");
         }
         return choix;
+    */
     }
 }

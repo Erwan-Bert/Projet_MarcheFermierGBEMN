@@ -20,9 +20,9 @@ public abstract class Producteur extends VendeurAcheteur
 
     }
 
-    public Producteur(double solde,int limite)
+    public Producteur(double solde,String nom,int limite)
     {
-        super(solde);
+        super(solde,nom);
         this.limiteDeCapacite = limite;
     }
 
@@ -38,9 +38,5 @@ public abstract class Producteur extends VendeurAcheteur
 
 
 
-
-    public void cotiser() {
-        // TODO implement here
-    }
 
 }

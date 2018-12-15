@@ -8,9 +8,9 @@ public class Apiculteur extends Producteur  {
     /**
      * Default constructor
      */
-    public Apiculteur(double solde,int limite)
+    public Apiculteur(double solde,String nom,int limite)
     {
-        super(solde,limite);
+        super(solde,nom,limite);
 
     }
 

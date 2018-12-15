@@ -8,8 +8,8 @@ public class ProducteurDeViande extends Producteur {
     /**
      * Default constructor
      */
-    public ProducteurDeViande(double solde,int limite) {
-        super(solde,limite);
+    public ProducteurDeViande(double solde,String nom,int limite) {
+        super(solde,nom, limite);
     }
 
 

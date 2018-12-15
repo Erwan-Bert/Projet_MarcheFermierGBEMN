@@ -8,8 +8,8 @@ public class Arboriculteur extends Producteur {
     /**
      * Default constructor
      */
-    public Arboriculteur(double solde,int limite) {
-        super(solde,limite);
+    public Arboriculteur(double solde,String nom,int limite) {
+        super(solde,nom,limite);
     }
 
 }
