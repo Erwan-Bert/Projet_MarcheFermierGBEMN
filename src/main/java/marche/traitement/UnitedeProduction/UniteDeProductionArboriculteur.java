@@ -15,7 +15,6 @@ import java.util.Date;
  */
 public class UniteDeProductionArboriculteur extends UniteDeProduction {
 
-    public ArrayList<Arboriculteur> producteurs;
 
     /**
      * Default constructor

@@ -3,6 +3,7 @@ import marche.traitement.Marche.Offre;
 import marche.traitement.Produit.Produit;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 
@@ -20,7 +21,7 @@ public class VendeurAcheteur extends Acteur {
     /**
      * 
      */
-    public ArrayList<Produit> stocks = new ArrayList<Produit>();
+    public List<Produit> stocks = new ArrayList<Produit>();
 
 
 

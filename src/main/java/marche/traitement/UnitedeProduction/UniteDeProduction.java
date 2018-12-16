@@ -10,6 +10,7 @@ import marche.traitement.Produit.ProduitsLaitiers.ProduitsLaitier;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 
@@ -17,7 +18,7 @@ import java.util.Date;
 public abstract class UniteDeProduction {
 
 
-    private ArrayList<Producteur> groupeDeProd;
+    protected List<Producteur> groupeDeProd;
     /**
      * Default constructor
      */

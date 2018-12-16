@@ -1,6 +1,7 @@
 package marche.traitement.Marche;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 public class LivreDuMarche {
 
 
-    private ArrayList<Offre> livre;
+    private List<Offre> livre;
 
 
     /**
@@ -25,7 +26,7 @@ public class LivreDuMarche {
         livre.add(o);
     }
 
-    public ArrayList<Offre> getLivre() {
+    public List<Offre> getLivre() {
         return livre;
     }
 }

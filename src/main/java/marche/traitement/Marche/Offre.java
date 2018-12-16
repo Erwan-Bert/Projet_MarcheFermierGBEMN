@@ -14,7 +14,7 @@ public class Offre
     private int prix;
     private int quantite;
     private Produit produit;
-    private ArrayList<Acteur> acheteurPotentiel = new ArrayList<Acteur>();
+    private List<Acteur> acheteurPotentiel = new ArrayList<Acteur>();
 
 
     /**
@@ -46,7 +46,7 @@ public class Offre
         return produit;
     }
 
-    public ArrayList<Acteur> getAcheteurPotentiel() {
+    public List<Acteur> getAcheteurPotentiel() {
         return acheteurPotentiel;
     }
 

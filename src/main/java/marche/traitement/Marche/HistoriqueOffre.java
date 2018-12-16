@@ -1,13 +1,14 @@
 package marche.traitement.Marche;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 
  */
 public class HistoriqueOffre {
 
-    private ArrayList<Offre> offresArchives = new ArrayList<Offre>();
+    private List<Offre> offresArchives = new ArrayList<Offre>();
 
     /**
      * Default constructor
@@ -15,7 +16,7 @@ public class HistoriqueOffre {
     public HistoriqueOffre() {
     }
 
-    public ArrayList<Offre> getOffresArchives() {
+    public List<Offre> getOffresArchives() {
         return offresArchives;
     }
 

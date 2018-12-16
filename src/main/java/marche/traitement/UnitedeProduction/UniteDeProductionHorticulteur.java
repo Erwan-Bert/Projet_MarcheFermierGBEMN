@@ -1,6 +1,7 @@
 package marche.traitement.UnitedeProduction;
 
 import marche.traitement.Producteurs.Horticulteur;
+import marche.traitement.Producteurs.Producteur;
 import marche.traitement.Produit.Epinards;
 
 import java.time.LocalDate;
@@ -13,13 +14,13 @@ import java.util.Date;
 public class UniteDeProductionHorticulteur extends UniteDeProduction {
 
 
-    private ArrayList<Horticulteur> producteurs;
     /**
      * Default constructor
      */
     public UniteDeProductionHorticulteur() {
         super();
-        this.producteurs = new ArrayList<Horticulteur>();
+        //je vois pas comment résoudre le problème, ça ne devrait pas poser de problème ...
+        //this.groupeDeProd = new ArrayList<Horticulteur>();
 
     }
 
@@ -32,7 +33,7 @@ public class UniteDeProductionHorticulteur extends UniteDeProduction {
     {
         if (H instanceof Horticulteur)
         {
-            this.producteurs.add(H);
+            this.groupeDeProd.add(H);
         }
 
     }
