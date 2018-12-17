@@ -27,7 +27,7 @@ public abstract class UniteDeProduction {
 
     }
 
-    public Produit fabriquer(String type, Integer quantite, LocalDate peremption)
+    public static Produit fabriquer(String type, Integer quantite, LocalDate peremption)
     {
         try
         {
@@ -40,7 +40,7 @@ public abstract class UniteDeProduction {
         return null;
     }
 
-    private Produit creer (String type, Integer quantite, LocalDate peremption) throws ClassNotFoundException
+    private static Produit creer (String type, Integer quantite, LocalDate peremption) throws ClassNotFoundException
     {
         UniteDeProductionLaitier uniteDeProductionLaitier = new UniteDeProductionLaitier();
         UniteDeProductionArboriculteur uniteDeProductionArboriculteur = new UniteDeProductionArboriculteur();
