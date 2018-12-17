@@ -7,6 +7,7 @@ import marche.traitement.Produit.Epinards;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 
@@ -19,8 +20,7 @@ public class UniteDeProductionHorticulteur extends UniteDeProduction {
      */
     public UniteDeProductionHorticulteur() {
         super();
-        //je vois pas comment résoudre le problème, ça ne devrait pas poser de problème ...
-        //this.groupeDeProd = new ArrayList<Horticulteur>();
+        this.groupeDeProd =  new ArrayList<Producteur>();
 
     }
 
