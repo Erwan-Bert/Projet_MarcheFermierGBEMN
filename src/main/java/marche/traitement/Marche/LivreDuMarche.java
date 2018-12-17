@@ -9,13 +9,15 @@ import java.util.List;
 public class LivreDuMarche {
 
 
-    private List<Offre> livre;
+    private static List<Offre> livreMarche = new ArrayList<>();
 
 
     /**
      * Default constructor
      */
-    public LivreDuMarche() {
+    private LivreDuMarche()
+    {
+
     }
 
     /**
@@ -23,10 +25,16 @@ public class LivreDuMarche {
      */
     public void ajouterOffre(Offre o)
     {
-        livre.add(o);
+        livreMarche.add(o);
+    }
+
+    public void enleverOffre(Offre o){
+        livreMarche.remove(o);
+        HistoriqueOffre.addOffresArchives(o);
+
     }
 
     public List<Offre> getLivre() {
-        return livre;
+        return livreMarche;
     }
 }

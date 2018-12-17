@@ -8,19 +8,20 @@ import java.util.List;
  */
 public class HistoriqueOffre {
 
-    private List<Offre> offresArchives = new ArrayList<Offre>();
+    private static List<Offre> historiqueOffres = new ArrayList<Offre>();
 
     /**
      * Default constructor
      */
-    public HistoriqueOffre() {
+    private HistoriqueOffre()
+    {
     }
 
-    public List<Offre> getOffresArchives() {
-        return offresArchives;
+    public static List<Offre> getOffresArchives() {
+        return historiqueOffres ;
     }
 
-    public void addOffresArchives(Offre offreArchive) {
-        this.offresArchives.add(offreArchive);
+    public static void addOffresArchives(Offre offreArchive) {
+        historiqueOffres .add(offreArchive);
     }
 }
