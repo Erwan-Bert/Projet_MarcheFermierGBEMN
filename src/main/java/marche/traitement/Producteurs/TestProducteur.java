@@ -1,10 +1,14 @@
 package marche.traitement.Producteurs;
-
+import org.junit.*;
 import marche.traitement.Producteurs.DecorateurProducteur.DecorateurProducteur;
 import marche.traitement.Producteurs.DecorateurProducteur.ProducteurBio;
+import marche.traitement.Produit.Fruit.Pomme;
+import marche.traitement.Produit.Produit;
 import marche.traitement.UnitedeProduction.UniteDeProduction;
 import marche.traitement.UnitedeProduction.UniteDeProductionHorticulteur;
 import marche.traitement.UnitedeProduction.UniteDeProductionProducteurDeViande;
+
+import java.time.LocalDate;
 
 public class TestProducteur {
 
