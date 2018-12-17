@@ -25,6 +25,14 @@ public class Offre
     {
         this.prix = prix;
         this.quantite = quantite;
+        if(quantite <= produit.getQuantite() && quantite >0){
+            this.produit = UniteDeProduction.fabriquer(produit.getClass().getSimpleName(),quantite,produit.getDateDePeremption());
+            produit.enleverQuantite(quantite);
+
+        }
+
+        //String type, Integer quantite, LocalDate peremption)
+
 
     }
 

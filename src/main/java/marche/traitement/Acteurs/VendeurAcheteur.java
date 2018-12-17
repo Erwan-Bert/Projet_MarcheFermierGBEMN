@@ -31,16 +31,31 @@ public class VendeurAcheteur extends Acteur {
      * @param //Produit produit
      * @return
      */
-    public Offre creeUneOffre(int quantite,int prix, Produit produit) {
-        // TODO implement here
-        return null;
+    public Offre creeUneOffre(int quantite,int prix, Produit produit)throws ArithmeticException,IllegalArgumentException {
+
+        if(prix<0)
+            throw new ArithmeticException("prix négatif");
+        if(quantite< 0 )
+            throw new ArithmeticException("quantite négative");
+        if(produit == null)
+            throw new IllegalArgumentException("rentrez un produit valide");
+
+        return new Offre(prix,quantite,produit);
+
     }
 
-    public void addToStock(Produit produit){
+    public void ajouterAuStock(Produit produit){
+        boolean dejaDansLeStock = false;
         for (Produit stock: stocks ) {
-            //if(stock instanceof )
+            if(stock.getClass().equals( produit.getClass()) ){
+                stock.ajouterQuantite(produit.getQuantite());
+                dejaDansLeStock = true;
+            }
+
         }
-        stocks.add(produit);
+        if(!dejaDansLeStock ){
+            stocks.add(produit);
+        }
     }
 
 }

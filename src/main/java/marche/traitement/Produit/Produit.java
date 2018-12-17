@@ -44,5 +44,12 @@ public abstract class Produit {
     public boolean valider() {
         return (dateDePeremption.isAfter(LocalDate.now().plusDays(1)));
     }//Profuit
+    public void enleverQuantite(int quantite){
+        this.quantite -= quantite;
+    }
+    public void ajouterQuantite(int quantite){
+        this.quantite += quantite;
+    }
+
 
 }
