@@ -1,10 +1,6 @@
 package marche.traitement.Produit;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.*;
-import java.util.Date;
 
 /**
  * 
@@ -12,6 +8,11 @@ import java.util.Date;
 public abstract class Produit {
     protected int quantite;
     protected LocalDate dateDePeremption;
+
+    public String getUnite() {
+        return unite;
+    }
+
     protected String unite;
 
     public Produit(){};

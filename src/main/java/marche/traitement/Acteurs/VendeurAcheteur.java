@@ -18,10 +18,15 @@ public class VendeurAcheteur extends Acteur {
     }
     public VendeurAcheteur() {
     }
+
+    public List<Produit> getStocks() {
+        return stocks;
+    }
+
     /**
      * 
      */
-    public List<Produit> stocks = new ArrayList<Produit>();
+    private List<Produit> stocks = new ArrayList<Produit>();
 
 
 
@@ -31,7 +36,7 @@ public class VendeurAcheteur extends Acteur {
      * @param //Produit produit
      * @return
      */
-    public Offre creeUneOffre(int quantite,int prix, Produit produit)throws ArithmeticException,IllegalArgumentException {
+    public Offre creerUneOffre(int quantite,int prix, Produit produit)throws ArithmeticException,IllegalArgumentException {
 
         if(prix<0)
             throw new ArithmeticException("prix négatif");
@@ -44,13 +49,22 @@ public class VendeurAcheteur extends Acteur {
 
     }
 
+    /**
+     * si le produit est du même type, date de péremption et unité qu'un produit dans le stock
+     * on combine les produits, sinon on ajoute le produit au stock dans une autre case
+     * @param produit
+     */
     public void ajouterAuStock(Produit produit){
         boolean dejaDansLeStock = false;
         for (Produit stock: stocks ) {
-            if(stock.getClass().equals( produit.getClass()) ){
-                stock.ajouterQuantite(produit.getQuantite());
-                dejaDansLeStock = true;
-            }
+            if(stock.getClass().equals( produit.getClass()) &&
+                    stock.getDateDePeremption() == produit.getDateDePeremption()&&
+                    stock.getUnite().equals(produit.getUnite())){
+
+                    stock.ajouterQuantite(produit.getQuantite());
+                    dejaDansLeStock = true;
+                }
+
 
         }
         if(!dejaDansLeStock ){
