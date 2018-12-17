@@ -2,6 +2,7 @@ package marche.traitement.Marche;
 
 import marche.traitement.Acteurs.Acteur;
 import marche.traitement.Produit.Produit;
+import marche.traitement.UnitedeProduction.UniteDeProduction;
 
 import java.util.*;
 
@@ -24,7 +25,7 @@ public class Offre
     {
         this.prix = prix;
         this.quantite = quantite;
-        //Produit produitPartiel = new Produit(produit);
+
     }
 
     /**

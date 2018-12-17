@@ -14,20 +14,14 @@ import java.time.LocalDate;
 public class MainMarche {
     public static void main(String[] args)
     {
-        Produit pomme = new Pomme(1, LocalDate.now().plusDays(14),"Tonne");
+        LocalDate peremption = LocalDate.of(2015, 8, 11);
+        System.out.println(peremption.plusDays(1));
 
-
-
-
-
-
-
-        /*
         String temp ="";
         int avancement = 1;
         String produit = "";
         Integer quantite = 0;
-        String peremption = "";
+
         while (!temp.equals("fini"))
         {
             temp = menu(avancement);
@@ -36,7 +30,7 @@ public class MainMarche {
             else if (avancement == 2)
                 quantite = Integer.parseInt(temp);
             else if (avancement == 3)
-                peremption = temp;
+                System.out.println("date = temp");
             else if (avancement == 4 && temp.equals("autre produit"))
             {
                 System.out.println(UniteDeProduction.fabriquer(produit, quantite, peremption));
@@ -66,6 +60,6 @@ public class MainMarche {
             System.out.println("Problème de saisie");
         }
         return choix;
-    */
+
     }
 }
