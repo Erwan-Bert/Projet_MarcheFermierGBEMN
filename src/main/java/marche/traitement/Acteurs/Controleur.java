@@ -28,9 +28,10 @@ public class Controleur {
      *  choisis a qui attribuer l'offre en fonction de la liste des acheteurs potentiels
      */
     public void choisirAcheteur(Offre o) {
-        Acteur acheteur = o.getAcheteurPotentiel().get(0);
+        Acteur acheteur = o.getAcheteurPotentiel().get(0); //arbitrairement
         acheteur.debiter(o.getPrix());
-        //acheteur.ajou
+        //acheteur.ajouter
+        //livrerProduit()
 
     }
 

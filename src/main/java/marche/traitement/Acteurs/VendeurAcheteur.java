@@ -36,16 +36,14 @@ public class VendeurAcheteur extends Acteur {
      * @param //Produit produit
      * @return
      */
-    public Offre creerUneOffre(int quantite,int prix, Produit produit)throws ArithmeticException,IllegalArgumentException {
+    public Offre creerUneOffre(int prix, Produit produit)throws ArithmeticException,IllegalArgumentException {
 
         if(prix<0)
             throw new ArithmeticException("prix négatif");
-        if(quantite< 0 )
-            throw new ArithmeticException("quantite négative");
         if(produit == null)
             throw new IllegalArgumentException("rentrez un produit valide");
 
-        return new Offre(prix,quantite,produit);
+        return new Offre(prix,produit);
 
     }
 

@@ -26,6 +26,7 @@ public class Offre
         this.produit = produit ;
 
         /* YAGNI
+        this.produit = produit
         this.produit.setQuantite(quantite);
         System.out.println(this.produit.getQuantite()); //TEST
         System.out.println(produit.getQuantite()); //Test

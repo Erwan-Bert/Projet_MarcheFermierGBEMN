@@ -2,7 +2,6 @@ package marche.traitement.Acteurs;
 import marche.traitement.Marche.Offre;
 
 import java.time.LocalDate;
-import java.util.*;
 
 /**
  *
@@ -61,13 +60,8 @@ public class Acteur {
      * @param //Offre
      * @return
      */
-    public boolean acheter(Offre o) {
-        if( o.getPrix() <= solde){
-            debiter(o.getPrix());
-            o.addAcheteurPotentiel(this);
-            return true;
-        }
-        return false;
+    public void acheter(Offre o) {
+        o.addAcheteurPotentiel(this);
     }
 
 
