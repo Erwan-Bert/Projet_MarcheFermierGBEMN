@@ -8,11 +8,6 @@ import java.time.LocalDate;
 public abstract class Produit {
     protected int quantite;
     protected LocalDate dateDePeremption;
-
-    public String getUnite() {
-        return unite;
-    }
-
     protected String unite;
 
     public Produit(){};
@@ -41,6 +36,9 @@ public abstract class Produit {
         return dateDePeremption;
     }//getDateDePeremption
 
+    public String getUnite() {
+        return unite;
+    }
 
     public boolean valider() {
         return (dateDePeremption.isAfter(LocalDate.now().plusDays(1)));
