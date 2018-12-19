@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class HistoriqueOffre {
 
-    private static List<Offre> historiqueOffres = new ArrayList<Offre>();
+    private static List<Archive> historiqueOffres = new ArrayList<Archive>();
 
     /**
      * Default constructor
@@ -17,11 +17,11 @@ public class HistoriqueOffre {
     {
     }
 
-    public static List<Offre> getOffresArchives() {
+    public static List<Archive> getArchives() {
         return historiqueOffres ;
     }
 
-    public static void addOffresArchives(Offre offreArchive) {
-        historiqueOffres .add(offreArchive);
+    public static void addOffresArchives(Archive Archive) {
+        historiqueOffres .add(Archive);
     }
 }

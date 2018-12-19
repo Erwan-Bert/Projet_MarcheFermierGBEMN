@@ -23,15 +23,26 @@ public class LivreDuMarche {
     /**
      * function ajouterOffre
      */
-    public void ajouterOffre(Offre o)
+    public static void ajouterOffre(Offre o)
     {
         livreMarche.add(o);
     }
 
-    public void enleverOffre(Offre o){
+    public static void enleverOffre(Offre o){
         livreMarche.remove(o);
         HistoriqueOffre.addOffresArchives(o);
 
+    }
+
+    public static void afficherLivre()
+    {
+        for (Offre o:livreMarche)
+        {
+            if (o.isValider())
+            {
+                System.out.println(o);
+            }
+        }
     }
 
     public List<Offre> getLivre() {
