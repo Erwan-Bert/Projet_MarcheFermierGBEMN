@@ -12,6 +12,7 @@ import java.util.List;
 public class Offre
 {
 
+    private boolean valider = false;
     private int prix;
     private Produit produit;
     private List<Acteur> acheteurPotentiel = new ArrayList<Acteur>();
@@ -51,6 +52,15 @@ public class Offre
 
     public int getPrix() {
         return prix;
+    }
+
+    public boolean isValider() {
+        return valider;
+    }
+
+    public void validerOffre()
+    {
+        this.valider = true;
     }
 
 
