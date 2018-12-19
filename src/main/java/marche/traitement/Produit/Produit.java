@@ -32,6 +32,10 @@ public abstract class Produit {
         return quantite;
     }//getQuantite
 
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
+    }
+
     public LocalDate getDateDePeremption() {
         return dateDePeremption;
     }//getDateDePeremption
