@@ -1,6 +1,7 @@
 package marche.traitement.Marche;
 
 import marche.traitement.Acteurs.Acteur;
+import marche.traitement.Acteurs.VendeurAcheteur;
 import marche.traitement.Produit.Produit;
 
 import java.util.ArrayList;
@@ -16,15 +17,23 @@ public class Offre
     private int prix;
     private Produit produit;
     private List<Acteur> acheteurPotentiel = new ArrayList<Acteur>();
+    private VendeurAcheteur vendeur;
+
+    public VendeurAcheteur getVendeur() {
+        return vendeur;
+    }
+
+
 
 
     /**
      * Default constructor
      */
-    public Offre(int prix, Produit produit)
+    public Offre(int prix, Produit produit, VendeurAcheteur vendeurAcheteur)
     {
         this.prix = prix;
-        this.produit = produit ;
+        this.produit = produit;
+        this.vendeur = vendeurAcheteur;
 
         /* YAGNI
         this.produit = produit
