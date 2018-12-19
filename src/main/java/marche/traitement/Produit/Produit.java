@@ -12,20 +12,11 @@ public abstract class Produit {
 
     public Produit(){};
 
-    /**
-     * constructeur par recopie
-     * @param produit
-     */
-    public Produit(Produit produit){
-        this.dateDePeremption = produit.dateDePeremption;
-        this.quantite = produit.quantite;
-        this.unite = produit.unite;
-
-    }
 
     public Produit(int quantite, LocalDate dateDePeremption, String unite) {
         this.quantite = quantite;
         this.dateDePeremption = dateDePeremption;
+        this.unite = unite;
     }//Produit
 
     public int getQuantite() {

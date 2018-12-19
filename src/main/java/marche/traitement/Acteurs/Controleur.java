@@ -16,7 +16,7 @@ public class Controleur {
 
     /**
      * valide l'offre si les conditions sont respectés
-     * @param Offre
+     *
      * @return bool
      */
     public boolean validerOffre(Offre o) {
@@ -24,23 +24,24 @@ public class Controleur {
     }
 
     /**
-     * @param Offre
+     *
      *  choisis a qui attribuer l'offre en fonction de la liste des acheteurs potentiels
      */
     public void choisirAcheteur(Offre o) {
         Acteur acheteur = o.getAcheteurPotentiel().get(0);
         acheteur.debiter(o.getPrix());
-        /*if(acheteur instanceof VendeurAcheteur){
-            acheteur.
-        } */
-
+        //acheteur.ajou
 
     }
+
+
+
+
 
     private void fairePayerAcheteur(Acteur acheteur, Produit produit){}
 
     /**
-     * @param Offre
+     *
      */
     public void supprimerOffre(Offre o) {
 

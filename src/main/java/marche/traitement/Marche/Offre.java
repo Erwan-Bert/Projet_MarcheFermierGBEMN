@@ -2,9 +2,9 @@ package marche.traitement.Marche;
 
 import marche.traitement.Acteurs.Acteur;
 import marche.traitement.Produit.Produit;
-import marche.traitement.UnitedeProduction.UniteDeProduction;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 
@@ -13,7 +13,6 @@ public class Offre
 {
 
     private int prix;
-    private int quantite;
     private Produit produit;
     private List<Acteur> acheteurPotentiel = new ArrayList<Acteur>();
 
@@ -21,20 +20,26 @@ public class Offre
     /**
      * Default constructor
      */
-    public Offre(int prix, int quantite, Produit produit)
+    public Offre(int prix, Produit produit)
     {
         this.prix = prix;
-        this.quantite = quantite;
-        if(quantite <= produit.getQuantite() && quantite >0){
-            this.produit = UniteDeProduction.fabriquer(produit.getClass().getSimpleName(),quantite,produit.getDateDePeremption());
-            produit.enleverQuantite(quantite);
+        this.produit = produit ;
+
+        /* YAGNI
+        this.produit.setQuantite(quantite);
+        System.out.println(this.produit.getQuantite()); //TEST
+        System.out.println(produit.getQuantite()); //Test
+
+        produit.enleverQuantite(quantite);
+        produit.setQuantite(produit.getQuantite()-quantite);
+*/
+
 
         }
 
-        //String type, Integer quantite, LocalDate peremption)
 
 
-    }
+
 
     /**
      * Function archiver
@@ -47,9 +52,6 @@ public class Offre
         return prix;
     }
 
-    public int getQuantite() {
-        return quantite;
-    }
 
     public Produit getProduit() {
         return produit;
