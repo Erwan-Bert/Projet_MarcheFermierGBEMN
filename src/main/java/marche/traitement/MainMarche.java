@@ -1,14 +1,11 @@
 package marche.traitement;
 
 
-import marche.traitement.Produit.Fruit.Pomme;
-import marche.traitement.Produit.Produit;
-import marche.traitement.UnitedeProduction.UniteDeProduction;
+import marche.traitement.Producteurs.ProducteurDeViande;
+import marche.traitement.Producteurs.ProducteurLaitier;
 import marche.traitement.UnitedeProduction.UniteDeProductionApiculteur;
+import marche.traitement.UnitedeProduction.UniteDeProductionLaitier;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.time.LocalDate;
 
 public class MainMarche {
@@ -16,50 +13,24 @@ public class MainMarche {
     {
         LocalDate peremption = LocalDate.of(2015, 8, 11);
         System.out.println(peremption.plusDays(1));
-
-        String temp ="";
-        int avancement = 1;
-        String produit = "";
-        Integer quantite = 0;
-
-        while (!temp.equals("fini"))
-        {
-            temp = menu(avancement);
-            if (avancement == 1)
-                produit = temp;
-            else if (avancement == 2)
-                quantite = Integer.parseInt(temp);
-            else if (avancement == 3)
-                System.out.println("date = temp");
-            else if (avancement == 4 && temp.equals("autre produit"))
-            {
-                System.out.println(UniteDeProduction.fabriquer(produit, quantite, peremption));
-                avancement = 0;
-            }
-            avancement += 1;
-        }
-        System.out.println(UniteDeProduction.fabriquer(produit, quantite, peremption));
-    }
-
-    private static String menu(int avancement) {
-
-        String choix = "";
-        if (avancement == 1)
-            System.out.println("Entrez le nom de votre produit");
-        else if (avancement == 2)
-            System.out.println("Entrez la quantite produite (en litre ou kilo selon votre produit)");
-        else if (avancement == 3)
-            System.out.println("Entrez la date de péremption du produit sous la forme jj/mm/aaaa");
-        else if (avancement == 4)
-            System.out.println("Entrez fini si vous avez fini ou autre produit si vous avez d'autres produits à enregistrer");
-
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        UniteDeProductionApiculteur uniteDeProductionApiculteur = new UniteDeProductionApiculteur("Les miellistes");
+        UniteDeProductionLaitier uniteDeProductionLaitier = new UniteDeProductionLaitier("Les laitiers");
+        ProducteurLaitier producteurLaitier = new ProducteurLaitier(12,"miche miche", 5);
         try {
-            choix = in.readLine();
-        } catch (IOException e) {
-            System.out.println("Problème de saisie");
+            uniteDeProductionLaitier.ajouterProducteur(producteurLaitier);
+            uniteDeProductionLaitier.ajouterProducteur(new ProducteurDeViande(544445454, "Robert", 1));
         }
-        return choix;
+        catch (ClassCastException e)
+        {
+            System.out.println("Le membre que vous avez essayé d'ajouter n'est pas autorisé à vendre le type de produit produite par" +
+                    "cette unité de production");
+        }
+        System.out.println(uniteDeProductionLaitier);
+
+
 
     }
+
+
+
 }

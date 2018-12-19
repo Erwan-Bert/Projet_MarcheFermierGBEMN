@@ -6,38 +6,34 @@ import marche.traitement.Produit.Epinards;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 /**
  * 
  */
 public class UniteDeProductionHorticulteur extends UniteDeProduction {
 
-
+    private String nom;
+    public ArrayList<Horticulteur> producteurs = new ArrayList<>();
     /**
      * Default constructor
      */
-    public UniteDeProductionHorticulteur() {
-        super();
-        this.groupeDeProd =  new ArrayList<Producteur>();
-
+    public UniteDeProductionHorticulteur(String nom) {
+        super(nom);
     }
 
-    /**
-     * 
-     */
-
-
-    public void AddMembre(Horticulteur H)
-    {
-        if (H instanceof Horticulteur)
+    @Override
+    protected void ajouterMembre(Producteur producteur)throws IllegalStateException {
+        try
         {
-            this.groupeDeProd.add(H);
+            producteurs.add((Horticulteur) producteur);
         }
-
+        catch (IllegalStateException e)
+        {
+            e.printStackTrace();
+        }
     }
 
+    @Override
     public Epinards produire(int quantite, String type, LocalDate peremption) {
         // TODO implement here
         return new Epinards(quantite,peremption,"Kilogrammes");

@@ -1,5 +1,6 @@
 package marche.traitement.UnitedeProduction;
 
+import marche.traitement.Producteurs.Producteur;
 import marche.traitement.Producteurs.ProducteurLaitier;
 import marche.traitement.Produit.ProduitsLaitiers.Fromage;
 import marche.traitement.Produit.ProduitsLaitiers.Lait;
@@ -7,7 +8,6 @@ import marche.traitement.Produit.ProduitsLaitiers.ProduitsLaitier;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * 
@@ -16,17 +16,18 @@ public class UniteDeProductionLaitier extends UniteDeProduction
 {
 
 
-    public ArrayList<ProducteurLaitier> producteurs;
-    /**
-     * Default constructor
-     */
-    public UniteDeProductionLaitier() {
+    public ArrayList<ProducteurLaitier> producteurs = new ArrayList<>();
+    private String nom;
+
+    public UniteDeProductionLaitier(String nom)
+    {
+        super(nom);
     }
 
-    /**
-     * 
-     */
-
+    @Override
+    protected void ajouterMembre(Producteur producteur)throws ClassCastException {
+            producteurs.add((ProducteurLaitier) producteur);
+    }
 
 
     public ProduitsLaitier produire(int quantite, String type, LocalDate peremption)
