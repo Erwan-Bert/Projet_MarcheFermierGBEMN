@@ -30,7 +30,7 @@ public class LivreDuMarche {
 
     public static void enleverOffre(Offre o){
         livreMarche.remove(o);
-        HistoriqueOffre.addOffresArchives(o);
+        o.archiver();
 
     }
 

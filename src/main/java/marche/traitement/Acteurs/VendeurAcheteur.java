@@ -10,6 +10,12 @@ import java.util.List;
  */
 public class VendeurAcheteur extends Acteur {
 
+
+    private List<Produit> stocks = new ArrayList<Produit>();
+    public List<Produit> getStocks() {
+        return stocks;
+    }
+
     /**
      * Default constructor
      */
@@ -18,16 +24,6 @@ public class VendeurAcheteur extends Acteur {
     }
     public VendeurAcheteur() {
     }
-
-    public List<Produit> getStocks() {
-        return stocks;
-    }
-
-    /**
-     * 
-     */
-    private List<Produit> stocks = new ArrayList<Produit>();
-
 
 
     /**
@@ -42,9 +38,13 @@ public class VendeurAcheteur extends Acteur {
             throw new ArithmeticException("prix négatif");
         if(produit == null)
             throw new IllegalArgumentException("rentrez un produit valide");
-
-        return new Offre(prix,produit);
-
+        if(stocks.contains(produit)){
+            stocks.remove(produit);
+            return new Offre(prix,produit,this);
+        }
+        else {
+            throw new IllegalArgumentException("rentrez un produit valide");
+        }
     }
 
     /**

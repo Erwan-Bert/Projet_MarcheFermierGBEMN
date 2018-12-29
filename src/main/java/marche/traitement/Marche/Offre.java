@@ -4,6 +4,7 @@ import marche.traitement.Acteurs.Acteur;
 import marche.traitement.Acteurs.VendeurAcheteur;
 import marche.traitement.Produit.Produit;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,17 +36,6 @@ public class Offre
         this.produit = produit;
         this.vendeur = vendeurAcheteur;
 
-        /* YAGNI
-        this.produit = produit
-        this.produit.setQuantite(quantite);
-        System.out.println(this.produit.getQuantite()); //TEST
-        System.out.println(produit.getQuantite()); //Test
-
-        produit.enleverQuantite(quantite);
-        produit.setQuantite(produit.getQuantite()-quantite);
-*/
-
-
         }
 
 
@@ -56,7 +46,7 @@ public class Offre
      * Function archiver
      */
     public void archiver() {
-        // TODO implement here
+        HistoriqueOffre.addOffresArchives( new Archive(null, this,LocalDate.now()));
     }
 
     public int getPrix() {
