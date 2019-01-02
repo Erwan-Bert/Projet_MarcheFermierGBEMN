@@ -12,12 +12,14 @@ public class Acteur {
      */
     private double solde;
     private String nom;
+    private CentraleAchat membre = null;
     /**
      *
      */
     private LocalDate dateFinCotisation;
 
-    public Acteur(){}
+    public Acteur() {
+    }
 
     public Acteur(double solde, String nom) {
         this.solde = solde;
@@ -26,16 +28,15 @@ public class Acteur {
     }
 
 
-
     /**
-    *fait payer l'utilisateur et lui ajoute un nombre de jour sur sa période de cotisation
+     * fait payer l'utilisateur et lui ajoute un nombre de jour sur sa période de cotisation
      * retourne si la cotisation a été un succès
      */
-    public boolean cotiser(){
+    public boolean cotiser() {
 
-        if( solde > 100){
+        if (solde > 100) {
             debiter(100);
-            if( dateFinCotisation.isBefore(LocalDate.now()))
+            if (dateFinCotisation.isBefore(LocalDate.now()))
                 dateFinCotisation = LocalDate.now();
             ajouterJoursDateFinCotisation(365);
             return true;
@@ -43,7 +44,7 @@ public class Acteur {
         return false;
     }
 
-    public boolean aCotiser(){
+    public boolean aCotiser() {
         return (this.dateFinCotisation.isAfter(LocalDate.now()));
     }
 
@@ -51,7 +52,7 @@ public class Acteur {
         this.dateFinCotisation = dateFinCotisation;
     }
 
-    public void ajouterJoursDateFinCotisation(int nbjours){
+    public void ajouterJoursDateFinCotisation(int nbjours) {
         this.dateFinCotisation = dateFinCotisation.plusDays(nbjours);
     }
 
@@ -68,16 +69,28 @@ public class Acteur {
     public LocalDate getDateFinCotisation() {
         return dateFinCotisation;
     }
+
     public double getSolde() {
         return solde;
     }
+
     public String getNom() {
         return nom;
     }
-    public void crediter(double montant){
+
+    public void crediter(double montant) {
         this.solde += montant;
     }
-    public void debiter(double montant){
+
+    public void debiter(double montant) {
         this.solde -= montant;
+    }
+
+    protected void setCentraleAchat(CentraleAchat ca) {
+        membre = ca;
+    }
+
+    public CentraleAchat getCentraleAchat() {
+        return membre;
     }
 }
