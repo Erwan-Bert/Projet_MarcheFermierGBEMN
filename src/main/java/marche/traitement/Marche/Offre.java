@@ -75,5 +75,15 @@ public class Offre
         this.acheteurPotentiel.add(acheteurPotentiel);
     }
 
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder("Offre : " +produit.getQuantite() + produit.getUnite());
+        s.append(produit.getNom());
+        s.append(" à ");
+        s.append(prix);
+        s.append("  et qui périme le ");
+        s.append(produit.getDateDePeremption());
 
+        return s.toString();
+    }
 }

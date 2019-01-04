@@ -13,6 +13,7 @@ public class ProduitBio extends DecorateurProduit {
         this.certification = certification;
     }
 
+
     /**
      *
      * @param produit
@@ -35,5 +36,10 @@ public class ProduitBio extends DecorateurProduit {
 
     public void decertifier(){
         certification = false;
+    }
+
+    @Override
+    public String getNom() {
+        return produit.getNom() + "bio";
     }
 }

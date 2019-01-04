@@ -1,5 +1,7 @@
 package marche.traitement.Marche;
 
+import marche.traitement.FluxInformation.FluxInformation;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,8 +11,8 @@ import java.util.List;
 public class LivreDuMarche {
 
 
-    private static List<Offre> livreMarche = new ArrayList<>();
-
+    private static List<Offre> livreMarche = new ArrayList<Offre>();
+    private static List<FluxInformation> fluxInformations = new ArrayList<FluxInformation>();
 
     /**
      * Default constructor
@@ -48,4 +50,20 @@ public class LivreDuMarche {
     public List<Offre> getLivre() {
         return livreMarche;
     }
+
+    public void ajouterFluxInformation(FluxInformation f){
+        fluxInformations.add(f);
+    }
+
+    public void enleverFluxInformation(FluxInformation f){
+        fluxInformations.remove(f);
+    }
+
+    public void notifierFluxInformations(Offre offre){
+        for(FluxInformation f : fluxInformations){
+            f.update(offre);
+        }
+    }
+
+
 }

@@ -11,7 +11,7 @@ import java.util.List;
 public class VendeurAcheteur extends Acteur {
 
 
-    private List<Produit> stocks = new ArrayList<Produit>();
+    protected List<Produit> stocks = new ArrayList<Produit>();
     public List<Produit> getStocks() {
         return stocks;
     }

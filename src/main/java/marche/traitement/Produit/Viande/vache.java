@@ -1,9 +1,6 @@
 package marche.traitement.Produit.Viande;
 
-import marche.traitement.Produit.Produit;
-
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  * 
@@ -15,4 +12,8 @@ public class vache extends Viande {
         super(quantite, dateDePeremption, unite);
     }
 
+    @Override
+    public String getNom() {
+        return "vache";
+    }
 }

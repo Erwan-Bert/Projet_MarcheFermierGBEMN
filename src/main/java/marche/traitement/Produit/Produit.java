@@ -34,7 +34,6 @@ public abstract class Produit {
     public String getUnite() {
         return unite;
     }
-
     /**
      *
      * @return boolean
@@ -48,6 +47,7 @@ public abstract class Produit {
     public void ajouterQuantite(int quantite){
         this.quantite += quantite;
     }
+    public abstract String getNom();
 
 
 }

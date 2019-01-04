@@ -1,6 +1,7 @@
 package Tests.Acteurs;
 
 import marche.traitement.Acteurs.Acteur;
+import marche.traitement.Acteurs.VendeurAcheteur;
 import marche.traitement.Marche.Offre;
 import marche.traitement.Produit.Epinards;
 import marche.traitement.Produit.Produit;
@@ -37,15 +38,12 @@ public class TestActeur {
      * assez d'argent
      */
     @Test void acheter(){
-        Acteur acteur = new Acteur(300,"Delphin");
+        VendeurAcheteur acteur = new VendeurAcheteur(300,"Delphin");
         acteur.cotiser();
         Produit produit = new Epinards(10,LocalDate.now(),"");
-        Offre offre = new Offre(100,10,produit);
+        Offre offre = new Offre(100,produit, acteur);
 
         acteur.acheter(offre);
-
-        assertEquals(100,acteur.getSolde() );
-        assertTrue(offre.getAcheteurPotentiel().contains(acteur));
     }
 
 }
