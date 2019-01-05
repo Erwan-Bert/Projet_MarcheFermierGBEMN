@@ -9,7 +9,7 @@ public class CentraleAchat extends Acteur
     private String nom;
     private Collection<Acteur> membres;
 
-    CentraleAchat (String nom)
+    public CentraleAchat (String nom)
     {
         this.nom = nom;
         membres = new ArrayList<>();

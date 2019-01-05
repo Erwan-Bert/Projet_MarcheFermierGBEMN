@@ -27,8 +27,6 @@ public class MainMarche {
         }
         System.out.println(uniteDeProductionLaitier);
 
-
-
     }
 
 

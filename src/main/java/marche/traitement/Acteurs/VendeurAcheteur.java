@@ -1,4 +1,6 @@
 package marche.traitement.Acteurs;
+
+import marche.traitement.Marche.LivreDuMarche;
 import marche.traitement.Marche.Offre;
 import marche.traitement.Produit.Produit;
 
@@ -32,15 +34,20 @@ public class VendeurAcheteur extends Acteur {
      * @param //Produit produit
      * @return
      */
-    public Offre creerUneOffre(int prix, Produit produit)throws ArithmeticException,IllegalArgumentException {
+    public void creerUneOffre(int prix, Produit produit)throws ArithmeticException,IllegalArgumentException {
 
         if(prix<0)
             throw new ArithmeticException("prix négatif");
         if(produit == null)
             throw new IllegalArgumentException("rentrez un produit valide");
         if(stocks.contains(produit)){
-            stocks.remove(produit);
-            return new Offre(prix,produit,this);
+            Offre offre = new Offre(prix,produit,this);
+            if(Controleur.validerOffre(offre)){
+                stocks.remove(produit);
+                LivreDuMarche.ajouterOffre(offre);
+            }else{
+                throw new IllegalArgumentException("votre offre a été rejeté par l'amf");
+            }
         }
         else {
             throw new IllegalArgumentException("rentrez un produit valide");
