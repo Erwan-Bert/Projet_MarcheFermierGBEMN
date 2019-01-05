@@ -1,7 +1,6 @@
 package marche.traitement.UnitedeProduction;
 
 import marche.traitement.Producteurs.Producteur;
-import marche.traitement.Produit.Produit;
 
 import java.time.LocalDate;
 
@@ -30,8 +29,6 @@ public abstract class UniteDeProduction {
         return produire(quantite, type, peremption);
     }*/
 
-    public abstract Produit produire(int quantite, String type, LocalDate peremption);
-
-
-
+    
+    public abstract void produire(int quantite, String type, LocalDate peremption, Producteur producteur);
 }
