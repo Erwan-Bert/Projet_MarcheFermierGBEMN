@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 
  */
-public class LivreDuMarche {
+public final class LivreDuMarche {
 
 
     private static List<Offre> livreMarche = new ArrayList<Offre>();
@@ -28,6 +28,8 @@ public class LivreDuMarche {
     public static void ajouterOffre(Offre o)
     {
         livreMarche.add(o);
+        LivreDuMarche.notifierFluxInformations(o);
+
     }
 
     public static void enleverOffre(Offre o){
@@ -47,19 +49,19 @@ public class LivreDuMarche {
         }
     }
 
-    public List<Offre> getLivre() {
+    public static List<Offre> getLivre() {
         return livreMarche;
     }
 
-    public void ajouterFluxInformation(FluxInformation f){
+    public static void ajouterFluxInformation(FluxInformation f){
         fluxInformations.add(f);
     }
 
-    public void enleverFluxInformation(FluxInformation f){
+    public static void enleverFluxInformation(FluxInformation f){
         fluxInformations.remove(f);
     }
 
-    public void notifierFluxInformations(Offre offre){
+    public static void notifierFluxInformations(Offre offre){
         for(FluxInformation f : fluxInformations){
             f.update(offre);
         }
