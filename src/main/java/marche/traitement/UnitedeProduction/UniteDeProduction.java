@@ -30,7 +30,7 @@ public abstract class UniteDeProduction {
         return produire(quantite, type, peremption);
     }
 
-    protected abstract Produit produire(int quantite, String type, LocalDate peremption);
+    public abstract Produit produire(int quantite, String type, LocalDate peremption);
 
 
 

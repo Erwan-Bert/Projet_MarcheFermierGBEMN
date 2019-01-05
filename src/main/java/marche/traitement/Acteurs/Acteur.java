@@ -62,6 +62,7 @@ public class Acteur {
      * @return
      */
     public void acheter(Offre o) {
+        if(o.getPrix()<solde)
         o.addAcheteurPotentiel(this);
     }
 
