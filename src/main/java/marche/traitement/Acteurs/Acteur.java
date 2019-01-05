@@ -13,6 +13,7 @@ public class Acteur {
     private double solde;
     private String nom;
     private CentraleAchat membre = null;
+    private StrategyCotisation cotisation = new CotisationPleinPot();
     /**
      *
      */
@@ -34,8 +35,8 @@ public class Acteur {
      */
     public boolean cotiser() {
 
-        if (solde > 100) {
-            debiter(100);
+        if (solde - cotisation.calculCotisation() > 0) {
+            debiter(cotisation.calculCotisation());
             if (dateFinCotisation.isBefore(LocalDate.now()))
                 dateFinCotisation = LocalDate.now();
             ajouterJoursDateFinCotisation(365);
@@ -93,5 +94,10 @@ public class Acteur {
 
     public CentraleAchat getCentraleAchat() {
         return membre;
+    }
+
+    public void switchStrategyCotisation(StrategyCotisation strategy)
+    {
+        cotisation = strategy;
     }
 }
