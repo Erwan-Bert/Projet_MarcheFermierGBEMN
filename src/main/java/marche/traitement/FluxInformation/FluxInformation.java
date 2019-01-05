@@ -14,9 +14,17 @@ public abstract class FluxInformation {
     protected String nom;
     protected List<Acteur> abonnes = new ArrayList<Acteur>(); //abonnés
 
-     public FluxInformation(String nom) {
+    public FluxInformation(String nom) {
         this.nom = nom;
     }
 
     public abstract void  update(Offre offre);
+
+    public void ajouterAbonne(Acteur a){
+        abonnes.add(a);
+    }
+    public void enleverAbonne(Acteur a){
+        abonnes.remove(a);
+    }
+
 }
