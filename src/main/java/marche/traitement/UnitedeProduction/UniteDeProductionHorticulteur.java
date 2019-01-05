@@ -34,9 +34,25 @@ public class UniteDeProductionHorticulteur extends UniteDeProduction {
     }
 
     @Override
-    public Epinards produire(int quantite, String type, LocalDate peremption) {
+    public void produire(int quantite, String type, LocalDate peremption,Producteur producteur) {
         // TODO implement here
-        return new Epinards(quantite,peremption,"Kilogrammes");
+        if (producteurs.contains(producteur))
+        {
+            if (producteur.getQuantiteStock() + quantite <= producteur.getLimite())
+            {
+                producteur.ajouterAuStock(new Epinards(quantite,peremption,"Kilogrammes"));
+            }
+            else
+            {
+                System.out.println("tu peux pas produire autant ta limite de stock est "+ producteur.getLimite());
+            }
+
+        }
+        else
+        {
+            System.out.println("Vous n'appartenez pas à une unité de production");
+        }
+
     }
 
 }

@@ -8,7 +8,7 @@ public class Horticulteur extends Producteur {
     /**
      * Default constructor
      */
-    public Horticulteur(double solde,String nom,int limite) {
+    public Horticulteur(double solde,String nom,double limite) {
         super(solde,nom,limite);
     }
 

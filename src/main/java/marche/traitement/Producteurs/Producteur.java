@@ -8,7 +8,7 @@ public abstract class Producteur extends VendeurAcheteur
 {
     /**attributs*/
 
-    private int limiteDeCapacite;
+    private double limiteDeCapacite;//en kilo
 
 
 
@@ -20,7 +20,7 @@ public abstract class Producteur extends VendeurAcheteur
 
     }
 
-    public Producteur(double solde,String nom,int limite)
+    public Producteur(double solde,String nom,double limite)
     {
         super(solde,nom);
         this.limiteDeCapacite = limite;
@@ -30,9 +30,9 @@ public abstract class Producteur extends VendeurAcheteur
 
 
 
-    public void getLimite()
+    public double getLimite()
     {
-        System.out.println("La limite de ce producteur est de "+ this.limiteDeCapacite);
+        return limiteDeCapacite;
     }
 
 

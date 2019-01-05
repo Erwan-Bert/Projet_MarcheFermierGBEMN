@@ -70,4 +70,15 @@ public class VendeurAcheteur extends Acteur {
         }
     }
 
+    //cette méthode permet de connaitre la quantité de tous les éléments du stock combinés
+    public double getQuantiteStock()
+    {
+        double quantiteTotale = 0;
+        for (Produit produit:stocks)
+        {
+            quantiteTotale += produit.getQuantite();
+        }
+        return quantiteTotale;
+    }
+
 }

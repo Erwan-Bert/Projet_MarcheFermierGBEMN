@@ -4,7 +4,6 @@ import marche.traitement.Producteurs.Producteur;
 import marche.traitement.Producteurs.ProducteurLaitier;
 import marche.traitement.Produit.ProduitsLaitiers.Fromage;
 import marche.traitement.Produit.ProduitsLaitiers.Lait;
-import marche.traitement.Produit.ProduitsLaitiers.ProduitsLaitier;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -29,13 +28,30 @@ public class UniteDeProductionLaitier extends UniteDeProduction
             producteurs.add((ProducteurLaitier) producteur);
     }
 
-
-    public ProduitsLaitier produire(int quantite, String type, LocalDate peremption)
+    @Override
+    public void produire(int quantite, String type, LocalDate peremption,Producteur producteur)
     {
-        if (type.equals("lait"))
-            return new Lait(quantite,peremption, "Litres");
+        if (producteurs.contains(producteur))
+        {
+            if (producteur.getQuantiteStock() + quantite <= producteur.getLimite())
+            {
+                if (type.equals("lait"))
+                producteur.ajouterAuStock(new Lait(quantite,peremption,"Kilogrammes"));
+                else
+                producteur.ajouterAuStock(new Fromage(quantite,peremption,"Kilogrammes"));
+
+            }
+            else
+            {
+                System.out.println("tu peux pas produire autant ta limite de stock est "+ producteur.getLimite());
+            }
+
+        }
         else
-            return  new Fromage(quantite, peremption, "Kilogrammes");
+        {
+            System.out.println("Vous n'appartenez pas à une unité de production");
+        }
+
     }
 
 }

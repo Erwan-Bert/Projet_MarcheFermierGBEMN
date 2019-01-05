@@ -34,9 +34,26 @@ public class UniteDeProductionApiculteur extends UniteDeProduction {
         }
     }
     @Override
-    public Miel produire(int quantite, String type, LocalDate peremption) {
-        // TODO implement here
-        return new Miel(quantite,peremption,"Kilogrammes");
+    public void produire(int quantite, String type, LocalDate peremption,Producteur producteur) {
+
+        if (producteurs.contains(producteur))
+        {
+            if (producteur.getQuantiteStock() + quantite <= producteur.getLimite())
+            {
+                producteur.ajouterAuStock(new Miel(quantite,peremption,"Kilogrammes"));
+            }
+            else
+            {
+                System.out.println("tu peux pas produire autant ta limite de stock est "+ producteur.getLimite());
+            }
+
+        }
+        else
+        {
+            System.out.println("Vous n'appartenez pas à une unité de production");
+        }
+
+
     }
 
 }
