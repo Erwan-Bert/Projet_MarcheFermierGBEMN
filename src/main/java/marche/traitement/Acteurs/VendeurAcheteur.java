@@ -81,4 +81,22 @@ public class VendeurAcheteur extends Acteur {
         return quantiteTotale;
     }
 
+    //cette méthode permet d'afficher de manière détailler le stock d'un acheteur vendeur
+    public void afficherStock()
+    {
+        int compteur = 1;
+        for (Produit produit :stocks)
+        {
+            System.out.println(compteur+") "+produit.getQuantite()+" kilo de "+produit.getNom()+" / périme le : "+produit.getDateDePeremption());
+            compteur++;
+        }
+    }
+
+
+    //cette méthode permet de retourner le produit qui se situe au ième rang du stock
+    public Produit getElementStock(int i)
+    {
+        return stocks.get(i-1);
+    }
+
 }

@@ -29,6 +29,6 @@ public abstract class UniteDeProduction {
         return produire(quantite, type, peremption);
     }*/
 
-    
+
     public abstract void produire(int quantite, String type, LocalDate peremption, Producteur producteur);
 }
