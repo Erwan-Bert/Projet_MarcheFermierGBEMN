@@ -31,24 +31,18 @@ public class Controleur {
     /**
      *
      *  choisis a qui attribuer l'offre en fonction de la liste des acheteurs potentiels
+     *  Effectue la transaction, enlève l'offre du livre du marché et archivre l'offre
      */
     public static void choisirAcheteur(Offre offre) {
         if(offre.getAcheteurPotentiel().size() != 0) {
             Acteur acheteur = offre.getAcheteurPotentiel().get(0); //arbitrairement
-            acheteur.debiter(offre.getPrix());
             LivreDuMarche.enleverOffre(offre);
             GestionnaireDeTransaction.transaction(acheteur, offre);
             HistoriqueOffre.addOffresArchives(new Archive(acheteur, offre, LocalDate.now()));
         }
-        //acheteur.ajouter
-        //livrerProduit()
-
     }
 
 
-    /**
-     *
-     */
     public static void supprimerOffre(Offre o) {
 
         o.archiver();
