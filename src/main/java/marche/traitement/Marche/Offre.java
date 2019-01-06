@@ -1,6 +1,7 @@
 package marche.traitement.Marche;
 
 import marche.traitement.Acteurs.Acteur;
+import marche.traitement.Acteurs.ChoixAcheteur.StrategyChoixAcheteur;
 import marche.traitement.Acteurs.VendeurAcheteur;
 import marche.traitement.Produit.Produit;
 
@@ -20,6 +21,14 @@ public class Offre
     private List<Acteur> acheteurPotentiel = new ArrayList<Acteur>();
     private VendeurAcheteur vendeur;
 
+    public StrategyChoixAcheteur getStrategyChoixAcheteur() {
+        return strategyChoixAcheteur;
+    }
+
+    private StrategyChoixAcheteur strategyChoixAcheteur;
+
+
+
     public VendeurAcheteur getVendeur() {
         return vendeur;
     }
@@ -30,12 +39,12 @@ public class Offre
     /**
      * Default constructor
      */
-    public Offre(int prix, Produit produit, VendeurAcheteur vendeurAcheteur)
+    public Offre(int prix, Produit produit, VendeurAcheteur vendeurAcheteur,StrategyChoixAcheteur strategyChoixAcheteur )
     {
         this.prix = prix;
         this.produit = produit;
         this.vendeur = vendeurAcheteur;
-
+        this.strategyChoixAcheteur = strategyChoixAcheteur;
         }
 
 

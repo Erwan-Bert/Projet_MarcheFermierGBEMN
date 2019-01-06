@@ -2,6 +2,8 @@ package Tests;
 
 
 import marche.traitement.Acteurs.CentraleAchat;
+import marche.traitement.Acteurs.ChoixAcheteur.ChoixParOrdreArrivee;
+import marche.traitement.Acteurs.ChoixAcheteur.StrategyChoixAcheteur;
 import marche.traitement.Acteurs.Controleur;
 import marche.traitement.FluxInformation.FluxInformation;
 import marche.traitement.FluxInformation.NewsLetter;
@@ -48,11 +50,13 @@ public class Test {
         newsletter.ajouterAbonne(acheteur);
 
         //ajout d'une offre
-        vendeur.creerUneOffre(100,vendeur.getStocks().get(0));
+        StrategyChoixAcheteur strategyChoixAcheteur = new ChoixParOrdreArrivee();
+        vendeur.creerUneOffre(100,vendeur.getStocks().get(0),strategyChoixAcheteur);
         LivreDuMarche.afficherLivre();
 
         //achat
         acheteur.acheter(LivreDuMarche.getLivre().get(0));
+        System.out.println(LivreDuMarche.getLivre().get(0).getAcheteurPotentiel().get(0).getNom());
         Controleur.choisirAcheteur(LivreDuMarche.getLivre().get(0));
         LivreDuMarche.afficherLivre();
 

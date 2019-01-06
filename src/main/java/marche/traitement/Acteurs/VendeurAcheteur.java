@@ -1,5 +1,6 @@
 package marche.traitement.Acteurs;
 
+import marche.traitement.Acteurs.ChoixAcheteur.StrategyChoixAcheteur;
 import marche.traitement.Marche.LivreDuMarche;
 import marche.traitement.Marche.Offre;
 import marche.traitement.Produit.Produit;
@@ -34,14 +35,14 @@ public abstract class VendeurAcheteur extends Acteur {
      * @param //Produit produit
      * @return
      */
-    public void creerUneOffre(int prix, Produit produit)throws ArithmeticException,IllegalArgumentException {
+    public void creerUneOffre(int prix, Produit produit, StrategyChoixAcheteur strategyChoixAcheteur)throws ArithmeticException,IllegalArgumentException {
 
         if(prix<0)
             throw new ArithmeticException("prix négatif");
         if(produit == null)
             throw new IllegalArgumentException("rentrez un produit valide");
         if(stocks.contains(produit)){
-            Offre offre = new Offre(prix,produit,this);
+            Offre offre = new Offre(prix,produit,this,strategyChoixAcheteur);
             if(Controleur.validerOffre(offre)){
                 stocks.remove(produit);
                 LivreDuMarche.ajouterOffre(offre);
