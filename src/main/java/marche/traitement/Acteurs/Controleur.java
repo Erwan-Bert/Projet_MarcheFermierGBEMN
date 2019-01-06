@@ -1,5 +1,4 @@
 package marche.traitement.Acteurs;
-import marche.traitement.GestionnaireDeTransaction.GestionnaireDeTransaction;
 import marche.traitement.Marche.Archive;
 import marche.traitement.Marche.HistoriqueOffre;
 import marche.traitement.Marche.LivreDuMarche;
@@ -37,7 +36,7 @@ public final class Controleur {
         if(offre.getAcheteurPotentiel().size() != 0) {
             Acteur acheteur = offre.getAcheteurPotentiel().get(0); //arbitrairement
             LivreDuMarche.enleverOffre(offre);
-            GestionnaireDeTransaction.transaction(acheteur, offre);
+            acheteur.transaction(offre);
             HistoriqueOffre.addOffresArchives(new Archive(acheteur, offre, LocalDate.now()));
         }
     }

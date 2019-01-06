@@ -42,10 +42,8 @@ public final class LivreDuMarche {
     {
         for (Offre o:livreMarche)
         {
-            if (o.isValider())
-            {
-                System.out.println(o);
-            }
+            System.out.println(o);
+
         }
     }
 

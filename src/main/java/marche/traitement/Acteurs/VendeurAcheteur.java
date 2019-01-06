@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 
  */
-public class VendeurAcheteur extends Acteur {
+public abstract class VendeurAcheteur extends Acteur {
 
 
     protected List<Produit> stocks = new ArrayList<Produit>();
@@ -104,6 +104,13 @@ public class VendeurAcheteur extends Acteur {
     public Produit getElementStock(int i)
     {
         return stocks.get(i-1);
+    }
+    @Override
+    public void transaction(Offre o){
+        super.transaction(o);
+        ajouterAuStock(o.getProduit());
+        System.out.println(" Le produit a été ajouté à votre stock et vous pouvez le revendre");
+
     }
 
 }

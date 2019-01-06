@@ -15,7 +15,7 @@ import marche.traitement.UnitedeProduction.UniteDeProductionLaitier;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Test {
     @org.junit.jupiter.api.Test
@@ -49,7 +49,6 @@ public class Test {
 
         //ajout d'une offre
         vendeur.creerUneOffre(100,vendeur.getStocks().get(0));
-
         LivreDuMarche.afficherLivre();
 
         //achat
@@ -57,7 +56,7 @@ public class Test {
         Controleur.choisirAcheteur(LivreDuMarche.getLivre().get(0));
         LivreDuMarche.afficherLivre();
 
-        assertEquals(110,acheteur.getSolde());
+        assertEquals(10,acheteur.getSolde());
 
 
 

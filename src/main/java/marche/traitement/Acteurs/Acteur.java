@@ -100,4 +100,17 @@ public class Acteur {
     {
         cotisation = strategy;
     }
+
+    public void transaction(Offre o){
+        if (getCentraleAchat() != null)
+        {
+            debiter(o.getPrix() - (o.getPrix()*getCentraleAchat().getPourcentage()));
+            System.out.println("vous béneficiez d'une ristourne car vous faites parti de la centrale d'achat"+ getCentraleAchat().getNom());
+        }
+        else
+            debiter(o.getPrix());
+        System.out.println("Vous pouvez venir récupérer l'offre" + o + " au dépot");
+
+    }
+
 }
