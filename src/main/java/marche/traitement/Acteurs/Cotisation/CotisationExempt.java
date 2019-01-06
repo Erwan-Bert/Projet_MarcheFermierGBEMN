@@ -1,4 +1,4 @@
-package marche.traitement.Acteurs;
+package marche.traitement.Acteurs.Cotisation;
 
 public class CotisationExempt implements StrategyCotisation {
     @Override

@@ -1,4 +1,7 @@
 package marche.traitement.Acteurs;
+
+import marche.traitement.Acteurs.Cotisation.CotisationPleinPot;
+import marche.traitement.Acteurs.Cotisation.StrategyCotisation;
 import marche.traitement.Marche.Offre;
 
 import java.time.LocalDate;
