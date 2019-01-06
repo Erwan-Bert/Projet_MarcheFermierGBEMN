@@ -2,6 +2,7 @@ package Tests;
 
 
 import marche.traitement.Acteurs.CentraleAchat;
+import marche.traitement.Acteurs.Controleur;
 import marche.traitement.FluxInformation.FluxInformation;
 import marche.traitement.FluxInformation.NewsLetter;
 import marche.traitement.Marche.LivreDuMarche;
@@ -29,30 +30,34 @@ public class Test {
     {
         //production
         UniteDeProduction u = new UniteDeProductionLaitier("les vaches du futur");
-        Producteur p0 = new ProducteurLaitier(200,"Mbappe",100);
-        Producteur p1 = new ProducteurLaitier(200,"Riberi",100);
-        u.ajouterProducteur(p0);
-        u.ajouterProducteur(p1);
-        p0.cotiser();
-        p1.cotiser();
-        u.produire(10,"lait",LocalDate.now().plusDays(10),p0);
+        Producteur vendeur = new ProducteurLaitier(200,"claude",100);
+        Producteur acheteur = new ProducteurLaitier(200,"solaar",100);
+        u.ajouterProducteur(vendeur);
+        u.ajouterProducteur(acheteur);
+        vendeur.cotiser();
+        acheteur.cotiser();
+        u.produire(10,"lait",LocalDate.now().plusDays(10),vendeur);
 
         // préparation acheteur
         CentraleAchat c = new CentraleAchat("Metro");
-        c.ajouterMembres(p1);
+        c.ajouterMembres(acheteur);
         c.setPourcentage(10);
 
         //Flux informations
         FluxInformation newsletter = new NewsLetter("adopte un légume");
-        newsletter.ajouterAbonne(p1);
+        newsletter.ajouterAbonne(acheteur);
 
         //ajout d'une offre
-        p0.creerUneOffre(100,p0.getStocks().get(0));
+        vendeur.creerUneOffre(100,vendeur.getStocks().get(0));
+
+        LivreDuMarche.afficherLivre();
 
         //achat
-        p1.acheter(LivreDuMarche.getLivre().get(0));
+        acheteur.acheter(LivreDuMarche.getLivre().get(0));
+        Controleur.choisirAcheteur(LivreDuMarche.getLivre().get(0));
+        LivreDuMarche.afficherLivre();
 
-        assertNotEquals(99990,p1.getSolde());
+        assertEquals(110,acheteur.getSolde());
 
 
 

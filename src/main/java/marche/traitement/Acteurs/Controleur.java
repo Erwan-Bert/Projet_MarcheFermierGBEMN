@@ -10,12 +10,12 @@ import java.time.LocalDate;
 /**
  * 
  */
-public class Controleur {
+public final class Controleur {
 
     /**
      * Default constructor
      */
-    public Controleur() {
+    private Controleur() {
     }
 
 
