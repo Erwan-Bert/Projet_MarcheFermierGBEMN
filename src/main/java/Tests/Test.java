@@ -28,7 +28,7 @@ public class Test {
     }
 
     @org.junit.jupiter.api.Test
-    public void uniteDeProd()
+    public void testDeProductionPuisVente()
     {
         //production
         UniteDeProduction u = new UniteDeProductionLaitier("les vaches du futur");
@@ -56,7 +56,6 @@ public class Test {
 
         //achat
         acheteur.acheter(LivreDuMarche.getLivre().get(0));
-        System.out.println(LivreDuMarche.getLivre().get(0).getAcheteurPotentiel().get(0).getNom());
         Controleur.choisirAcheteur(LivreDuMarche.getLivre().get(0));
         LivreDuMarche.afficherLivre();
 

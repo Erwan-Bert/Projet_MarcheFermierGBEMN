@@ -40,6 +40,10 @@ public class ProduitBio extends DecorateurProduit {
 
     @Override
     public String getNom() {
-        return produit.getNom() + "bio";
+        String result = produit.getNom();
+        if(isCertifie())
+            result+= " bio";
+
+        return result;
     }
 }

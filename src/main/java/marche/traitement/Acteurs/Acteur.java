@@ -108,10 +108,12 @@ public class Acteur {
         if (getCentraleAchat() != null)
         {
             debiter(o.getPrix() - (o.getPrix()*getCentraleAchat().getPourcentage()/100));
-            System.out.println("vous béneficiez d'une ristourne car vous faites parti de la centrale d'achat"+ getCentraleAchat().getNom());
+            System.out.println("vous béneficiez d'une ristourne car vous faites parti de la centrale d'achat "+ getCentraleAchat().getNom());
+
         }
         else
             debiter(o.getPrix());
+         o.getVendeur().crediter(o.getPrix());
         System.out.println("Vous pouvez venir récupérer l'offre" + o + " au dépot");
 
     }

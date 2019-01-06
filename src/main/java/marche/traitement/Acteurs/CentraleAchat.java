@@ -6,6 +6,12 @@ import java.util.Collection;
 public class CentraleAchat extends Acteur
 {
     private int pourcentage;
+
+    @Override
+    public String getNom() {
+        return nom;
+    }
+
     private String nom;
     private Collection<Acteur> membres;
 
