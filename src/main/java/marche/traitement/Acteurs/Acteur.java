@@ -66,7 +66,7 @@ public class Acteur {
      * @return
      */
     public void acheter(Offre o) {
-        if(o.getPrix()<solde)
+        if(o.getPrix()<=solde)
         o.addAcheteurPotentiel(this);
     }
 
@@ -107,7 +107,7 @@ public class Acteur {
     public void transaction(Offre o){
         if (getCentraleAchat() != null)
         {
-            debiter(o.getPrix() - (o.getPrix()*getCentraleAchat().getPourcentage()));
+            debiter(o.getPrix() - (o.getPrix()*getCentraleAchat().getPourcentage()/100));
             System.out.println("vous béneficiez d'une ristourne car vous faites parti de la centrale d'achat"+ getCentraleAchat().getNom());
         }
         else
