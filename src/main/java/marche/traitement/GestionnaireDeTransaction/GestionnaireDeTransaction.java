@@ -6,15 +6,12 @@ import marche.traitement.Marche.Offre;
 
 public final class GestionnaireDeTransaction {
     public static void transaction(Acteur acteur, Offre offre){
-        System.out.println("Venez nous contacter pour obtenir votre achat");
+        System.out.println("Vous pouvez venir au dépot pour obtenir votre achat à l'aide de votre pièce d'identité");
+
     }
 
-    /*public static void transaction(VendeurAcheteur vendeurAcheteur, Offre offre){
-        vendeurAcheteur.ajouterAuStock(offre.getProduit());
-        System.out.println("votre produit a été mis dans votre stock(vous pouvez le renvendre), vous pouvez aussi le récupérer");
-    }*/
 
-    public static void transaction (VendeurAcheteur acheteur, Offre offre)
+    public static void transaction(VendeurAcheteur acheteur, Offre offre)
     {
         if (acheteur.getCentraleAchat() != null)
         {
@@ -23,7 +20,9 @@ public final class GestionnaireDeTransaction {
         }
         else
             acheteur.debiter(offre.getPrix());
+
         acheteur.ajouterAuStock(offre.getProduit());
+        System.out.println("votre produit a été mis dans votre stock(vous pouvez le renvendre), vous pouvez aussi le récupérer");
     }
 
 }

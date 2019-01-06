@@ -35,7 +35,7 @@ public class Acteur {
      */
     public boolean cotiser() {
 
-        if (solde - cotisation.calculCotisation() > 0) {
+        if (solde  > cotisation.calculCotisation()) {
             debiter(cotisation.calculCotisation());
             if (dateFinCotisation.isBefore(LocalDate.now()))
                 dateFinCotisation = LocalDate.now();

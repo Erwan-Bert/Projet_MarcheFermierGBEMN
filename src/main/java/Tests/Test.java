@@ -30,8 +30,8 @@ public class Test {
     {
         //production
         UniteDeProduction u = new UniteDeProductionLaitier("les vaches du futur");
-        Producteur vendeur = new ProducteurLaitier(200,"claude",100);
-        Producteur acheteur = new ProducteurLaitier(200,"solaar",100);
+        Producteur vendeur = new ProducteurLaitier(400,"claude",100);
+        Producteur acheteur = new ProducteurLaitier(400,"solaar",100);
         u.ajouterProducteur(vendeur);
         u.ajouterProducteur(acheteur);
         vendeur.cotiser();
