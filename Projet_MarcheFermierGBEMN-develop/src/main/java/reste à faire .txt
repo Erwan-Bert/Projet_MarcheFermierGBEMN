@@ -1,6 +1,0 @@
-
-
--Gerer les cas où les offres ne passent pas
--gerer les productions de UniteDeProduction ( en cours)
--Faire interface
--Faire une classe pour toutes les exceptions que l'on throw
