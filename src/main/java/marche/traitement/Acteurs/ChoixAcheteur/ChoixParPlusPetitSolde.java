@@ -4,6 +4,9 @@ import marche.traitement.Acteurs.Acteur;
 
 import java.util.ArrayList;
 
+/**
+     *  Classe permettant de choisir l'ordre des Acheteur par ordre croissant du solde (plus petit solde)
+     */
 public class ChoixParPlusPetitSolde implements StrategyChoixAcheteur {
     @Override
     public Acteur choixAcheteur(ArrayList<Acteur> acheteurPotentiel) {

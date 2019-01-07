@@ -5,7 +5,10 @@ import marche.traitement.Marche.Offre;
 
 public class NewsLetter extends FluxInformation{
 
-
+	/**
+     * Constructeur de la Boitte aux lettres
+	 * @param String nom
+     */
     public NewsLetter(String nom) {
         super(nom);
     }

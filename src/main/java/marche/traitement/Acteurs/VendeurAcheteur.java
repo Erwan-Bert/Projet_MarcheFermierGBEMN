@@ -30,6 +30,7 @@ public abstract class VendeurAcheteur extends Acteur {
 
 
     /**
+	 * Creer une offre selon la quantité le prix et le Produit
      * @param //int quantite
      * @param //int prix
      * @param //Produit produit
@@ -58,7 +59,7 @@ public abstract class VendeurAcheteur extends Acteur {
     /**
      * si le produit est du même type, date de péremption et unité qu'un produit dans le stock
      * on combine les produits, sinon on ajoute le produit au stock dans une autre case
-     * @param produit
+     * @param Produit produit
      */
     public void ajouterAuStock(Produit produit){
         boolean dejaDansLeStock = false;
@@ -78,7 +79,11 @@ public abstract class VendeurAcheteur extends Acteur {
         }
     }
 
-    //cette méthode permet de connaitre la quantité de tous les éléments du stock combinés
+    /**
+     * Retourne la quantitée totale des produits
+     * @param Produit produit
+	 * @return quantiteTotale
+     */
     public double getQuantiteStock()
     {
         double quantiteTotale = 0;
@@ -88,8 +93,10 @@ public abstract class VendeurAcheteur extends Acteur {
         }
         return quantiteTotale;
     }
-
-    //cette méthode permet d'afficher de manière détailler le stock d'un acheteur vendeur
+	
+	/**
+     * Affiche de manière détailler le stock d'un acheteur vendeur
+     */
     public void afficherStock()
     {
         int compteur = 1;
@@ -101,7 +108,9 @@ public abstract class VendeurAcheteur extends Acteur {
     }
 
 
-    //cette méthode permet de retourner le produit qui se situe au ième rang du stock
+	/**
+     * Retourne le produit qui se situe au ième rang du stock
+     */
     public Produit getElementStock(int i)
     {
         return stocks.get(i-1);

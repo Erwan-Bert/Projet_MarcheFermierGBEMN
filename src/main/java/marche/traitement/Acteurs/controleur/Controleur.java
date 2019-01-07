@@ -42,7 +42,9 @@ public abstract class Controleur {
         }
     }
 
-
+	/**
+     *  Supprime une Offre passée en parmètre
+     */
     public void supprimerOffre(Offre o) {
 
         o.archiver();
