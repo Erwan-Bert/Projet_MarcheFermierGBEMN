@@ -13,37 +13,66 @@ public abstract class Produit {
     public Produit(){};
 
 
+	/**
+     * Constructeur
+     */
     public Produit(int quantite, LocalDate dateDePeremption, String unite) {
         this.quantite = quantite;
         this.dateDePeremption = dateDePeremption;
         this.unite = unite;
-    }//Produit
+    }
 
+	/**
+     * Renvoi la quantité d'un produit
+     * @return int
+     */
     public int getQuantite() {
         return quantite;
-    }//getQuantite
-
+    }
+	
+	/**
+     * Initialise la quantité d'un produit
+     * @param int quantite
+     */
     public void setQuantite(int quantite) {
         this.quantite = quantite;
     }
 
+	/**
+     * Renvoi la date d'un peremption d'un produit
+     * @return boolean
+     */
     public LocalDate getDateDePeremption() {
         return dateDePeremption;
-    }//getDateDePeremption
+    }
 
+	/**
+     * Renvoi l'unité d'un produit
+     * @return boolean
+     */
     public String getUnite() {
         return unite;
     }
     /**
-     *
+     * Renvoi si un produit est validé , en fonction de sa date de peremption
      * @return boolean
      */
     public boolean valider() {
         return (dateDePeremption.isAfter(LocalDate.now().plusDays(1)));
     }
+	
+	/**
+     * Enleve une quantité passée en paramètre a un produit
+     * @param int quantite
+     */
     public void enleverQuantite(int quantite){
         this.quantite -= quantite;
     }
+	
+	/**
+     * Ajoute une quantité passée en paramètre a un produit
+     * @param int quantite
+     */
     public void ajouterQuantite(int quantite){
         this.quantite += quantite;
     }

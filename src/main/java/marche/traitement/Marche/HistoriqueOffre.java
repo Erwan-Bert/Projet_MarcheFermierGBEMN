@@ -16,11 +16,19 @@ public class HistoriqueOffre {
     private HistoriqueOffre()
     {
     }
-
+	
+	/**
+     * Retourne la liste des archives
+	 * @return historiqueOffres
+     */
     public static List<Archive> getArchives() {
         return historiqueOffres ;
     }
 
+	/**
+     * Ajoute une offre a la liste des archives
+	 * @param Archive archive
+     */
     public static void addOffresArchives(Archive Archive) {
         historiqueOffres .add(Archive);
     }

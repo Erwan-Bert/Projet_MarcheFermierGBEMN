@@ -36,7 +36,8 @@ public class LivreDuMarche {
     }
 
     /**
-     * function ajouterOffre
+     * Ajoute une offre au livre du marche
+	 * @param Offre o
      */
     public void ajouterOffre(Offre o)
     {
@@ -44,7 +45,11 @@ public class LivreDuMarche {
         notifierFluxInformations(o);
 
     }
-
+	
+	/**
+     * Choisit un acheter qui pourra acheter l'offre , avec le numero de l'offre en paramètre
+	 * @return int numeroDeOffre
+     */
     public void faireChoisirUnAcheteur(int numeroDeOffre){
         try {
             controleur.choisirAcheteur(livreMarche.get(numeroDeOffre - 1)); // indice -1 pour simplifier la comprÃ©hension
@@ -52,14 +57,21 @@ public class LivreDuMarche {
             System.out.println("veuillez rentrer un indice valable");
         }
     }
-
+	
+	/**
+     * Enleve une offre du livre du marche
+	 * @param
+     */
     public void enleverOffre(Offre o){
         livreMarche.remove(o);
         o.getVendeur().ajouterAuStock(o.getProduit());
         o.archiver();
 
     }
-
+	
+	/**
+     * Affice l'intégralité du livre du marche
+     */
     public void afficherLivre()
     {
         for (Offre o:livreMarche)
@@ -68,19 +80,35 @@ public class LivreDuMarche {
 
         }
     }
-
+	
+	/**
+     * Retourne l'intégralité du livre du marche
+	 * @return LivreMarche
+     */
     public List<Offre> getLivre() {
         return livreMarche;
     }
 
+	/**
+     * Ajoute une information passée en paramètre au flux d'information
+	 * @param FluxInformation f
+     */
     public void ajouterFluxInformation(FluxInformation f){
         fluxInformations.add(f);
     }
 
+	/**
+     * Enleve une information passée en paramètre au flux d'information
+	 * @param FluxInformation f
+     */
     public void enleverFluxInformation(FluxInformation f){
         fluxInformations.remove(f);
     }
 
+	/**
+     * Notifie lorsque le flux d'information est mis a jour
+	 * @param Offre offre
+     */
     public void notifierFluxInformations(Offre offre){
         for(FluxInformation f : fluxInformations){
             f.update(offre);

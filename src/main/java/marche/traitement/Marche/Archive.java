@@ -9,7 +9,11 @@ public class Archive
     private Acteur acheteur;
     private Offre offre;
     private LocalDate date;
-
+	
+	/**
+     * Initialise une Archive avec un acheteur une offre et une date (Constructeur)
+	 * @param boolean
+     */
     public Archive (Acteur acheteur, Offre offre,LocalDate date)
     {
         this.acheteur =acheteur;
@@ -17,15 +21,26 @@ public class Archive
         this.date = date;
     }
 
+	/**
+     * Retourne l'acheteur de l'archive
+	 * @return acheteur
+     */
     public Acteur getAcheteur() {
         return acheteur;
     }
 
-
+	/**
+     * Retourne l'offre de l'archive
+	 * @return offre
+     */
     public Offre getOffre() {
         return offre;
     }
-
+	
+	/**
+     * Retourne la date de l'archive
+	 * @return date
+     */
     public LocalDate getDate() {
         return date;
     }
