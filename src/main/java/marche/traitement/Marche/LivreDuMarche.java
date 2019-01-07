@@ -8,37 +8,38 @@ import java.util.List;
 /**
  * 
  */
-public final class LivreDuMarche {
+public class LivreDuMarche {
 
 
-    private static List<Offre> livreMarche = new ArrayList<Offre>();
-    private static List<FluxInformation> fluxInformations = new ArrayList<FluxInformation>();
+    private List<Offre> livreMarche = new ArrayList<Offre>();
+    private List<FluxInformation> fluxInformations = new ArrayList<FluxInformation>();
+    private String nom ;
 
     /**
      * Default constructor
      */
-    private LivreDuMarche()
+    public LivreDuMarche(String nom)
     {
-
+        this.nom = nom;
     }
 
     /**
      * function ajouterOffre
      */
-    public static void ajouterOffre(Offre o)
+    public void ajouterOffre(Offre o)
     {
         livreMarche.add(o);
-        LivreDuMarche.notifierFluxInformations(o);
+        notifierFluxInformations(o);
 
     }
 
-    public static void enleverOffre(Offre o){
+    public void enleverOffre(Offre o){
         livreMarche.remove(o);
         o.archiver();
 
     }
 
-    public static void afficherLivre()
+    public void afficherLivre()
     {
         for (Offre o:livreMarche)
         {
@@ -47,19 +48,19 @@ public final class LivreDuMarche {
         }
     }
 
-    public static List<Offre> getLivre() {
+    public List<Offre> getLivre() {
         return livreMarche;
     }
 
-    public static void ajouterFluxInformation(FluxInformation f){
+    public void ajouterFluxInformation(FluxInformation f){
         fluxInformations.add(f);
     }
 
-    public static void enleverFluxInformation(FluxInformation f){
+    public void enleverFluxInformation(FluxInformation f){
         fluxInformations.remove(f);
     }
 
-    public static void notifierFluxInformations(Offre offre){
+    public void notifierFluxInformations(Offre offre){
         for(FluxInformation f : fluxInformations){
             f.update(offre);
         }

@@ -47,17 +47,20 @@ public class Test {
 
         //Flux informations
         FluxInformation newsletter = new NewsLetter("adopte un légume");
+
         newsletter.ajouterAbonne(acheteur);
 
         //ajout d'une offre
         StrategyChoixAcheteur strategyChoixAcheteur = new ChoixParOrdreArrivee();
-        vendeur.creerUneOffre(100,vendeur.getStocks().get(0),strategyChoixAcheteur);
-        LivreDuMarche.afficherLivre();
+
+        LivreDuMarche marche = new LivreDuMarche("VieuxPort");
+        vendeur.creerUneOffre(100,vendeur.getStocks().get(0),strategyChoixAcheteur, marche);
+        marche.afficherLivre();
 
         //achat
-        acheteur.acheter(LivreDuMarche.getLivre().get(0));
-        Controleur.choisirAcheteur(LivreDuMarche.getLivre().get(0));
-        LivreDuMarche.afficherLivre();
+        acheteur.acheter(marche.getLivre().get(0));
+        Controleur.choisirAcheteur(marche.getLivre().get(0));
+        marche.afficherLivre();
 
         assertEquals(10,acheteur.getSolde());
 

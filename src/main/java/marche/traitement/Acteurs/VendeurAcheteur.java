@@ -35,17 +35,17 @@ public abstract class VendeurAcheteur extends Acteur {
      * @param //Produit produit
      * @return
      */
-    public void creerUneOffre(int prix, Produit produit, StrategyChoixAcheteur strategyChoixAcheteur)throws ArithmeticException,IllegalArgumentException {
+    public void creerUneOffre(int prix, Produit produit, StrategyChoixAcheteur strategyChoixAcheteur, LivreDuMarche marche)throws ArithmeticException,IllegalArgumentException {
 
         if(prix<0)
             throw new ArithmeticException("prix négatif");
         if(produit == null)
             throw new IllegalArgumentException("rentrez un produit valide");
         if(stocks.contains(produit)){
-            Offre offre = new Offre(prix,produit,this,strategyChoixAcheteur);
+            Offre offre = new Offre(prix,produit,this,strategyChoixAcheteur, marche);
             if(Controleur.validerOffre(offre)){
                 stocks.remove(produit);
-                LivreDuMarche.ajouterOffre(offre);
+                marche.ajouterOffre(offre);
             }else{
                 throw new IllegalArgumentException("votre offre a été rejeté par l'amf");
             }

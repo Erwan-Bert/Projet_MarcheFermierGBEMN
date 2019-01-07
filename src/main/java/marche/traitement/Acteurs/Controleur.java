@@ -37,7 +37,7 @@ public final class Controleur {
     public static void choisirAcheteur(Offre offre) {
         if(offre.getAcheteurPotentiel().size() != 0) {
             Acteur acheteur = offre.getAcheteurPotentiel().get(0); //arbitrairement
-            LivreDuMarche.enleverOffre(offre);
+            offre.getMarche().enleverOffre(offre);
             acheteur.transaction(offre);
             HistoriqueOffre.addOffresArchives(new Archive(acheteur, offre, LocalDate.now()));
         }

@@ -21,6 +21,11 @@ public class Offre
     private List<Acteur> acheteurPotentiel = new ArrayList<Acteur>();
     private VendeurAcheteur vendeur;
 
+    public LivreDuMarche getMarche() {
+        return marche;
+    }
+
+    private LivreDuMarche marche;
     public StrategyChoixAcheteur getStrategyChoixAcheteur() {
         return strategyChoixAcheteur;
     }
@@ -39,12 +44,14 @@ public class Offre
     /**
      * Default constructor
      */
-    public Offre(int prix, Produit produit, VendeurAcheteur vendeurAcheteur,StrategyChoixAcheteur strategyChoixAcheteur )
+    public Offre(int prix, Produit produit, VendeurAcheteur vendeurAcheteur,StrategyChoixAcheteur strategyChoixAcheteur,
+                 LivreDuMarche marche)
     {
         this.prix = prix;
         this.produit = produit;
         this.vendeur = vendeurAcheteur;
         this.strategyChoixAcheteur = strategyChoixAcheteur;
+        this.marche = marche;
         }
 
 
