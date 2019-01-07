@@ -1,7 +1,7 @@
-package marche.traitement.Acteurs;
+package marche.traitement.Acteurs.controleur;
+import marche.traitement.Acteurs.Acteur;
 import marche.traitement.Marche.Archive;
 import marche.traitement.Marche.HistoriqueOffre;
-import marche.traitement.Marche.LivreDuMarche;
 import marche.traitement.Marche.Offre;
 
 import java.time.LocalDate;
@@ -9,14 +9,14 @@ import java.time.LocalDate;
 /**
  * 
  */
-public final class Controleur {
+public abstract class Controleur {
 
     /**
      * Default constructor
      */
 
 
-    private Controleur() {
+    public Controleur() {
     }
 
 
@@ -25,16 +25,15 @@ public final class Controleur {
      *
      * @return bool
      */
-    public static boolean validerOffre(Offre o) {
-        return (o.getPrix() < 1000000); //validation purement arbitraire
-    }
+    public abstract boolean validerOffre(Offre o);
+    public abstract String getNom();
 
     /**
      *
      *  choisis a qui attribuer l'offre en fonction de la liste des acheteurs potentiels
      *  Effectue la transaction, enlève l'offre du livre du marché et archivre l'offre
      */
-    public static void choisirAcheteur(Offre offre) {
+    public void choisirAcheteur(Offre offre) {
         if(offre.getAcheteurPotentiel().size() != 0) {
             Acteur acheteur = offre.getAcheteurPotentiel().get(0); //arbitrairement
             offre.getMarche().enleverOffre(offre);
@@ -44,7 +43,7 @@ public final class Controleur {
     }
 
 
-    public static void supprimerOffre(Offre o) {
+    public void supprimerOffre(Offre o) {
 
         o.archiver();
     }

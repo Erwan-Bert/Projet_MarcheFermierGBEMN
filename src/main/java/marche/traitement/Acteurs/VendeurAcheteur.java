@@ -43,7 +43,7 @@ public abstract class VendeurAcheteur extends Acteur {
             throw new IllegalArgumentException("rentrez un produit valide");
         if(stocks.contains(produit)){
             Offre offre = new Offre(prix,produit,this,strategyChoixAcheteur, marche);
-            if(Controleur.validerOffre(offre)){
+            if(marche.getControleur().validerOffre(offre)){
                 stocks.remove(produit);
                 marche.ajouterOffre(offre);
             }else{

@@ -4,7 +4,8 @@ package Tests;
 import marche.traitement.Acteurs.CentraleAchat;
 import marche.traitement.Acteurs.ChoixAcheteur.ChoixParOrdreArrivee;
 import marche.traitement.Acteurs.ChoixAcheteur.StrategyChoixAcheteur;
-import marche.traitement.Acteurs.Controleur;
+import marche.traitement.Acteurs.controleur.Controleur;
+import marche.traitement.Acteurs.controleur.ControleurBasique;
 import marche.traitement.FluxInformation.FluxInformation;
 import marche.traitement.FluxInformation.NewsLetter;
 import marche.traitement.Marche.LivreDuMarche;
@@ -52,14 +53,16 @@ public class Test {
 
         //ajout d'une offre
         StrategyChoixAcheteur strategyChoixAcheteur = new ChoixParOrdreArrivee();
-
-        LivreDuMarche marche = new LivreDuMarche("VieuxPort");
+        Controleur controleur = new ControleurBasique();
+        LivreDuMarche marche = new LivreDuMarche("VieuxPort", controleur);
         vendeur.creerUneOffre(100,vendeur.getStocks().get(0),strategyChoixAcheteur, marche);
         marche.afficherLivre();
 
         //achat
         acheteur.acheter(marche.getLivre().get(0));
-        Controleur.choisirAcheteur(marche.getLivre().get(0));
+
+        marche.getControleur().choisirAcheteur(marche.getLivre().get(0));
+        marche.faireChoisirUnAcheteur(1);
         marche.afficherLivre();
 
         assertEquals(10,acheteur.getSolde());
