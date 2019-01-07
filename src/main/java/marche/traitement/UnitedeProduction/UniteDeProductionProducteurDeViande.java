@@ -25,6 +25,9 @@ public class UniteDeProductionProducteurDeViande extends UniteDeProduction {
         super(nom);
     }
 
+	/**
+     * Ajoute un producteur a la liste des producteurs de viandes
+     */
     @Override
     protected void ajouterMembre(Producteur producteur) throws ClassCastException {
         try {
@@ -34,6 +37,9 @@ public class UniteDeProductionProducteurDeViande extends UniteDeProduction {
         }
     }
 
+	/**
+     * Produit un produit issu de la viande avec la quantite le type la date de peremption et le producteur
+     */
     @Override
     public void produire(int quantite, String type, LocalDate peremption, Producteur producteur) {
         if (producteurs.contains(producteur)) {

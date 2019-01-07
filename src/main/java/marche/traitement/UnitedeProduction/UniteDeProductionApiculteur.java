@@ -21,7 +21,10 @@ public class UniteDeProductionApiculteur extends UniteDeProduction {
 
         super(nom);
     }
-
+	
+	/**
+     * Ajoute un membre a la liste des Apiculteurs
+     */
     @Override
     protected void ajouterMembre(Producteur producteur)throws IllegalStateException {
         try
@@ -33,6 +36,10 @@ public class UniteDeProductionApiculteur extends UniteDeProduction {
             e.printStackTrace();
         }
     }
+	
+	/**
+     * Produit le produit en question avec la quantite le type la date de peremption et le producteur
+     */
     @Override
     public void produire(int quantite, String type, LocalDate peremption,Producteur producteur) {
 

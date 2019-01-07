@@ -21,6 +21,9 @@ public class UniteDeProductionHorticulteur extends UniteDeProduction {
         super(nom);
     }
 
+	/**
+     * Ajoute un produteur a la liste des Horticulteurs
+     */
     @Override
     protected void ajouterMembre(Producteur producteur)throws IllegalStateException {
         try
@@ -33,6 +36,9 @@ public class UniteDeProductionHorticulteur extends UniteDeProduction {
         }
     }
 
+	/**
+     * Produit un produit issu de l'Horticulture avec a quantite le type la date de peremption et le producteur
+     */
     @Override
     public void produire(int quantite, String type, LocalDate peremption,Producteur producteur) {
         // TODO implement here

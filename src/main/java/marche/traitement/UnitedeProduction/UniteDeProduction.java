@@ -17,7 +17,10 @@ public abstract class UniteDeProduction {
         this.nom = nom;
     }
 
-
+	/**
+     * Ajoute un producteur a l'unite de production
+     * @param Producteur producteur
+     */
     public void ajouterProducteur(Producteur producteur)
     {
         ajouterMembre(producteur);
@@ -30,7 +33,10 @@ public abstract class UniteDeProduction {
         return produire(quantite, type, peremption);
     }*/
 
-
+	/**
+     * Produit un protuit ,avec sa quantite son type sa date et le producteur qui l'a réalisé
+     * @param quantite type peremption producteur
+     */
     public abstract void produire(int quantite, String type, LocalDate peremption, Producteur producteur);
 
     /**

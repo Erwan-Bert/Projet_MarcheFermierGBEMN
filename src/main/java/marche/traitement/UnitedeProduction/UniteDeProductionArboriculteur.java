@@ -22,6 +22,9 @@ public class UniteDeProductionArboriculteur extends UniteDeProduction {
         super(nom);
     }
 
+	/**
+     * Ajoute un producteur a la liste des Arboriculteurs
+     */
     @Override
     protected void ajouterMembre(Producteur producteur)throws IllegalStateException {
         try
@@ -34,6 +37,9 @@ public class UniteDeProductionArboriculteur extends UniteDeProduction {
         }
     }
 
+	/**
+     * Produit un produit issu de l'arboriculture avec la quantite le type la date de peremption et le producteur
+     */
     @Override
     public void produire(int quantite, String type, LocalDate peremption,Producteur producteur)
     {

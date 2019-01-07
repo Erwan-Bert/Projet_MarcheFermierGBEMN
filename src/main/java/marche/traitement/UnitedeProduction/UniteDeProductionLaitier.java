@@ -23,11 +23,17 @@ public class UniteDeProductionLaitier extends UniteDeProduction
         super(nom);
     }
 
+	/**
+     * Ajoute un producteur a la liste des producteurs laitiers
+     */
     @Override
     protected void ajouterMembre(Producteur producteur)throws ClassCastException {
             producteurs.add((ProducteurLaitier) producteur);
     }
 
+	/**
+     * Produit un produit issu du lait avec la quantite le type la date de peremption et le producteur
+     */
     @Override
     public void produire(int quantite, String type, LocalDate peremption,Producteur producteur)
     {
