@@ -5,7 +5,7 @@ import marche.traitement.Acteurs.CentraleAchat;
 import marche.traitement.Acteurs.ChoixAcheteur.ChoixParOrdreArrivee;
 import marche.traitement.Acteurs.ChoixAcheteur.StrategyChoixAcheteur;
 import marche.traitement.Acteurs.controleur.Controleur;
-import marche.traitement.Acteurs.controleur.ControleurBasique;
+import marche.traitement.Acteurs.controleur.ControleurAMF;
 import marche.traitement.FluxInformation.FluxInformation;
 import marche.traitement.FluxInformation.NewsLetter;
 import marche.traitement.Marche.LivreDuMarche;
@@ -17,6 +17,7 @@ import marche.traitement.UnitedeProduction.UniteDeProduction;
 import marche.traitement.UnitedeProduction.UniteDeProductionLaitier;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -46,15 +47,19 @@ public class Test {
         c.ajouterMembres(acheteur);
         c.setPourcentage(10);
 
-        //Flux informations
+        //Flux informations et création du marché
         FluxInformation newsletter = new NewsLetter("adopte un légume");
-
         newsletter.ajouterAbonne(acheteur);
+        ArrayList<String> blacklist = new ArrayList<>();
+        blacklist.add("panda géant");
+        Controleur controleur = new ControleurAMF(blacklist);
+        LivreDuMarche marche = new LivreDuMarche("VieuxPort", controleur);
+        marche.ajouterFluxInformation(newsletter);
 
         //ajout d'une offre
         StrategyChoixAcheteur strategyChoixAcheteur = new ChoixParOrdreArrivee();
-        Controleur controleur = new ControleurBasique();
-        LivreDuMarche marche = new LivreDuMarche("VieuxPort", controleur);
+
+
         vendeur.creerUneOffre(100,vendeur.getStocks().get(0),strategyChoixAcheteur, marche);
         marche.afficherLivre();
 
@@ -66,8 +71,6 @@ public class Test {
         marche.afficherLivre();
 
         assertEquals(10,acheteur.getSolde());
-
-
 
 
 

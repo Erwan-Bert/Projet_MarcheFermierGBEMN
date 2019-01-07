@@ -55,6 +55,7 @@ public class LivreDuMarche {
 
     public void enleverOffre(Offre o){
         livreMarche.remove(o);
+        o.getVendeur().ajouterAuStock(o.getProduit());
         o.archiver();
 
     }
