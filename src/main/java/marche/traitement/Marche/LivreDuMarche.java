@@ -47,7 +47,7 @@ public class LivreDuMarche {
     }
 	
 	/**
-     * Choisit un acheter qui pourra acheter l'offre , avec le numero de l'offre en paramètre
+     * Choisit un acheter qui pourra acheter l'offre , avec le numero de l'offre en paramï¿½tre
 	 * @return int numeroDeOffre
      */
     public void faireChoisirUnAcheteur(int numeroDeOffre){
@@ -70,7 +70,7 @@ public class LivreDuMarche {
     }
 	
 	/**
-     * Affice l'intégralité du livre du marche
+     * Affice l'integralite du livre du marche
      */
     public void afficherLivre()
     {
@@ -82,7 +82,7 @@ public class LivreDuMarche {
     }
 	
 	/**
-     * Retourne l'intégralité du livre du marche
+     * Retourne l'integralite du livre du marche
 	 * @return LivreMarche
      */
     public List<Offre> getLivre() {
@@ -90,7 +90,7 @@ public class LivreDuMarche {
     }
 
 	/**
-     * Ajoute une information passée en paramètre au flux d'information
+     * Ajoute une information passee en parametre au flux d'information
 	 * @param FluxInformation f
      */
     public void ajouterFluxInformation(FluxInformation f){
@@ -98,7 +98,7 @@ public class LivreDuMarche {
     }
 
 	/**
-     * Enleve une information passée en paramètre au flux d'information
+     * Enleve une information passee en parametre au flux d'information
 	 * @param FluxInformation f
      */
     public void enleverFluxInformation(FluxInformation f){
