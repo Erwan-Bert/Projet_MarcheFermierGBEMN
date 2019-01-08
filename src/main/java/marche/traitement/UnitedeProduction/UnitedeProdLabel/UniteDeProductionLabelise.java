@@ -19,7 +19,7 @@ public abstract class  UniteDeProductionLabelise extends UniteDeProduction
     }
     @Override
     public void produire(int quantite, String type, LocalDate peremption, Producteur producteur){
-        produireProduitLabelise(quantite,type,peremption,(DecorateurProducteur) producteur);
+        //produireProduitLabelise(quantite,type,peremption,(DecorateurProducteur) producteur);
     }
-    public abstract void produireProduitLabelise(int quantite, String type, LocalDate peremption, DecorateurProducteur producteur);
+    //public abstract void produireProduitLabelise(int quantite, String type, LocalDate peremption, DecorateurProducteur producteur);
 }

@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b12d0a5-82e7-43f5-8374-4fc242b94615" name="Default Changelist" comment="changement du constructeur de Offre ajout de strategie de">
-      <change afterPath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UnitedeProdLabel/UniteDeProductionBio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UnitedeProdLabel/UniteDeProductionLabelise.java" afterDir="false" />
+    <list default="true" id="0b12d0a5-82e7-43f5-8374-4fc242b94615" name="Default Changelist" comment="Changement unité de production et dev de unite de production bio">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_3_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_3_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/M3105_projet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/M3105_projet.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/marche/traitement/MainMarche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marche/traitement/MainMarche.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marche/traitement/Producteurs/DecorateurProducteur/DecorateurProducteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marche/traitement/Producteurs/DecorateurProducteur/DecorateurProducteur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marche/traitement/Producteurs/DecorateurProducteur/ProducteurBio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marche/traitement/Producteurs/DecorateurProducteur/ProducteurBio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProduction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProduction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionApiculteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionApiculteur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionArboriculteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionArboriculteur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionHorticulteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionHorticulteur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionLaitier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionLaitier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionProducteurDeViande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionProducteurDeViande.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UnitedeProdLabel/UniteDeProductionBio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UnitedeProdLabel/UniteDeProductionBio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UnitedeProdLabel/UniteDeProductionLabelise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UnitedeProdLabel/UniteDeProductionLabelise.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,26 +83,26 @@
     <session id="353100688">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="44" />
+          <entry key="java" value="50" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="44" />
+          <entry key="JAVA" value="50" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1857" />
-          <entry key="txt" value="346" />
+          <entry key="java" value="2103" />
+          <entry key="txt" value="419" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1857" />
-          <entry key="PLAIN_TEXT" value="346" />
+          <entry key="JAVA" value="2103" />
+          <entry key="PLAIN_TEXT" value="419" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -127,8 +118,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProduction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+            <state relative-caret-position="180">
+              <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionApiculteur.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -137,7 +137,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UnitedeProdLabel/UniteDeProductionLabelise.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="21" column="92" lean-forward="true" selection-start-line="21" selection-start-column="92" selection-end-line="21" selection-end-column="92" />
+              <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,8 +148,49 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UnitedeProdLabel/UniteDeProductionBio.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#195#196#0" expanded="true" />
+                <element signature="e#220#221#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionLaitier.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/MainMarche.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/Produit/TestProduit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/Produit/DecorateurProduit.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -244,10 +285,10 @@
         <option value="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionArboriculteur.java" />
         <option value="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionApiculteur.java" />
         <option value="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionProducteurDeViande.java" />
-        <option value="$PROJECT_DIR$/src/main/java/marche/traitement/MainMarche.java" />
         <option value="$PROJECT_DIR$/src/main/java/marche/traitement/Producteurs/DecorateurProducteur/ProducteurBio.java" />
         <option value="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProduction.java" />
         <option value="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UnitedeProdLabel/UniteDeProductionLabelise.java" />
+        <option value="$PROJECT_DIR$/src/main/java/marche/traitement/MainMarche.java" />
         <option value="$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UnitedeProdLabel/UniteDeProductionBio.java" />
       </list>
     </option>
@@ -370,8 +411,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="marche" type="462c0819:PsiDirectoryNode" />
               <item name="traitement" type="462c0819:PsiDirectoryNode" />
-              <item name="Producteurs" type="462c0819:PsiDirectoryNode" />
-              <item name="DecorateurProducteur" type="462c0819:PsiDirectoryNode" />
+              <item name="Produit" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="M3105_projet" type="b2602c69:ProjectViewProjectNode" />
@@ -411,7 +451,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546944262673" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546946171551" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -552,7 +592,7 @@
       <workItem from="1546620327182" duration="4938000" />
       <workItem from="1546717917301" duration="9923000" />
       <workItem from="1546796034284" duration="10088000" />
-      <workItem from="1546939851343" duration="4384000" />
+      <workItem from="1546939851343" duration="6318000" />
     </task>
     <task id="LOCAL-00001" summary="modification des classes historiqueOffre et LivreDuMarche transformation en singleton">
       <created>1545052529424</created>
@@ -624,7 +664,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546809402421</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Changement unité de production et dev de unite de production bio">
+      <created>1546944359090</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1546944359090</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -660,10 +707,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46826000" />
+    <option name="totallyTimeSpent" value="48760000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1680" height="1023" extended-state="7" />
+    <frame x="0" y="27" width="1680" height="1023" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22242647" />
@@ -681,9 +728,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3152174" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.31441543" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5021322" side_tool="true" weight="0.06195652" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4978678" weight="0.08804348" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4978678" weight="0.08740068" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3280363" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -744,10 +791,10 @@
     <MESSAGE value="test et problème de gstionnaire transaction" />
     <MESSAGE value="passage passage de vendeurAcheteur en abstract, supression de gestionnaire transaction" />
     <MESSAGE value="changement du constructeur de Offre ajout de strategie choix acteurs" />
-    <option name="LAST_COMMIT_MESSAGE" value="changement du constructeur de Offre ajout de strategie choix acteurs" />
+    <MESSAGE value="Changement unité de production et dev de unite de production bio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changement unité de production et dev de unite de production bio" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Producteurs/ProducteurDeViande.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Producteurs/ProducteurLaitier.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/Produit/Fruit/Fruit.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/Acteurs/TestActeurs.java" />
@@ -756,7 +803,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/Marche/HistoriqueOffre.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/Marche/Archive.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/FluxInformation.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/Produit/DecorateurProduit.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/Produit/Epinards.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/Produit/ProduitsLaitiers/Fromage.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/Produit/ProduitsLaitiers/Lait.java" />
@@ -840,13 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/Produit/ProduitBio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/Produit/Miel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -889,13 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionLaitier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionHorticulteur.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -910,13 +942,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionApiculteur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionProducteurDeViande.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -924,17 +949,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/MainMarche.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/Produit/ProduitBio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" column="96" selection-start-line="19" selection-start-column="96" selection-end-line="19" selection-end-column="96" />
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProduction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+        <state relative-caret-position="180">
+          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionApiculteur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/Produit/DecorateurProduit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -956,20 +995,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/Produit/TestProduit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UnitedeProdLabel/UniteDeProductionLabelise.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="21" column="92" lean-forward="true" selection-start-line="21" selection-start-column="92" selection-end-line="21" selection-end-column="92" />
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UniteDeProductionLaitier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/MainMarche.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/marche/traitement/UnitedeProduction/UnitedeProdLabel/UniteDeProductionBio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        <state relative-caret-position="270">
+          <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#195#196#0" expanded="true" />
+            <element signature="e#220#221#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,6 +1,12 @@
 package marche.traitement.UnitedeProduction.UnitedeProdLabel;
 
-/*
+
+import marche.traitement.Producteurs.DecorateurProducteur.ProducteurBio;
+import marche.traitement.Producteurs.Producteur;
+import marche.traitement.UnitedeProduction.UniteDeProduction;
+
+import java.time.LocalDate;
+
 public class UniteDeProductionBio extends UniteDeProductionLabelise
 {
 
@@ -25,14 +31,18 @@ public class UniteDeProductionBio extends UniteDeProductionLabelise
         }
 
     }
-/*
+
+
     @Override
     public void produire(int quantite, String type, LocalDate peremption, Producteur producteur)
     {
         if (this.porducteursLabelises.contains(producteur))
         {
-            up.produire(quantite,type,peremption,producteur.get);
-            producteur.ajouterAuStock(new ProduitBio());
+            up.produire(quantite,type,peremption,producteur);
+
         }
     }
-    */
+
+
+}
+
