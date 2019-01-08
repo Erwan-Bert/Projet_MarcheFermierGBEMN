@@ -20,7 +20,6 @@ public class Offre
     private Produit produit;
     private List<Acteur> acheteurPotentiel = new ArrayList<Acteur>();
     private VendeurAcheteur vendeur;
-
     public LivreDuMarche getMarche() {
         return marche;
     }
