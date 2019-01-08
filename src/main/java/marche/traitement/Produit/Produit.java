@@ -5,14 +5,24 @@ import java.time.LocalDate;
 /**
  * 
  */
-public abstract class Produit {
+public abstract class Produit implements  Cloneable{
     protected int quantite;
     protected LocalDate dateDePeremption;
     protected String unite;
 
-    public Produit(){};
+    protected Produit(){}
 
+    public Produit clone() {
+        Produit produit = null;
+        try
+        {
+            produit = (Produit) super.clone();
+        }catch(CloneNotSupportedException c){
+            System.out.println("erreur dans la segmentation du produit");
+        }
 
+        return produit;
+    }
 	/**
      * Constructeur
      */
