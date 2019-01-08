@@ -16,4 +16,5 @@ public class Miel extends Produit {
         super(quantite, dateDePeremption, unite);
     }
 
+
 }
