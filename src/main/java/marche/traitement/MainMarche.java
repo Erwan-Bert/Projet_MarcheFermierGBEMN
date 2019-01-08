@@ -1,6 +1,7 @@
 package marche.traitement;
 
 
+import marche.traitement.Producteurs.DecorateurProducteur.ProducteurBio;
 import marche.traitement.Producteurs.ProducteurDeViande;
 import marche.traitement.Producteurs.ProducteurLaitier;
 import marche.traitement.UnitedeProduction.UniteDeProductionApiculteur;
@@ -15,17 +16,13 @@ public class MainMarche {
         System.out.println(peremption.plusDays(1));
         UniteDeProductionApiculteur uniteDeProductionApiculteur = new UniteDeProductionApiculteur("Les miellistes");
         UniteDeProductionLaitier uniteDeProductionLaitier = new UniteDeProductionLaitier("Les laitiers");
-        ProducteurLaitier producteurLaitier = new ProducteurLaitier(12,"miche miche", 5);
-        try {
-            uniteDeProductionLaitier.ajouterProducteur(producteurLaitier);
-            uniteDeProductionLaitier.ajouterProducteur(new ProducteurDeViande(544445454, "Robert", 1));
-        }
-        catch (ClassCastException e)
-        {
-            System.out.println("Le membre que vous avez essayé d'ajouter n'est pas autorisé à vendre le type de produit produite par" +
-                    "cette unité de production");
-        }
-        System.out.println(uniteDeProductionLaitier);
+        ProducteurLaitier prod = new ProducteurLaitier(400,"tpo",562);
+        ProducteurBio producteurLaitier = new ProducteurBio(new ProducteurLaitier(400,"tpo",562));
+
+
+        uniteDeProductionLaitier.ajouterMembre(producteurLaitier);
+        uniteDeProductionLaitier.ajouterMembre(new ProducteurDeViande(544445454, "Robert", 1));
+
 
     }
 

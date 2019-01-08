@@ -25,14 +25,14 @@ public class UniteDeProductionHorticulteur extends UniteDeProduction {
      * Ajoute un produteur a la liste des Horticulteurs
      */
     @Override
-    protected void ajouterMembre(Producteur producteur)throws IllegalStateException {
+    public void ajouterMembre(Producteur producteur)throws ClassCastException {
         try
         {
             producteurs.add((Horticulteur) producteur);
         }
-        catch (IllegalStateException e)
+        catch (ClassCastException e)
         {
-            e.printStackTrace();
+            System.out.println("Le producteur que vous tentez d'ajouter n'est pas du bon type");
         }
     }
 

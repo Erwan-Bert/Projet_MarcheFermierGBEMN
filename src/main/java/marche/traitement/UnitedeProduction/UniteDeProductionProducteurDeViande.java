@@ -29,11 +29,14 @@ public class UniteDeProductionProducteurDeViande extends UniteDeProduction {
      * Ajoute un producteur a la liste des producteurs de viandes
      */
     @Override
-    protected void ajouterMembre(Producteur producteur) throws ClassCastException {
-        try {
+    public void ajouterMembre(Producteur producteur) throws ClassCastException {
+        try
+        {
             producteurs.add((ProducteurDeViande) producteur);
-        } catch (ClassCastException e) {
-            e.printStackTrace();
+        }
+        catch (ClassCastException e)
+        {
+            System.out.println("Le producteur que vous tentez d'ajouter n'est pas du bon type");
         }
     }
 

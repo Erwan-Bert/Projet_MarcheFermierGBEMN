@@ -1,7 +1,7 @@
 package marche.traitement.UnitedeProduction;
 
-import marche.traitement.Producteurs.Apiculteur;
 import marche.traitement.Producteurs.Producteur;
+import marche.traitement.Producteurs.ProducteurLaitier;
 import marche.traitement.Produit.Miel;
 
 import java.time.LocalDate;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class UniteDeProductionApiculteur extends UniteDeProduction {
 
     private String nom;
-    public ArrayList<Apiculteur> producteurs = new ArrayList<>();
+    public ArrayList<ProducteurLaitier> producteurs = new ArrayList<>();
     /**
      * Default constructor
      */
@@ -26,14 +26,14 @@ public class UniteDeProductionApiculteur extends UniteDeProduction {
      * Ajoute un membre a la liste des Apiculteurs
      */
     @Override
-    protected void ajouterMembre(Producteur producteur)throws IllegalStateException {
+    public void ajouterMembre(Producteur producteur)throws ClassCastException{
         try
         {
-            producteurs.add((Apiculteur) producteur);
+            producteurs.add((ProducteurLaitier) producteur);
         }
-        catch (IllegalStateException e)
+        catch (ClassCastException e)
         {
-            e.printStackTrace();
+            System.out.println("Le producteur que vous tentez d'ajouter n'est pas du bon type");
         }
     }
 	

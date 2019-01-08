@@ -27,8 +27,20 @@ public class UniteDeProductionLaitier extends UniteDeProduction
      * Ajoute un producteur a la liste des producteurs laitiers
      */
     @Override
-    protected void ajouterMembre(Producteur producteur)throws ClassCastException {
+    public void ajouterMembre(Producteur producteur)throws ClassCastException {
+        try
+        {
             producteurs.add((ProducteurLaitier) producteur);
+
+        }
+
+        catch (ClassCastException e)
+
+        {
+            System.out.println("Le producteur que vous tentez d'ajouter n'est pas du bon type");
+
+        }
+
     }
 
 	/**

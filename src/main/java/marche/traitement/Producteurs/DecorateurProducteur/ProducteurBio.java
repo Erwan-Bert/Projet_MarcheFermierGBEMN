@@ -4,25 +4,22 @@ import marche.traitement.Producteurs.Producteur;
 
 public class ProducteurBio extends DecorateurProducteur
 {
-    private Producteur producteur;
+
+
 
     /**
      * Constructeur
      */
-    public ProducteurBio (Producteur prod)
+    public ProducteurBio (Producteur producteur)
     {
-        super(prod);
-
+        super(producteur);
     }
 
-	
-	/**
-     * méthode spécifique au producteur bio qui permet de certifier un producteur Bio
-     */
-    public void certifierBio ()
+    public Producteur getProducteur()
     {
-        System.out.println(this.producteur + " est un producteur bio");
+        return prod;
     }
+
 
 
 }

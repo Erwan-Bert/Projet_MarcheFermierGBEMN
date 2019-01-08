@@ -12,6 +12,8 @@ public abstract class UniteDeProduction {
 
     private String nom;
 
+    protected UniteDeProduction(){}
+
     public UniteDeProduction(String nom)
     {
         this.nom = nom;
@@ -21,12 +23,12 @@ public abstract class UniteDeProduction {
      * Ajoute un producteur a l'unite de production
      * @param Producteur producteur
      */
-    public void ajouterProducteur(Producteur producteur)
+    /*public void ajouterProducteur(Producteur producteur)
     {
         ajouterMembre(producteur);
-    }
+    }*/
 
-    protected abstract void ajouterMembre(Producteur producteur);
+    public abstract void ajouterMembre(Producteur producteur);
 
     /*public Produit getProduit(int quantite, String type, LocalDate peremption)
     {

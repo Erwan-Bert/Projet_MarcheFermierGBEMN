@@ -6,8 +6,9 @@ public abstract class DecorateurProducteur extends Producteur {
 
     protected Producteur prod;
 
-    public DecorateurProducteur (Producteur prod)
+    public DecorateurProducteur (Producteur producteur)
     {
-        this.prod = prod;
+        super();
+        prod = producteur;
     }
 }
