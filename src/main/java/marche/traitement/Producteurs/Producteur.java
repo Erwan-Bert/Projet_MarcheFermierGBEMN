@@ -22,10 +22,10 @@ public abstract class Producteur extends VendeurAcheteur
     public Producteur() {}
 
     /**
-     * Initialise le Producteur avec son solde son nom et la limite (Constructeur)
-     * @param  solde
-     * @param  nom
-     * @param  limite
+     * permet d'instancier un Producteur
+     * @param solde double correspond au solde de base de l'agriculteur
+     * @param nom string correspond au nom de l'agriculteur
+     * @param limite double correspond à la limite de stockage de l'agriculteur
      */
     public Producteur(double solde,String nom,double limite)
     {
