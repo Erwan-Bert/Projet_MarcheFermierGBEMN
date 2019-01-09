@@ -39,13 +39,14 @@ public class Acteur {
      */
     public boolean cotiser() {
 
-        if (solde  > cotisation.calculCotisation()) {
+        if (solde >= cotisation.calculCotisation()) {
             debiter(cotisation.calculCotisation());
             if (dateFinCotisation.isBefore(LocalDate.now()))
                 dateFinCotisation = LocalDate.now();
             ajouterJoursDateFinCotisation(365);
             return true;
         }
+        System.out.println("Le producteur ne dispose de pas assez d'argent");
         return false;
     }
 
