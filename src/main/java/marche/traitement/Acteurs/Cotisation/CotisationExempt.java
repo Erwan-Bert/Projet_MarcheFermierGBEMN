@@ -3,9 +3,10 @@ package marche.traitement.Acteurs.Cotisation;
 /**
 	 * Classe de strategie de cotisation Exempt
      */
-public class CotisationExempt implements StrategyCotisation {
+public class CotisationExempt extends StrategyCotisation {
+
     @Override
-    public int calculCotisation() {
+    int calculCotisation(int montant) {
         return 0;
     }
 }

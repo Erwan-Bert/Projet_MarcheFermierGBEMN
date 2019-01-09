@@ -64,6 +64,7 @@ public class Test {
 
 
         vendeur.creerUneOffre(100,vendeur.getStocks().get(0),strategyChoixAcheteur, marche);
+        System.out.println("test");
         marche.afficherLivre();
 
         //achat
@@ -71,13 +72,14 @@ public class Test {
 
         marche.getControleur().choisirAcheteur(marche.getLivre().get(0));
         marche.faireChoisirUnAcheteur(1);
+        System.out.println("salut");
         marche.afficherLivre();
 
         assertEquals(10,acheteur.getSolde());
 
-
-
     }
+
+
 }
 
 

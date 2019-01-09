@@ -50,6 +50,13 @@ public class Acteur {
         return false;
     }
 
+    /**
+     * permet de changer de cotisation
+     * @param cotisation
+     */
+    public void setCotisation(StrategyCotisation cotisation) {
+        this.cotisation = cotisation;
+    }
 	/**
      * Permet de savoir si un utilisateur a cotisé
 	 * @return boolean
