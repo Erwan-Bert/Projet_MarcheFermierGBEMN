@@ -7,9 +7,9 @@ import marche.traitement.Initialisation.Initialisation;
 public class MainMarche {
 
     public static void main(String[] args)
-    {
+    {   Initialisation.init();
         while (true) {
-            Initialisation.init();
+
             AffichageTerminal.gestionMenuPricipal();
         }
     }
