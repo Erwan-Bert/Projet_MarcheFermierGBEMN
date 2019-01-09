@@ -27,6 +27,7 @@ public class MainMarche {
     {
         Producteur laitier = new ProducteurLaitier(200, "Maurice", 500);
         while (true) {
+            Initialisation.init();
             System.out.println(Initialisation.listeUniteDeProduction.get(4).getMembre());
             AffichageTerminal.gestionMenuPricipal();
         }

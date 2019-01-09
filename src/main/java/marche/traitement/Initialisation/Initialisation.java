@@ -10,7 +10,7 @@ import marche.traitement.UnitedeProduction.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Initialisation
+public final class Initialisation
 {
     public static ArrayList<Producteur> listeProducteur = new ArrayList<>();
     public static ArrayList<UniteDeProduction> listeUniteDeProduction = new ArrayList<>();
@@ -18,8 +18,8 @@ public class Initialisation
 
 
 
-    static 
-    {
+    public static void init(){
+
         Apiculteur apiculteur = new Apiculteur(100, "Jean", 50);
         Arboriculteur arboriculteur = new Arboriculteur(200, "Pierre", 60);
         Horticulteur horticulteur = new Horticulteur(300, "Jacques", 70);
