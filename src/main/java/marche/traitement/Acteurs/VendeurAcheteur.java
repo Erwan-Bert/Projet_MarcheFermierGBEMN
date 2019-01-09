@@ -184,4 +184,16 @@ public  class VendeurAcheteur extends Acteur {
         return stocks;
     }
 
+    public String toString(){
+        if (getQuantiteStock() == 0)
+            return getNom() + "{" +
+                     "kg" +
+                    ", stocks=" + afficherStock() +
+                    "}\n";
+        return getNom() + "{" +
+                 "kg" +
+                ", stocks=" + getQuantiteStock() + "kg" + afficherStock() +
+                "}\n";
+    }
+
 }
