@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 
  */
-public class HistoriqueOffre {
+public final class HistoriqueOffre {
 
     private static List<Archive> historiqueOffres = new ArrayList<Archive>();
 
@@ -27,7 +27,7 @@ public class HistoriqueOffre {
 
 	/**
      * Ajoute une offre a la liste des archives
-	 * @param  archive
+	 * @param  archive Archive ajoutée à l'historique
      */
     public static void addOffresArchives(Archive archive) {
         historiqueOffres .add(archive);

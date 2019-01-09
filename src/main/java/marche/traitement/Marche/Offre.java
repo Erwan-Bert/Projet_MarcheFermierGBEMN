@@ -20,28 +20,20 @@ public class Offre
     private Produit produit;
     private List<Acteur> acheteurPotentiel = new ArrayList<Acteur>();
     private VendeurAcheteur vendeur;
-    public LivreDuMarche getMarche() {
-        return marche;
-    }
-
     private LivreDuMarche marche;
-    public StrategyChoixAcheteur getStrategyChoixAcheteur() {
-        return strategyChoixAcheteur;
-    }
-
     private StrategyChoixAcheteur strategyChoixAcheteur;
-
-
-
     public VendeurAcheteur getVendeur() {
         return vendeur;
     }
 
 
-
-
     /**
-     * Default constructor
+     * Permet d'instancier une offre
+     * @param prix int correspondant au prix de l'offre
+     * @param produit Produit correspondant à la marchandise à venre
+     * @param vendeurAcheteur Acteur correspondant au vendeur de la marchandise
+     * @param strategyChoixAcheteur Strategie permettant de choisisr la manière de selectionner l'acheteur
+     * @param marche Correspond au marche dans lequel l'offre sera disponible
      */
     public Offre(int prix, Produit produit, VendeurAcheteur vendeurAcheteur,StrategyChoixAcheteur strategyChoixAcheteur,
                  LivreDuMarche marche)
@@ -53,13 +45,28 @@ public class Offre
         this.marche = marche;
         }
 
+
+    /**
+     * methode permettant de retirer l'offre elle-même dumarché où elle se trouve
+     */
     public void retirerOffre()
     {
         marche.getLivre().remove(this);
     }
 
+    /**
+     * méthode permettant d'obtenir La strategie de vente souhaité par le vendeur
+     * @return strategie de choix d'acheteur
+     */
+    public StrategyChoixAcheteur getStrategyChoixAcheteur()
+    {
+        return strategyChoixAcheteur;
+    }
 
-
+    public LivreDuMarche getMarche()
+    {
+        return marche;
+    }
     /**
      * Ajoute a la liste des archives une archive avec l'offre et la date du jour 
      */
@@ -110,7 +117,7 @@ public class Offre
 
 	/**
      * Ajoute un acheteur a la liste des acheteurs potentiels
-	 * @param  acheteurPotentiel
+	 * @param  acheteurPotentiel Acteur correspondant à l'acheteur potentiel
      */
     public void addAcheteurPotentiel(Acteur acheteurPotentiel) {
         this.acheteurPotentiel.add(acheteurPotentiel);

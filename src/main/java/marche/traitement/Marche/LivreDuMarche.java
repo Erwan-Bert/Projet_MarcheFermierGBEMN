@@ -14,20 +14,19 @@ public class LivreDuMarche {
 
     private List<Offre> livreMarche = new ArrayList<Offre>();
     private List<FluxInformation> fluxInformations = new ArrayList<FluxInformation>();
-
     public Controleur getControleur() {
         return controleur;
     }
-
     public String getNom() {
         return nom;
     }
-
     private Controleur controleur;
     private String nom ;
 
     /**
-     * Default constructor
+     * Instancie un Marche
+     * @param nom string nom que l'on attribue au marche
+     * @param controleur Controleur appartenant à ce marché
      */
     public LivreDuMarche(String nom, Controleur controleur)
     {
@@ -36,31 +35,36 @@ public class LivreDuMarche {
     }
 
     /**
-     * Ajoute une offre au livre du marche
-	 * @param  o
+     * Ajoute une offre au livre du marche et notifie les flux d'info abonné à ce marcher qui vont ensuite alerter les abonnés des flux correspondant
+	 * @param  o offre ajouter au livre du marché
      */
     public void ajouterOffre(Offre o)
     {
         livreMarche.add(o);
         notifierFluxInformations(o);
     }
-	
-	/**
-     * Choisit un acheter qui pourra acheter l'offre , avec le numero de l'offre en param�tre
+
+    /**
+     *  permet de cloturer une offre par son indice dans la liste des offres
+     * @param numeroDeOffre int correspondant à l'indice de l'offre
      */
-    public void faireChoisirUnAcheteur(int numeroDeOffre){
-        try {
+    public void faireChoisirUnAcheteur(int numeroDeOffre)throws IndexOutOfBoundsException{
+        try
+        {
             controleur.choisirAcheteur(livreMarche.get(numeroDeOffre - 1)); // indice -1 pour simplifier la compréhension
-        }catch (IndexOutOfBoundsException e){
+        }
+        catch (IndexOutOfBoundsException e)
+        {
             System.out.println("veuillez rentrer un indice valable");
         }
     }
 	
 	/**
      * Enleve une offre du livre du marche
-	 * @param
+	 * @param o offre à enlever
      */
-    public void enleverOffre(Offre o){
+    public void enleverOffre(Offre o)
+    {
         o.getVendeur().ajouterAuStock(o.getProduit());
         o.archiver();
     }

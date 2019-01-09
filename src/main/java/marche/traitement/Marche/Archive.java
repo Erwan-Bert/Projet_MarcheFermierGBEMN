@@ -9,10 +9,12 @@ public class Archive
     private Acteur acheteur;
     private Offre offre;
     private LocalDate date;
-	
-	/**
-     * Initialise une Archive avec un acheteur une offre et une date (Constructeur)
-	 * @param
+
+    /**
+     * permet d'instancier une Archive
+     * @param acheteur Acteur correspondant à l'acheteur
+     * @param offre Offre correspondant à l'achat effectué
+     * @param date Date correspondant à la date au moment de l'achat
      */
     public Archive (Acteur acheteur, Offre offre,LocalDate date)
     {
@@ -45,6 +47,11 @@ public class Archive
         return date;
     }
 
+
+    /**
+     * permet de faciliter l'affichage d'une archive à travers une string
+     * @return string
+     */
     @Override
     public String toString() {
         return "Archive{" +

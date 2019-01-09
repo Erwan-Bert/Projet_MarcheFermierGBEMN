@@ -1,10 +1,7 @@
 package marche.traitement.Acteurs.controleur;
 import marche.traitement.Acteurs.Acteur;
-import marche.traitement.Marche.Archive;
-import marche.traitement.Marche.HistoriqueOffre;
 import marche.traitement.Marche.Offre;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,8 +47,7 @@ public abstract class Controleur {
         if(offre.getAcheteurPotentiel().size() != 0) {
             Acteur acheteur = offre.getStrategyChoixAcheteur().choixAcheteur(offre.getAcheteurPotentiel());
             acheteur.transaction(offre);
-            HistoriqueOffre.addOffresArchives(new Archive(acheteur, offre, LocalDate.now()));
-            offre.retirerOffre();
+            offre.archiver();
         }
     }
 }
