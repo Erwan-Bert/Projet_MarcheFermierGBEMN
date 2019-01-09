@@ -294,6 +294,7 @@ public class AffichageTerminal
         String limite = "";
         String type = "";
         int avancement = 1;
+        System.out.println("Les producteurs que vous pouvez créer sont : arboriculteur|horticulteur|producteur de viande|producteur laitier|producteur bio");
         while (avancement != 5)
         {
             temp = menuCreationProducteur(avancement);
@@ -337,6 +338,7 @@ public class AffichageTerminal
         String nom = "";
         String type = "";
         int avancement = 1;
+        System.out.println("Les unités de production que vous pouvez créer sont : apiculteur|arboriculteur|horticulteur|viande|laitier|bio  ");
         while (avancement != 3)
         {
             temp = menuCreationUniteProduction(avancement);
