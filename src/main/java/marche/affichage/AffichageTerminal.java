@@ -94,9 +94,9 @@ public class AffichageTerminal
         System.out.println(Initialisation.listeProducteur);
     }
 
-    public static  void menuCatalogue()
+    public static void menuCatalogue()
     {
-
+        System.out.println(Initialisation.livreDuMarche);
     }
 
     public static void gestionMenuPricipal()

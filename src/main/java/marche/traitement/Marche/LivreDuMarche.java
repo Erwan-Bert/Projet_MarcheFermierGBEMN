@@ -72,13 +72,14 @@ public class LivreDuMarche {
 	/**
      * Affice l'integralite du livre du marche
      */
-    public void afficherLivre()
+    public String afficherLivre()
     {
+        StringBuilder contenuLivre = new StringBuilder();
         for (Offre o:livreMarche)
         {
-            System.out.println(o);
-
+            contenuLivre.append(o);
         }
+        return contenuLivre.toString();
     }
 	
 	/**
@@ -115,5 +116,13 @@ public class LivreDuMarche {
         }
     }
 
-
+    @Override
+    public String toString() {
+        return "LivreDuMarche{" +
+                "nom='" + nom + "\'\n" +
+                ", " + nom + " contient\n" + afficherLivre() +
+                ", fluxInformations=" + fluxInformations +
+                ", controleur=" + controleur.getNom() +
+                '}';
+    }
 }

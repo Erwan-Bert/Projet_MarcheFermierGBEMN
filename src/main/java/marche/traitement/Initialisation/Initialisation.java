@@ -63,7 +63,7 @@ public class Initialisation
         Offre ventePomme = new Offre(200, new Pomme(arboriculteur.getElementStock(1).getQuantite(), arboriculteur.getElementStock(1).getDateDePeremption(), arboriculteur.getElementStock(1).getUnite()), arboriculteur, new ChoixParOrdreArrivee(), livreDuMarche);
         Offre venteEpinard = new Offre(300, new Epinards(horticulteur.getElementStock(1).getQuantite(), horticulteur.getElementStock(1).getDateDePeremption(), horticulteur.getElementStock(1).getUnite()), horticulteur, new ChoixParPlusPetitSolde(), livreDuMarche);
         Offre venteCochon = new Offre(400, new Cochon(producteurDeViande.getElementStock(1).getQuantite(), producteurDeViande.getElementStock(1).getDateDePeremption(), producteurDeViande.getElementStock(1).getUnite()), producteurDeViande, new ChoixParOrdreArrivee(), livreDuMarche);
-        Offre venteVache = new Offre(500, new Vache(producteurDeViande.getElementStock(1).getQuantite(), producteurDeViande.getElementStock(1).getDateDePeremption(), producteurDeViande.getElementStock(1).getUnite()), producteurDeViande, new ChoixParPlusPetitSolde(), livreDuMarche);
+        Offre venteVache = new Offre(500, new Vache(producteurDeViande.getElementStock(2).getQuantite(), producteurDeViande.getElementStock(2).getDateDePeremption(), producteurDeViande.getElementStock(2).getUnite()), producteurDeViande, new ChoixParPlusPetitSolde(), livreDuMarche);
         Offre venteLait = new Offre(600, new Lait(producteurLaitier.getElementStock(1).getQuantite(), producteurLaitier.getElementStock(1).getDateDePeremption(), producteurLaitier.getElementStock(1).getUnite()), producteurLaitier, new ChoixParPlusPetitSolde(), livreDuMarche);
         livreDuMarche.ajouterOffre(venteMiel);
         livreDuMarche.ajouterOffre(ventePomme);
