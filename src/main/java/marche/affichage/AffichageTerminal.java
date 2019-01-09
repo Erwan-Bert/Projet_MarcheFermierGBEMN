@@ -1,6 +1,7 @@
 package marche.affichage;
 
 import marche.traitement.Initialisation.Initialisation;
+import marche.traitement.Marche.HistoriqueOffre;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -89,14 +90,19 @@ public class AffichageTerminal
         return elements;
     }
 
-    public static void menuParticipants()
+    public static void affichageParticipants()
     {
         System.out.println(Initialisation.listeProducteur);
     }
 
-    public static void menuCatalogue()
+    public static void affichageCatalogue()
     {
         System.out.println(Initialisation.livreDuMarche);
+    }
+
+    public static void affichageHistorique()
+    {
+        System.out.println(HistoriqueOffre.getArchives());
     }
 
     public static void gestionMenuPricipal()

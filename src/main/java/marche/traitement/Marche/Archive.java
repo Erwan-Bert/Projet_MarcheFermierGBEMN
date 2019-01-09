@@ -44,4 +44,13 @@ public class Archive
     public LocalDate getDate() {
         return date;
     }
+
+    @Override
+    public String toString() {
+        return "Archive{" +
+                "acheteur=" + acheteur.getNom() +
+                ", " + offre +
+                ", acheté le " + date +
+                "}\n";
+    }
 }

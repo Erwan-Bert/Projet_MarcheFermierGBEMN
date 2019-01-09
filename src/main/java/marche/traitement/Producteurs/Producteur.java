@@ -2,6 +2,7 @@ package marche.traitement.Producteurs;
 
 
 import marche.traitement.Acteurs.VendeurAcheteur;
+import marche.traitement.Initialisation.Initialisation;
 import marche.traitement.Produit.Produit;
 
 import java.time.LocalDate;
@@ -20,7 +21,7 @@ public abstract class Producteur extends VendeurAcheteur
      */
     public Producteur()
     {
-
+        Initialisation.listeProducteur.add(this);
     }
 
     /**
@@ -74,8 +75,11 @@ public abstract class Producteur extends VendeurAcheteur
         return null;
     }
 
-
-
-
-
+    @Override
+    public String toString() {
+        return getNom() + "{" +
+                "limiteDeCapacite=" + limiteDeCapacite + "kg" +
+                ", stocks=" + getQuantiteStock() + "kg" + afficherStock() +
+                "}\n";
+    }
 }
