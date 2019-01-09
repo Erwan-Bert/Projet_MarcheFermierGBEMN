@@ -7,24 +7,24 @@ import marche.traitement.Marche.Offre;
 import java.time.LocalDate;
 
 /**
- *
+ * Acheteur de l'application, les grossistes sont aussi des acheteurs il non pas la possibilité de revendre
+ * sur ce marché (ils revendent dans des
  */
 public class Acteur {
-    /**
-     *
-     */
     private double solde;
     private String nom;
     private CentraleAchat membre = null;
     private StrategyCotisation cotisation = new CotisationPleinPot();
-    /**
-     *
-     */
     private LocalDate dateFinCotisation;
 
-    public Acteur() {
-    }
 
+    public Acteur() {}
+
+    /**
+     * initialise la date ou la cotisation se termine dans le passé, initilise aussi le nom et le solde
+     * @param solde
+     * @param nom
+     */
     public Acteur(double solde, String nom) {
         this.solde = solde;
         this.nom = nom;
@@ -84,7 +84,7 @@ public class Acteur {
 
     /**
 	 * Permet a un utilisateur d'acheter et de l'ajouter a la liste des achetteur possibles
-     * @param  o
+     * @param  o offre que l'acteur veut acheter
      */
     public void acheter(Offre o) {
         if(o.getPrix()<=solde)

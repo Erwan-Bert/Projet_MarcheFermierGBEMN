@@ -26,11 +26,12 @@ public class CentraleAchat extends Acteur
     }
 
 	/**
-	 * Initialise le pourcentage passe en paramètre
-	 * @param  pourcentage
+	 * vérifie que le paramètre est un pourcentage et le remplace
+	 * @param  pourcentage nouveau pourcentage
      */
     public void setPourcentage(int pourcentage) {
-        this.pourcentage = pourcentage;
+        if(0<=pourcentage && pourcentage<=100)
+            this.pourcentage = pourcentage;
     }
 
 	/**

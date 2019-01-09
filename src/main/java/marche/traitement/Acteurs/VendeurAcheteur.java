@@ -10,30 +10,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 
+ *
  */
 public  class VendeurAcheteur extends Acteur {
 
 
     protected List<Produit> stocks = new ArrayList<Produit>();
-    public List<Produit> getStocks() {
-        return stocks;
-    }
+
 
     /**
      * Default constructor
      */
-    public VendeurAcheteur(double solde, String nom)
-    {
+    public VendeurAcheteur(double solde, String nom) {
         super(solde, nom);
         Initialisation.listeVendeurAcheteur.add(this);
     }
-    public VendeurAcheteur() {
-    }
+    protected VendeurAcheteur() {}
 
 
     /**
-	 * Creer une offre selon le prix et le Produit (vend tout le produit)
+     * Creer une offre selon le prix et le Produit (vend tout le produit)
      * @param //int quantite
      * @param //int prix
      * @param //Produit produit
@@ -117,9 +113,9 @@ public  class VendeurAcheteur extends Acteur {
                     stock.getDateDePeremption() == produit.getDateDePeremption()&&
                     stock.getUnite().equals(produit.getUnite())){
 
-                    stock.ajouterQuantite(produit.getQuantite());
-                    dejaDansLeStock = true;
-                }
+                stock.ajouterQuantite(produit.getQuantite());
+                dejaDansLeStock = true;
+            }
 
 
         }
@@ -131,7 +127,7 @@ public  class VendeurAcheteur extends Acteur {
     /**
      * Retourne la quantitée totale des produits
      * @param
-	 * @return quantiteTotale
+     * @return quantiteTotale
      */
     public double getQuantiteStock()
     {
@@ -142,8 +138,8 @@ public  class VendeurAcheteur extends Acteur {
         }
         return quantiteTotale;
     }
-	
-	/**
+
+    /**
      * Affiche de manière détailler le stock d'un acheteur vendeur
      */
     public String afficherStock()
@@ -153,7 +149,13 @@ public  class VendeurAcheteur extends Acteur {
         if (stocks.size() != 0)
         {
             for (Produit produit : stocks) {
-                contenuStock.append(") " + produit.getQuantite() + " kilo de " + produit.getNom() + " / périme le : " + produit.getDateDePeremption());
+                contenuStock.append(") ");
+                contenuStock.append(produit.getQuantite());
+                contenuStock.append(" kilo de ");
+                contenuStock.append(produit.getNom());
+                contenuStock.append(" / périme le : ");
+                contenuStock.append(produit.getDateDePeremption());
+
                 compteur++;
             }
         }
@@ -163,7 +165,7 @@ public  class VendeurAcheteur extends Acteur {
     }
 
 
-	/**
+    /**
      * Retourne le produit qui se situe au ième rang du stock
      */
     public Produit getElementStock(int i)
@@ -176,6 +178,10 @@ public  class VendeurAcheteur extends Acteur {
         ajouterAuStock(o.getProduit());
         System.out.println(" Le produit a été ajouté à votre stock et vous pouvez le revendre");
 
+    }
+
+    public List<Produit> getStocks() {
+        return stocks;
     }
 
 }
