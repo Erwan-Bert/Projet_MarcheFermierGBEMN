@@ -46,4 +46,5 @@ public abstract class UniteDeProduction {
         return nom;
     }
     public abstract ArrayList<Producteur> getMembre();
+
 }

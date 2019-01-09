@@ -64,7 +64,8 @@ public class AffichageTerminal
                 "Entrez 9 si vous voulez créer de nouvelles unité de production.\n" + espace+
                 "Entrez 10 si vous voulez créer des centrales d'achat\n" + espace+
                 "Entrez 11 si vous voulez créer des NewsLetter\n" + espace+
-                "Entrez 12 si vous voulez abonner quelqu'un à une newsLetter");
+                "Entrez 12 si vous voulez abonner quelqu'un à une newsLetter\n"+espace
+                +"Entrez 13 si vous voulez voir la liste des unités de production");
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         try {
             choix = in.readLine();
@@ -78,22 +79,9 @@ public class AffichageTerminal
     {
         String choix = "";
         if (avancement == 1)
-        {
-            System.out.println("Entrez le nom du producteur que vous voulez ajouter. Voici la liste \n");
-            for (VendeurAcheteur v:Initialisation.listeVendeurAcheteur)
-            {
-                System.out.println(v.getNom() + "\n");
-            }
-        }
+            System.out.println("Entrez le nom du producteur que vous voulez ajouter");
         else if (avancement == 2)
-        {
-            System.out.println("Entrez le nom de l'unité de production dans laquelle vous voulez l'ajouter, puis réappuyer sur entrer. Voici la liste des unité de production \n");
-            for (UniteDeProduction up: Initialisation.listeUniteDeProduction)
-            {
-                System.out.println(up.getNom()+"\n");
-            }
-        }
-
+            System.out.println("Entrez le nom de l'unité de production dans laquelle vous voulez l'ajouter, puis réappuyer sur entrer");
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         try {
             choix = in.readLine();
@@ -565,6 +553,10 @@ public class AffichageTerminal
                     }
                 }
                 break;
+            case 13 :
+                System.out.println(Initialisation.listeUniteDeProduction);
+            default:
+                System.out.println("Veuillez écrire l'un des nombres proposés");
         }
     }
 }
