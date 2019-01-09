@@ -43,12 +43,10 @@ public class LivreDuMarche {
     {
         livreMarche.add(o);
         notifierFluxInformations(o);
-
     }
 	
 	/**
      * Choisit un acheter qui pourra acheter l'offre , avec le numero de l'offre en param�tre
-	 * @return int numeroDeOffre
      */
     public void faireChoisirUnAcheteur(int numeroDeOffre){
         try {
@@ -63,10 +61,8 @@ public class LivreDuMarche {
 	 * @param
      */
     public void enleverOffre(Offre o){
-        livreMarche.remove(o);
         o.getVendeur().ajouterAuStock(o.getProduit());
         o.archiver();
-
     }
 	
 	/**

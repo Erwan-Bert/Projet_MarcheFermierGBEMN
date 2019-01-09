@@ -110,7 +110,7 @@ public  class VendeurAcheteur extends Acteur {
     public void ajouterAuStock(Produit produit){
         boolean dejaDansLeStock = false;
         for (Produit stock: stocks ) {
-            if(stock.getClass().equals( produit.getClass()) &&
+            if(     stock.getNom().equals(produit.getNom()) &&
                     stock.getDateDePeremption() == produit.getDateDePeremption()&&
                     stock.getUnite().equals(produit.getUnite())){
 

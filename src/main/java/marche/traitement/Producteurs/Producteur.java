@@ -19,21 +19,19 @@ public abstract class Producteur extends VendeurAcheteur
     /**
      * Default constructor
      */
-    public Producteur()
-    {
-        Initialisation.listeProducteur.add(this);
-    }
+    public Producteur() {}
 
     /**
      * Initialise le Producteur avec son solde son nom et la limite (Constructeur)
-     * @param double solde
-     * @param String nom
-     * @param double limite
+     * @param  solde
+     * @param  nom
+     * @param  limite
      */
     public Producteur(double solde,String nom,double limite)
     {
         super(solde,nom);
         this.limiteDeCapacite = limite;
+        Initialisation.listeProducteur.add(this);
     }
 
 
@@ -76,7 +74,13 @@ public abstract class Producteur extends VendeurAcheteur
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
+        if (getQuantiteStock() == 0)
+            return getNom() + "{" +
+                    "limiteDeCapacite=" + limiteDeCapacite + "kg" +
+                    ", stocks=" + afficherStock() +
+                    "}\n";
         return getNom() + "{" +
                 "limiteDeCapacite=" + limiteDeCapacite + "kg" +
                 ", stocks=" + getQuantiteStock() + "kg" + afficherStock() +

@@ -6,10 +6,11 @@ import marche.traitement.Produit.Fruit.Pomme;
 import marche.traitement.Produit.Produit;
 import marche.traitement.Produit.Viande.Vache;
 import org.junit.jupiter.api.Test;
+
 import java.time.LocalDate;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestVendeurAcheteur {
 
@@ -77,7 +78,6 @@ public class TestVendeurAcheteur {
         System.out.println(stocks);
         assertEquals( 2, stocks.size() );
     }
-
 
 
 }

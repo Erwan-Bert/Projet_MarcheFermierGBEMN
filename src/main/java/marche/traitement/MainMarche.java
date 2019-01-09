@@ -2,6 +2,8 @@ package marche.traitement;
 
 
 import marche.affichage.AffichageTerminal;
+import marche.traitement.Producteurs.Producteur;
+import marche.traitement.Producteurs.ProducteurLaitier;
 
 public class MainMarche {
     /*public static void main(String[] args)
@@ -28,6 +30,7 @@ public class MainMarche {
         UniteDeProductionBio up =new UniteDeProductionBio(up1);
         System.out.println(boloss.getClass());
         up.ajouterMembre(boloss);*/
+        Producteur bob = new ProducteurLaitier(100, "bob", 200);
         AffichageTerminal.affichageParticipants();
         AffichageTerminal.affichageCatalogue();
         AffichageTerminal.affichageHistorique();

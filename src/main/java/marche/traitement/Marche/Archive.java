@@ -12,7 +12,7 @@ public class Archive
 	
 	/**
      * Initialise une Archive avec un acheteur une offre et une date (Constructeur)
-	 * @param boolean
+	 * @param
      */
     public Archive (Acteur acheteur, Offre offre,LocalDate date)
     {
