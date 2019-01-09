@@ -74,4 +74,11 @@ public class UniteDeProductionProducteurDeViande extends UniteDeProduction {
     {
         return new ArrayList<>(producteurs);
     }
+
+    @Override
+    public String toString() {
+        return "nom= " + getNom() +
+                ", producteurs=" + getMembre() +
+                '}';
+    }
 }

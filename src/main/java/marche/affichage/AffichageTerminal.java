@@ -63,7 +63,8 @@ public class AffichageTerminal
                 "Entrez 9 si vous voulez créer de nouvelles unité de production.\n" +
                 "Entrez 10 si vous voulez créer des centrales d'achat\n" +
                 "Entrez 11 si vous voulez créer des NewsLetter\n" +
-                "Entrez 12 si vous voulez abonner quelqu'un à une newsLetter");
+                "Entrez 12 si vous voulez abonner quelqu'un à une newsLetter\n" +
+                "Entrez 13 si vous voulez voir la liste des unités de production");
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         try {
             choix = in.readLine();
@@ -551,6 +552,10 @@ public class AffichageTerminal
                     }
                 }
                 break;
+            case 13 :
+                System.out.println(Initialisation.listeUniteDeProduction);
+            default:
+                System.out.println("Veuillez écrire l'un des nombres proposés");
         }
     }
 }

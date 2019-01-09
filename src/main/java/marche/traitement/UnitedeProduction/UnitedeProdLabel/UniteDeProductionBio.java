@@ -83,5 +83,12 @@ public class UniteDeProductionBio extends UniteDeProductionLabelise
         return new ArrayList<>(up.getMembre());
     }
 
+    @Override
+    public String toString() {
+        return "nom= " + getNom() +
+                ", producteurs=" + getMembre() +
+                '}';
+    }
+
 }
 
