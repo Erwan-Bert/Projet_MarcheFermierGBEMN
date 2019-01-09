@@ -12,7 +12,6 @@ import java.util.ArrayList;
  */
 public class UniteDeProductionHorticulteur extends UniteDeProduction {
 
-    private String nom;
     public ArrayList<Horticulteur> producteurs = new ArrayList<>();
     /**
      * Default constructor
@@ -21,8 +20,9 @@ public class UniteDeProductionHorticulteur extends UniteDeProduction {
         super(nom);
     }
 
-	/**
-     * Ajoute un produteur a la liste des Horticulteurs
+    /**
+     * Ajoute un producteur a la liste des producteurs de viandes
+     * @param producteur Producteur que l'on ajoute à l'unité de production correspondante de la classe
      */
     @Override
     public void ajouterMembre(Producteur producteur)throws ClassCastException {
@@ -36,12 +36,15 @@ public class UniteDeProductionHorticulteur extends UniteDeProduction {
         }
     }
 
-	/**
-     * Produit un produit issu de l'Horticulture avec a quantite le type la date de peremption et le producteur
+    /**
+     * Produit un produit issu de la viande avec la quantite le type la date de peremption et le producteur
+     * @param  quantite  correspond à la quantité à produire
+     * @param type correspond au type d'aliment à produire
+     * @param peremption désine la date de peremption du produit
+     * @param producteur est le producteur qui produit à travers l'unité de production
      */
     @Override
     public void produire(Integer quantite, String type, LocalDate peremption,Producteur producteur) {
-        // TODO implement here
         if (producteurs.contains(producteur))
         {
             if (producteur.getQuantiteStock() + quantite <= producteur.getLimite())
@@ -60,6 +63,10 @@ public class UniteDeProductionHorticulteur extends UniteDeProduction {
         }
     }
 
+    /**
+     *
+     * @return les membres appartenant à l'unité de production
+     */
     @Override
     public ArrayList<Producteur> getMembre()
     {

@@ -16,15 +16,16 @@ public class UniteDeProductionLaitier extends UniteDeProduction
 
 
     public ArrayList<ProducteurLaitier> producteurs = new ArrayList<>();
-    private String nom;
+
 
     public UniteDeProductionLaitier(String nom)
     {
         super(nom);
     }
 
-	/**
-     * Ajoute un producteur a la liste des producteurs laitiers
+    /**
+     * Ajoute un producteur a la liste des producteurs de viandes
+     * @param producteur Producteur que l'on ajoute à l'unité de production correspondante de la classe
      */
     @Override
     public void ajouterMembre(Producteur producteur)throws ClassCastException {
@@ -43,13 +44,17 @@ public class UniteDeProductionLaitier extends UniteDeProduction
 
     }
 
-	/**
-     * Produit un produit issu du lait avec la quantite le type la date de peremption et le producteur
+    /**
+     * Produit un produit issu de la viande avec la quantite le type la date de peremption et le producteur
+     * @param  quantite  correspond à la quantité à produire
+     * @param type correspond au type d'aliment à produire
+     * @param peremption désine la date de peremption du produit
+     * @param producteur est le producteur qui produit à travers l'unité de production
      */
     @Override
     public void produire(Integer quantite, String type, LocalDate peremption,Producteur producteur)
     {
-        if (producteurs.contains(producteur))
+        if (producteurs.contains((producteur)))
         {
             if (producteur.getQuantiteStock() + quantite <= producteur.getLimite())
             {
@@ -72,6 +77,10 @@ public class UniteDeProductionLaitier extends UniteDeProduction
 
     }
 
+    /**
+     *
+     * @return les membres appartenant à l'unité de production
+     */
     @Override
     public ArrayList<Producteur> getMembre()
     {

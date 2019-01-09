@@ -15,31 +15,29 @@ public abstract class UniteDeProduction {
 
     protected UniteDeProduction(){}
 
+    /**
+     * créer une unité de production
+     * @param nom correspond au nom de l'UP
+     */
     public UniteDeProduction(String nom)
     {
         this.nom = nom;
         Initialisation.listeUniteDeProduction.add(this);
     }
 
-	/**
-     * Ajoute un producteur a l'unite de production
-     * @param producteur
+    /**
+     * Ajoute un producteur a la liste des producteurs de viandes
+     * @param producteur Producteur que l'on ajoute à l'unité de production correspondante de la classe
      */
-    /*public void ajouterProducteur(Producteur producteur)
-    {
-        ajouterMembre(producteur);
-    }*/
 
     public abstract void ajouterMembre(Producteur producteur);
 
-    /*public Produit getProduit(int quantite, String type, LocalDate peremption)
-    {
-        return produire(quantite, type, peremption);
-    }*/
-
 	/**
-     * Produit un protuit ,avec sa quantite son type sa date et le producteur qui l'a réalisé
-     * @param quantite type peremption producteur
+     * Produit un produit issu de la viande avec la quantite le type la date de peremption et le producteur
+     * @param  quantite  correspond à la quantité à produire
+     * @param type correspond au type d'aliment à produire
+     * @param peremption désine la date de peremption du produit
+     * @param producteur est le producteur qui produit à travers l'unité de production
      */
     public abstract void produire(Integer quantite, String type, LocalDate peremption, Producteur producteur);
 

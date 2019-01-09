@@ -22,8 +22,9 @@ public class UniteDeProductionArboriculteur extends UniteDeProduction {
         super(nom);
     }
 
-	/**
-     * Ajoute un producteur a la liste des Arboriculteurs
+    /**
+     * Ajoute un producteur a la liste des producteurs de viandes
+     * @param producteur Producteur que l'on ajoute à l'unité de production correspondante de la classe
      */
     @Override
     public void ajouterMembre(Producteur producteur)throws ClassCastException {
@@ -37,8 +38,12 @@ public class UniteDeProductionArboriculteur extends UniteDeProduction {
         }
     }
 
-	/**
-     * Produit un produit issu de l'arboriculture avec la quantite le type la date de peremption et le producteur
+    /**
+     * Produit un produit issu de la viande avec la quantite le type la date de peremption et le producteur
+     * @param  quantite  correspond à la quantité à produire
+     * @param type correspond au type d'aliment à produire
+     * @param peremption désine la date de peremption du produit
+     * @param producteur est le producteur qui produit à travers l'unité de production
      */
     @Override
     public void produire(Integer quantite, String type, LocalDate peremption,Producteur producteur)
@@ -60,6 +65,10 @@ public class UniteDeProductionArboriculteur extends UniteDeProduction {
             System.out.println("Vous n'appartenez pas à une unité de production");
         }
     }
+    /**
+     *
+     * @return les membres appartenant à l'unité de production
+     */
     @Override
     public ArrayList<Producteur> getMembre()
     {
