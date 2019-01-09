@@ -5,15 +5,15 @@ import java.time.LocalDate;
 /**
  * 
  */
-public class vache extends Viande {
+public class Vache extends Viande {
 
 
-    public vache(int quantite, LocalDate dateDePeremption, String unite) {
+    public Vache(int quantite, LocalDate dateDePeremption, String unite) {
         super(quantite, dateDePeremption, unite);
     }
 
     @Override
     public String getNom() {
-        return "vache";
+        return "Vache";
     }
 }

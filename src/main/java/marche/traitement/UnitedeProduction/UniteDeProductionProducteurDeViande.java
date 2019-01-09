@@ -3,7 +3,7 @@ package marche.traitement.UnitedeProduction;
 import marche.traitement.Producteurs.Producteur;
 import marche.traitement.Producteurs.ProducteurDeViande;
 import marche.traitement.Produit.Viande.Cochon;
-import marche.traitement.Produit.Viande.vache;
+import marche.traitement.Produit.Viande.Vache;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -50,7 +50,7 @@ public class UniteDeProductionProducteurDeViande extends UniteDeProduction {
                 if (type.equals("cochon"))
                     producteur.ajouterAuStock(new Cochon(quantite, peremption, "Kilogrammes"));
                 else
-                    producteur.ajouterAuStock(new vache(quantite, peremption, "Kilogrammes"));
+                    producteur.ajouterAuStock(new Vache(quantite, peremption, "Kilogrammes"));
 
             } else {
                 System.out.println("tu peux pas produire autant ta limite de stock est " + producteur.getLimite());
