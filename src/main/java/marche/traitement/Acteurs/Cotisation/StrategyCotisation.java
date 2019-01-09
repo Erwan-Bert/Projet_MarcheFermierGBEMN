@@ -1,16 +1,13 @@
 package marche.traitement.Acteurs.Cotisation;
 
 /**
-	 * Permet de calculer la valeur de la cotisation selon la strategie
+ * Permet de calculer la valeur de la cotisation selon la strategie.
+ * Les deux méthodes de la classe sont utilisées pour pouvoir appeler des strategies de cotisation à la chaine
+ * dans Ensemble de Cotisation
      */
 public abstract class StrategyCotisation {
 
     static final  int coutCotisation = 300;
-    /**
-     * Les deux méthodes sont utilisé pour pouvoir appeler des strategie de cotisation à la chaine
-     * dans Ensemble de Cotisation
-     */
-
 
     /**
      *
@@ -25,5 +22,5 @@ public abstract class StrategyCotisation {
      * @param montant de la cotisation
      * @return montant de la cotisation après modification par la strategy
      */
-    abstract int calculCotisation(int montant);
+    protected abstract int calculCotisation(int montant);
 }

@@ -2,16 +2,17 @@ package marche.traitement.Acteurs.Cotisation;
 
 import java.util.ArrayList;
 
+/**
+ * Permet d'appliquer plusieurs stratedie en même temps
+ */
 public class EnsembleCotisation extends StrategyCotisation{
     private ArrayList<StrategyCotisation> strategyCotisations = new ArrayList<StrategyCotisation>();
 
-    public EnsembleCotisation() {
-
-    }
+    public EnsembleCotisation() {}
 
     /**
      *
-     * @return la cotisation de base changé par chaque Strategie de cotisation
+     * @return la cotisation de base changé par chaque Strategie de l'attribut strategyCotisations
      */
     @Override
     public int calculCotisation() {
@@ -22,8 +23,13 @@ public class EnsembleCotisation extends StrategyCotisation{
         return cotisation;
     }
 
+    /**
+     * se contente d'appeller calculCotisation
+     * @param montant de la cotisation
+     * @return même chose que calculCotisation
+     */
     @Override
-    public int calculCotisation(int montant) {
+    protected int calculCotisation(int montant) {
         return calculCotisation();
     }
 

@@ -1,6 +1,6 @@
 package marche.traitement.Acteurs.Cotisation;
 
-/**
+    /**
 	 * Classe de strategie de cotisation Plein Pot 
      */
 public class CotisationPleinPot extends StrategyCotisation {
@@ -10,7 +10,7 @@ public class CotisationPleinPot extends StrategyCotisation {
      * @return la totalité du montant
      */
     @Override
-    int calculCotisation(int montant) {
+    protected int calculCotisation(int montant) {
         return montant;
     }
 }
