@@ -34,9 +34,21 @@ public class AffichageTerminal
         else if (avancement == 3)
             System.out.println("Dans combien de jour votre produit se périme?");
         else if (avancement == 4)
-            System.out.println("Entrez le nom du producteur");
+        {
+            System.out.println("Entrez le nom du producteur. Voici la liste des producteurs");
+            for (VendeurAcheteur vend:Initialisation.listeVendeurAcheteur)
+            {
+                System.out.println(vend.getNom() + "\n");
+            }
+        }
         else if (avancement == 5)
-            System.out.println("Entrez le nom de l'unité de production");
+        {
+            System.out.println("Entrez le nom de l'unité de production.Voici la liste");
+            for (UniteDeProduction up:Initialisation.listeUniteDeProduction)
+            {
+                System.out.println(up.getNom()+"\n");
+            }
+        }
         else if (avancement == 6)
             System.out.println("Entrez fini si vous avez fini ou autre produit si vous avez d'autres produits à enregistrer");
 
