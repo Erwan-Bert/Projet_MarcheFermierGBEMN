@@ -1,7 +1,7 @@
 package marche.traitement.UnitedeProduction;
 
+import marche.traitement.Producteurs.Apiculteur;
 import marche.traitement.Producteurs.Producteur;
-import marche.traitement.Producteurs.ProducteurLaitier;
 import marche.traitement.Produit.Miel;
 
 import java.time.LocalDate;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class UniteDeProductionApiculteur extends UniteDeProduction {
 
     private String nom;
-    public ArrayList<ProducteurLaitier> producteurs = new ArrayList<>();
+    public ArrayList<Apiculteur> producteurs = new ArrayList<>();
     /**
      * Default constructor
      */
@@ -29,7 +29,7 @@ public class UniteDeProductionApiculteur extends UniteDeProduction {
     public void ajouterMembre(Producteur producteur)throws ClassCastException{
         try
         {
-            producteurs.add((ProducteurLaitier) producteur);
+            producteurs.add((Apiculteur) producteur);
         }
         catch (ClassCastException e)
         {

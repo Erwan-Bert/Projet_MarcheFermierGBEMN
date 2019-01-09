@@ -1,5 +1,7 @@
 package marche.affichage;
 
+import marche.traitement.Initialisation.Initialisation;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -87,6 +89,16 @@ public class AffichageTerminal
         return elements;
     }
 
+    public static void menuParticipants()
+    {
+        System.out.println(Initialisation.listeProducteur);
+    }
+
+    public static  void menuCatalogue()
+    {
+
+    }
+
     public static void gestionMenuPricipal()
     {
         ArrayList<String> parametreProduit;
@@ -97,8 +109,11 @@ public class AffichageTerminal
             temp = menuPrincipal();
         }
         if (temp.equals("ajouter membre"))
+        {
             while (!temp.equals(""))
                 temp = menuAjouterMembre(avancement);
+
+        }
         else
             parametreProduit = new ArrayList<>(gestionMenuProduire());
 

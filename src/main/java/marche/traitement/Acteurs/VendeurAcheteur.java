@@ -143,14 +143,20 @@ public abstract class VendeurAcheteur extends Acteur {
 	/**
      * Affiche de manière détailler le stock d'un acheteur vendeur
      */
-    public void afficherStock()
+    public String afficherStock()
     {
         int compteur = 1;
-        for (Produit produit :stocks)
+        StringBuilder contenuStock = new StringBuilder();
+        if (stocks.size() != 0)
         {
-            System.out.println(compteur+") "+produit.getQuantite()+" kilo de "+produit.getNom()+" / périme le : "+produit.getDateDePeremption());
-            compteur++;
+            for (Produit produit : stocks) {
+                contenuStock.append(") " + produit.getQuantite() + " kilo de " + produit.getNom() + " / périme le : " + produit.getDateDePeremption());
+                compteur++;
+            }
         }
+        else
+            contenuStock.append("vide");
+        return contenuStock.toString();
     }
 
 

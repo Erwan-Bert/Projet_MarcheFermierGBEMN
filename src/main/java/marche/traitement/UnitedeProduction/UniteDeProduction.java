@@ -1,5 +1,6 @@
 package marche.traitement.UnitedeProduction;
 
+import marche.traitement.Initialisation.Initialisation;
 import marche.traitement.Producteurs.Producteur;
 import marche.traitement.Produit.Produit;
 
@@ -17,11 +18,12 @@ public abstract class UniteDeProduction {
     public UniteDeProduction(String nom)
     {
         this.nom = nom;
+        Initialisation.listeUniteDeProduction.add(this);
     }
 
 	/**
      * Ajoute un producteur a l'unite de production
-     * @param Producteur producteur
+     * @param producteur
      */
     /*public void ajouterProducteur(Producteur producteur)
     {
