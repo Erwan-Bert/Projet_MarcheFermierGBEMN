@@ -30,7 +30,7 @@ public abstract class VendeurAcheteur extends Acteur {
 
 
     /**
-	 * Creer une offre selon la quantité le prix et le Produit
+	 * Creer une offre selon le prix et le Produit (vend tout le produit)
      * @param //int quantite
      * @param //int prix
      * @param //Produit produit
@@ -38,28 +38,74 @@ public abstract class VendeurAcheteur extends Acteur {
      */
     public void creerUneOffre(int prix, Produit produit, StrategyChoixAcheteur strategyChoixAcheteur, LivreDuMarche marche)throws ArithmeticException,IllegalArgumentException {
 
-        if(prix<0)
-            throw new ArithmeticException("prix négatif");
-        if(produit == null)
-            throw new IllegalArgumentException("rentrez un produit valide");
-        if(stocks.contains(produit)){
-            Offre offre = new Offre(prix,produit,this,strategyChoixAcheteur, marche);
-            if(marche.getControleur().validerOffre(offre)){
-                stocks.remove(produit);
-                marche.ajouterOffre(offre);
-            }else{
-                throw new IllegalArgumentException("votre offre a été rejeté par l'amf");
+        try {
+            if(prix<0)
+                throw new ArithmeticException("prix négatif");
+            if(produit == null)
+                throw new IllegalArgumentException("rentrez un produit valide");
+            if(stocks.contains(produit)){
+                Offre offre = new Offre(prix,produit,this,strategyChoixAcheteur, marche);
+                if(marche.getControleur().validerOffre(offre)){
+                    stocks.remove(produit);
+                    marche.ajouterOffre(offre);
+                }else{
+                    throw new IllegalArgumentException("votre offre a été rejeté par l'amf");
+                }
+            }
+            else {
+                throw new IllegalArgumentException("rentrez un produit valide");
             }
         }
-        else {
-            throw new IllegalArgumentException("rentrez un produit valide");
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+
+    }
+    /**
+     * Creer une offre selon la quantité le prix et le Produit
+     * @param //int quantite
+     * @param //int prix
+     * @param //Produit produit
+     * @return
+     */
+
+    public void creerUneOffre(int prix, Produit produit, StrategyChoixAcheteur strategyChoixAcheteur, LivreDuMarche marche,int quantite)throws ArithmeticException,IllegalArgumentException
+    {
+        try
+        {
+            if(prix<0)
+                throw new ArithmeticException("prix négatif");
+            if(produit == null)
+                throw new IllegalArgumentException("rentrez un produit valide");
+            if (stocks.contains(produit) && quantite < produit.getQuantite())
+            {
+                Produit copy = produit.clone();
+                copy.setQuantite(quantite);
+                Offre offre = new Offre(prix,copy,this,strategyChoixAcheteur,marche);
+                if (marche.getControleur().validerOffre(offre))
+                {
+                    produit.setQuantite(produit.getQuantite()-quantite);
+                    marche.ajouterOffre(offre);
+                }
+                else
+                    throw new IllegalArgumentException("votre offre a été rejeté par l'amf");
+            }
+            else
+            {
+                throw new IllegalArgumentException("rentrez un produit valide");
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
         }
     }
 
     /**
      * si le produit est du même type, date de péremption et unité qu'un produit dans le stock
      * on combine les produits, sinon on ajoute le produit au stock dans une autre case
-     * @param Produit produit
+     * @param produit
      */
     public void ajouterAuStock(Produit produit){
         boolean dejaDansLeStock = false;
@@ -81,7 +127,7 @@ public abstract class VendeurAcheteur extends Acteur {
 
     /**
      * Retourne la quantitée totale des produits
-     * @param Produit produit
+     * @param
 	 * @return quantiteTotale
      */
     public double getQuantiteStock()
