@@ -22,8 +22,8 @@ public class Acteur {
 
     /**
      * initialise la date ou la cotisation se termine dans le passé, initilise aussi le nom et le solde
-     * @param solde
-     * @param nom
+     * @param solde solde initial
+     * @param nom nom de l'acteur
      */
     public Acteur(double solde, String nom) {
         this.solde = solde;
@@ -35,7 +35,7 @@ public class Acteur {
     /**
      * fait payer l'utilisateur et lui ajoute un nombre de jour sur sa période de cotisation
      * retourne si la cotisation a été un succès
-	 * @return boolean
+	 * @return boolean retourne si l'acteur a eu assé d'argent pour cotiser
      */
     public boolean cotiser() {
 
@@ -52,7 +52,7 @@ public class Acteur {
 
     /**
      * permet de changer de cotisation
-     * @param cotisation
+     * @param cotisation nouvelle cotisation
      */
     public void setCotisation(StrategyCotisation cotisation) {
         this.cotisation = cotisation;
@@ -67,7 +67,7 @@ public class Acteur {
 
 	/**
 	 * Initialise la date de fin de cotisation
-	 * @param  dateFinCotisation
+	 * @param  dateFinCotisation  nouvelle date de fin de cotisation
      */
     protected void setDateFinCotisation(LocalDate dateFinCotisation) {
         this.dateFinCotisation = dateFinCotisation;
@@ -117,7 +117,7 @@ public class Acteur {
 	
 	/**
 	 * Credite l'Acheteur d'un montant qu'on lui met en paramètre
-	 * @param  montant
+	 * @param  montant somme à créditer
      */
     public void crediter(double montant) {
         this.solde += montant;
@@ -125,7 +125,7 @@ public class Acteur {
 
 	/**
 	 * Debite l'Acheteur d'un montant qu'on lui met en parametre
-	 * @param  montant
+	 * @param  montant somme à débiter
      */
     public void debiter(double montant) {
         this.solde -= montant;
@@ -149,7 +149,7 @@ public class Acteur {
 
 	/**
 	 * Modifie la strategie de cotisation des utilisateurs suivant la strategie passe en paramètre
-	 * @param  strategy
+	 * @param  strategy nouvelle stratégie
      */
     public void switchStrategyCotisation(StrategyCotisation strategy)
     {
@@ -157,8 +157,8 @@ public class Acteur {
     }
 
 	/**
-	 * Genere la transation d'une offre passée en paramètre
-	 * @param  o
+	 * débite l'acteur et crédite le vendeur
+	 * @param  o offre sur laquel effectuer la transaction
      */
     public void transaction(Offre o){
         if (getCentraleAchat() != null)
@@ -169,6 +169,7 @@ public class Acteur {
         }
         else
             debiter(o.getPrix());
+
          o.getVendeur().crediter(o.getPrix());
         System.out.println("Vous pouvez venir récupérer l'offre" + o + " au dépot");
 
