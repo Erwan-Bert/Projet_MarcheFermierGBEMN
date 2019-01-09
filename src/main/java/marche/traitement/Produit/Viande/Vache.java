@@ -14,6 +14,6 @@ public class Vache extends Viande {
 
     @Override
     public String getNom() {
-        return "Vache";
+        return "vache";
     }
 }

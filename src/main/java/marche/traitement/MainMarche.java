@@ -31,6 +31,7 @@ public class MainMarche {
         AffichageTerminal.affichageParticipants();
         AffichageTerminal.affichageCatalogue();
         AffichageTerminal.affichageHistorique();
+        AffichageTerminal.affichageCotation();
 
     }
 

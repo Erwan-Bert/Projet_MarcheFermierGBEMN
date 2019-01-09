@@ -2,6 +2,7 @@ package marche.affichage;
 
 import marche.traitement.Initialisation.Initialisation;
 import marche.traitement.Marche.HistoriqueOffre;
+import marche.traitement.Marche.Offre;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -103,6 +104,91 @@ public class AffichageTerminal
     public static void affichageHistorique()
     {
         System.out.println(HistoriqueOffre.getArchives());
+    }
+
+    public static void affichageCotation()
+    {
+        int nombreOffreMiel = 0;
+        double sommePrixMiel = 0;
+        double moyennePrixMiel;
+
+        int nombreOffrePomme = 0;
+        double sommePrixPomme = 0;
+        double moyennePrixPomme;
+
+        int nombreOffreEpinard = 0;
+        double sommePrixEpinard = 0;
+        double moyennePrixEpinard;
+
+        int nombreOffreVache = 0;
+        double sommePrixVache = 0;
+        double moyennePrixVache;
+
+        int nombreOffreCochon = 0;
+        double sommePrixCochon = 0;
+        double moyennePrixCochon;
+
+        int nombreOffreLait = 0;
+        double sommePrixLait = 0;
+        double moyennePrixLait;
+
+        int nombreOffreFromage = 0;
+        double sommePrixFromage = 0;
+        double moyennePrixFromage;
+        for (Offre offre: Initialisation.livreDuMarche.getLivre())
+        {
+            if (offre.getProduit().getNom().equals("miel"))
+            {
+                nombreOffreMiel += 1;
+                sommePrixMiel += offre.getPrix() / offre.getProduit().getQuantite();
+            }
+            else if (offre.getProduit().getNom().equals("pomme"))
+            {
+                nombreOffrePomme += 1;
+                sommePrixPomme += offre.getPrix() / offre.getProduit().getQuantite();
+            }
+            else if (offre.getProduit().getNom().equals("épinards"))
+            {
+                nombreOffreEpinard += 1;
+                sommePrixEpinard += offre.getPrix() / offre.getProduit().getQuantite();
+            }
+            else if (offre.getProduit().getNom().equals("vache"))
+            {
+                nombreOffreVache += 1;
+                sommePrixVache += offre.getPrix() / offre.getProduit().getQuantite();
+            }
+            else if (offre.getProduit().getNom().equals("cochon"))
+            {
+                nombreOffreCochon += 1;
+                sommePrixCochon += offre.getPrix() / offre.getProduit().getQuantite();
+            }
+            else if (offre.getProduit().getNom().equals("lait"))
+            {
+                nombreOffreLait += 1;
+                sommePrixLait += offre.getPrix() / offre.getProduit().getQuantite();
+            }
+            else if (offre.getProduit().getNom().equals("fromage"))
+            {
+                nombreOffreFromage += 1;
+                sommePrixFromage += offre.getPrix() / offre.getProduit().getQuantite();
+            }
+        }
+        moyennePrixMiel = sommePrixMiel / nombreOffreMiel;
+        moyennePrixPomme = sommePrixPomme / nombreOffrePomme;
+        moyennePrixEpinard = sommePrixEpinard / nombreOffreEpinard;
+        moyennePrixVache = sommePrixVache / nombreOffreVache;
+        moyennePrixCochon = sommePrixCochon / nombreOffreCochon;
+        moyennePrixLait = sommePrixLait / nombreOffreLait;
+        moyennePrixFromage = sommePrixFromage / nombreOffreFromage;
+        StringBuilder affichagePrix = new StringBuilder();
+        affichagePrix.append("Prix actuel moyen du miel par kilo : " + moyennePrixMiel + "€\n");
+        affichagePrix.append("Prix actuel moyen des pommes par kilo : " + moyennePrixPomme + "€\n");
+        affichagePrix.append("Prix actuel moyen des épinards par kilo : " + moyennePrixEpinard + "€\n");
+        affichagePrix.append("Prix actuel moyen de la viande de vache par kilo : " + moyennePrixVache + "€\n");
+        affichagePrix.append("Prix actuel moyen de la viande de cochon par kilo : " + moyennePrixCochon + "€\n");
+        affichagePrix.append("Prix actuel moyen du lait par kilo : " + moyennePrixLait + "€\n");
+        affichagePrix.append("Prix actuel moyen du fromage par kilo : " + moyennePrixFromage + "€");
+        System.out.println(affichagePrix.toString());
     }
 
     public static void gestionMenuPricipal()
