@@ -1,14 +1,16 @@
 package Tests.Acteurs;
 
 import marche.traitement.Acteurs.VendeurAcheteur;
+import marche.traitement.Producteurs.ProducteurLaitier;
 import marche.traitement.Produit.Fruit.Pomme;
 import marche.traitement.Produit.Produit;
-import marche.traitement.Produit.Viande.vache;
+import marche.traitement.Produit.Viande.Vache;
 import org.junit.jupiter.api.Test;
+
 import java.time.LocalDate;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestVendeurAcheteur {
 
@@ -17,7 +19,7 @@ public class TestVendeurAcheteur {
     @Test
     public void ajouterAuStock_Basic(){
         Produit produit = new Pomme(10, LocalDate.now(),"Tonne");
-        VendeurAcheteur vendeurAcheteur = new VendeurAcheteur(1000,"Chams");
+        VendeurAcheteur vendeurAcheteur = new ProducteurLaitier(1000,"Chams",100);
 
         vendeurAcheteur.ajouterAuStock(produit);
         List<Produit> stocks = vendeurAcheteur.getStocks();
@@ -30,9 +32,9 @@ public class TestVendeurAcheteur {
      */
     @Test
     public void ajouterAuStock_ProduitDejaDansLeStock(){
-        Produit produitInitial = new vache(10, LocalDate.now(),"Tonne");
+        Produit produitInitial = new Vache(10, LocalDate.now(),"Tonne");
         Produit produit = new Pomme(10, LocalDate.now(),"Tonne");
-        VendeurAcheteur vendeurAcheteur = new VendeurAcheteur(1000,"Chams");
+        VendeurAcheteur vendeurAcheteur = new ProducteurLaitier(1000,"Chams",100);
 
         vendeurAcheteur.ajouterAuStock(produitInitial);
         vendeurAcheteur.ajouterAuStock(produit); // deuxième ajout d'une pomme
@@ -49,7 +51,7 @@ public class TestVendeurAcheteur {
     public void ajouterAuStock_ProduitDejaDansLeStockMauvaiseDate(){
         Produit produit = new Pomme(10, LocalDate.now(),"Tonne");
         Produit produit1 = new Pomme(10, LocalDate.now().plusDays(1),"Tonne");
-        VendeurAcheteur vendeurAcheteur = new VendeurAcheteur(1000,"Chams");
+        VendeurAcheteur vendeurAcheteur = new ProducteurLaitier(1000,"Chams",100);
 
         vendeurAcheteur.ajouterAuStock(produit);
         vendeurAcheteur.ajouterAuStock(produit1); // deuxième ajout d'une pomme à date de péremption différente
@@ -66,7 +68,7 @@ public class TestVendeurAcheteur {
     public void ajouterAuStock_ProduitDejaDansLeStockMauvaiseUnite(){
         Produit produit = new Pomme(10, LocalDate.now(),"mole");
         Produit produit1 = new Pomme(10, LocalDate.now(),"Tonne");
-        VendeurAcheteur vendeurAcheteur = new VendeurAcheteur(1000,"Chams");
+        VendeurAcheteur vendeurAcheteur = new ProducteurLaitier(1000,"Chams",100);
 
         vendeurAcheteur.ajouterAuStock(produit);
         vendeurAcheteur.ajouterAuStock(produit1); // deuxième ajout d'une pomme à date de péremption différente
@@ -76,7 +78,6 @@ public class TestVendeurAcheteur {
         System.out.println(stocks);
         assertEquals( 2, stocks.size() );
     }
-
 
 
 }

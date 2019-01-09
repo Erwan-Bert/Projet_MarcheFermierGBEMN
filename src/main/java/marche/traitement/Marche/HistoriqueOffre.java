@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 
  */
-public class HistoriqueOffre {
+public final class HistoriqueOffre {
 
     private static List<Archive> historiqueOffres = new ArrayList<Archive>();
 
@@ -16,12 +16,20 @@ public class HistoriqueOffre {
     private HistoriqueOffre()
     {
     }
-
+	
+	/**
+     * Retourne la liste des archives
+	 * @return historiqueOffres
+     */
     public static List<Archive> getArchives() {
         return historiqueOffres ;
     }
 
-    public static void addOffresArchives(Archive Archive) {
-        historiqueOffres .add(Archive);
+	/**
+     * Ajoute une offre a la liste des archives
+	 * @param  archive Archive ajoutée à l'historique
+     */
+    public static void addOffresArchives(Archive archive) {
+        historiqueOffres .add(archive);
     }
 }
