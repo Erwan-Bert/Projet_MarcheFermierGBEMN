@@ -419,146 +419,138 @@ public class AffichageTerminal
         String tempString = "pas vide";
         int avancement = 1;
         tempInt = menuPrincipal();
-        if (tempInt == 1)
+        switch (tempInt)
         {
-            String nom1 = "";
-            String nom2 = "";
-            while (!tempString.equals("") && avancement != 3)
-            {
-                tempString = menuAjouterMembre(avancement);
-                if (avancement == 1)
-                    nom1 = tempString;
-                if (avancement == 2)
-                    nom2 = tempString;
-                ++avancement;
-            }
-            for (UniteDeProduction unite: Initialisation.listeUniteDeProduction)
-            {
-                if (unite.getNom().equals(nom2))
-                    for (VendeurAcheteur va: Initialisation.listeVendeurAcheteur)
-                    {
-                        if (va.getNom().equals(nom1))
-                            unite.ajouterMembre((Producteur) va);
-                    }
-            }
-        }
-        else if (tempInt == 2)
-        {
-            parametre = new ArrayList<>(gestionMenuProduire());
-            System.out.println(parametre);
-            for (UniteDeProduction unite: Initialisation.listeUniteDeProduction)
-            {
-                if (unite.getNom().equals(parametre.get(3)))
+            case 1 :
+                String nom1 = "";
+                String nom2 = "";
+                while (!tempString.equals("") && avancement != 3)
                 {
-                    for (Producteur p : unite.getMembre()) {
-                        if (p.getNom().equals(parametre.get(4)))
-                            unite.produire(parseInt(parametre.get(1)), parametre.get(0), LocalDate.now().plusDays(parseInt(parametre.get(2))), p);
+                    tempString = menuAjouterMembre(avancement);
+                    if (avancement == 1)
+                        nom1 = tempString;
+                    if (avancement == 2)
+                        nom2 = tempString;
+                    ++avancement;
+                }
+                for (UniteDeProduction unite: Initialisation.listeUniteDeProduction)
+                {
+                    if (unite.getNom().equals(nom2))
+                        for (VendeurAcheteur va: Initialisation.listeVendeurAcheteur)
+                        {
+                            if (va.getNom().equals(nom1))
+                                unite.ajouterMembre((Producteur) va);
+                        }
+                }
+                break;
+            case 2 :
+                parametre = new ArrayList<>(gestionMenuProduire());
+                System.out.println(parametre);
+                for (UniteDeProduction unite: Initialisation.listeUniteDeProduction)
+                {
+                    if (unite.getNom().equals(parametre.get(3)))
+                    {
+                        for (Producteur p : unite.getMembre()) {
+                            if (p.getNom().equals(parametre.get(4)))
+                                unite.produire(parseInt(parametre.get(1)), parametre.get(0), LocalDate.now().plusDays(parseInt(parametre.get(2))), p);
+                        }
                     }
                 }
-            }
-        }
-        else if (tempInt == 3)
-            affichageParticipants();
-        else if (tempInt == 4)
-            affichageCatalogue();
-        else if (tempInt == 5)
-            affichageHistorique();
-        else if (tempInt == 6)
-            affichageCotation();
-        else if (tempInt == 7)
-        {
-            parametre = gestionCreationProducteur();
-            if (parametre.get(3).equals("apiculteur"))
-            {
-                Producteur p = new Apiculteur(parseInt(parametre.get(1)), parametre.get(0), parseInt(parametre.get(2)));
-            }
-            else if (parametre.get(3).equals("arboriculteur"))
-            {
-                Producteur p = new Arboriculteur(parseInt(parametre.get(1)), parametre.get(0), parseInt(parametre.get(2)));
-            }
-            else if (parametre.get(3).equals("horticulteur"))
-            {
-                Producteur p = new Horticulteur(parseInt(parametre.get(1)), parametre.get(0), parseInt(parametre.get(2)));
-            }
-            else if (parametre.get(3).equals("producteur de viande"))
-            {
-                Producteur p = new ProducteurDeViande(parseInt(parametre.get(1)), parametre.get(0), parseInt(parametre.get(2)));
-            }
-            else if (parametre.get(3).equals("producteur laitier"))
-            {
-                Producteur p = new ProducteurLaitier(parseInt(parametre.get(1)), parametre.get(0), parseInt(parametre.get(2)));
-            }
-            else if (parametre.get(3).equals("producteur bio"))
-            {
-                for (VendeurAcheteur va: Initialisation.listeVendeurAcheteur)
+                break;
+            case 3 : affichageParticipants();
+                break;
+            case 4 : affichageCatalogue();
+                break;
+            case 5 : affichageHistorique();
+                break;
+            case 6 : affichageCotation();
+                break;
+            case 7 :
+                parametre = gestionCreationProducteur();
+                if (parametre.get(3).equals("apiculteur"))
                 {
-                    if (va.getNom().equals(parametre.get(0)))
-                    {
-                        Producteur pBio = new ProducteurBio((Producteur) va);
-                    }
+                    Producteur p = new Apiculteur(parseInt(parametre.get(1)), parametre.get(0), parseInt(parametre.get(2)));
                 }
-            }
-        }
-        else if (tempInt == 8)
-        {
-            parametre = gestionCreationTrader();
-            VendeurAcheteur trader = new Tradeur(parametre.get(0), parseInt(parametre.get(1)));
-        }
-        else if (tempInt == 9)
-        {
-            parametre = gestionCreationUniteProduction();
-            if (parametre.get(1).equals("apiculteur")){
-                UniteDeProduction up = new UniteDeProductionApiculteur(parametre.get(0));
-            }
-            else if (parametre.get(1).equals("arboriculteur")){
-                UniteDeProduction up = new UniteDeProductionArboriculteur(parametre.get(0));
-            }
-            else if (parametre.get(1).equals("horticulteur")){
-                UniteDeProduction up = new UniteDeProductionHorticulteur(parametre.get(0));
-            }
-            else if (parametre.get(1).equals("viande")){
-                UniteDeProduction up = new UniteDeProductionProducteurDeViande(parametre.get(0));
-            }
-            else if (parametre.get(1).equals("laitier")){
-                UniteDeProduction up = new UniteDeProductionLaitier(parametre.get(0));
-            }
-            else if (parametre.get(1).equals("bio")){
-                for (UniteDeProduction up: Initialisation.listeUniteDeProduction)
+                else if (parametre.get(3).equals("arboriculteur"))
                 {
-                    if (up.getNom().equals(parametre.get(0)))
-                    {
-                        UniteDeProduction upBio = new UniteDeProductionBio(up);
-                    }
+                    Producteur p = new Arboriculteur(parseInt(parametre.get(1)), parametre.get(0), parseInt(parametre.get(2)));
                 }
-            }
-        }
-        else if (tempInt == 10)
-        {
-            tempString = menuCreationCentral();
-            Acteur central = new CentraleAchat(tempString);
-        }
-        else if (tempInt == 11)
-        {
-            tempString = menuCreationNewsLetter();
-            FluxInformation news = new NewsLetter(tempString);
-        }
-        else if (tempInt == 12)
-        {
-            parametre = gestionAjouterAbonner();
-            for (FluxInformation fi: Initialisation.listeNewsLetter)
-            {
-                if (fi.getNom().equals(parametre.get(1)))
+                else if (parametre.get(3).equals("horticulteur"))
+                {
+                    Producteur p = new Horticulteur(parseInt(parametre.get(1)), parametre.get(0), parseInt(parametre.get(2)));
+                }
+                else if (parametre.get(3).equals("producteur de viande"))
+                {
+                    Producteur p = new ProducteurDeViande(parseInt(parametre.get(1)), parametre.get(0), parseInt(parametre.get(2)));
+                }
+                else if (parametre.get(3).equals("producteur laitier"))
+                {
+                    Producteur p = new ProducteurLaitier(parseInt(parametre.get(1)), parametre.get(0), parseInt(parametre.get(2)));
+                }
+                else if (parametre.get(3).equals("producteur bio"))
                 {
                     for (VendeurAcheteur va: Initialisation.listeVendeurAcheteur)
                     {
                         if (va.getNom().equals(parametre.get(0)))
-                            fi.ajouterAbonne(va);
+                        {
+                            Producteur pBio = new ProducteurBio((Producteur) va);
+                        }
                     }
                 }
-            }
+                break;
+            case 8 :
+                parametre = gestionCreationTrader();
+                VendeurAcheteur trader = new Tradeur(parametre.get(0), parseInt(parametre.get(1)));
+                break;
+            case 9 :
+                parametre = gestionCreationUniteProduction();
+                if (parametre.get(1).equals("apiculteur")){
+                    UniteDeProduction up = new UniteDeProductionApiculteur(parametre.get(0));
+                }
+                else if (parametre.get(1).equals("arboriculteur")){
+                    UniteDeProduction up = new UniteDeProductionArboriculteur(parametre.get(0));
+                }
+                else if (parametre.get(1).equals("horticulteur")){
+                    UniteDeProduction up = new UniteDeProductionHorticulteur(parametre.get(0));
+                }
+                else if (parametre.get(1).equals("viande")){
+                    UniteDeProduction up = new UniteDeProductionProducteurDeViande(parametre.get(0));
+                }
+                else if (parametre.get(1).equals("laitier")){
+                    UniteDeProduction up = new UniteDeProductionLaitier(parametre.get(0));
+                }
+                else if (parametre.get(1).equals("bio")){
+                    for (UniteDeProduction up: Initialisation.listeUniteDeProduction)
+                    {
+                        if (up.getNom().equals(parametre.get(0)))
+                        {
+                            UniteDeProduction upBio = new UniteDeProductionBio(up);
+                        }
+                    }
+                }
+                break;
+            case 10 :
+                tempString = menuCreationCentral();
+                Acteur central = new CentraleAchat(tempString);
+                break;
+            case 11 :
+                tempString = menuCreationNewsLetter();
+                FluxInformation news = new NewsLetter(tempString);
+                break;
+            case 12 :
+                parametre = gestionAjouterAbonner();
+                for (FluxInformation fi: Initialisation.listeNewsLetter)
+                {
+                    if (fi.getNom().equals(parametre.get(1)))
+                    {
+                        for (VendeurAcheteur va: Initialisation.listeVendeurAcheteur)
+                        {
+                            if (va.getNom().equals(parametre.get(0)))
+                                fi.ajouterAbonne(va);
+                        }
+                    }
+                }
+                break;
         }
-
     }
-
-
 }
