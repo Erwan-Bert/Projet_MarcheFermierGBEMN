@@ -365,7 +365,7 @@ public class AffichageTerminal
     public static String menuCreationNewsLetter()
     {
         String choix = "";
-        System.out.println("Entrez le nom de la centrale d'achat que vous voulez créer");
+        System.out.println("Entrez le nom de la newsletter que vous voulez créer");
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         try {
             choix = in.readLine();
