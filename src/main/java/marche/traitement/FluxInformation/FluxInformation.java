@@ -1,6 +1,7 @@
 package marche.traitement.FluxInformation;
 
 import marche.traitement.Acteurs.Acteur;
+import marche.traitement.Initialisation.Initialisation;
 import marche.traitement.Marche.Offre;
 
 import java.util.ArrayList;
@@ -18,8 +19,10 @@ public abstract class FluxInformation {
      *  Initialise un flux d'information (Constructeur)
 	 * @param String nom
      */
-    public FluxInformation(String nom) {
+    public FluxInformation(String nom)
+    {
         this.nom = nom;
+        Initialisation.listeNewsLetter.add(this);
     }
 
 	/**

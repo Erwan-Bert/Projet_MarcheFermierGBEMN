@@ -1,6 +1,7 @@
 package marche.traitement.Acteurs;
 
 import marche.traitement.Acteurs.ChoixAcheteur.StrategyChoixAcheteur;
+import marche.traitement.Initialisation.Initialisation;
 import marche.traitement.Marche.LivreDuMarche;
 import marche.traitement.Marche.Offre;
 import marche.traitement.Produit.Produit;
@@ -22,8 +23,10 @@ public  class VendeurAcheteur extends Acteur {
     /**
      * Default constructor
      */
-    public VendeurAcheteur(double solde, String nom) {
+    public VendeurAcheteur(double solde, String nom)
+    {
         super(solde, nom);
+        Initialisation.listeVendeurAcheteur.add(this);
     }
     public VendeurAcheteur() {
     }

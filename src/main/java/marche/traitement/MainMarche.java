@@ -3,8 +3,6 @@ package marche.traitement;
 
 import marche.affichage.AffichageTerminal;
 import marche.traitement.Initialisation.Initialisation;
-import marche.traitement.Producteurs.Producteur;
-import marche.traitement.Producteurs.ProducteurLaitier;
 
 public class MainMarche {
     /*public static void main(String[] args)
@@ -25,10 +23,8 @@ public class MainMarche {
 
     public static void main(String[] args)
     {
-        Producteur laitier = new ProducteurLaitier(200, "Maurice", 500);
         while (true) {
             Initialisation.init();
-            System.out.println(Initialisation.listeUniteDeProduction.get(4).getMembre());
             AffichageTerminal.gestionMenuPricipal();
         }
     }

@@ -1,7 +1,11 @@
 package marche.affichage;
 
+import marche.traitement.Acteurs.Acteur;
+import marche.traitement.Acteurs.CentraleAchat;
 import marche.traitement.Acteurs.Tradeur;
 import marche.traitement.Acteurs.VendeurAcheteur;
+import marche.traitement.FluxInformation.FluxInformation;
+import marche.traitement.FluxInformation.NewsLetter;
 import marche.traitement.Initialisation.Initialisation;
 import marche.traitement.Marche.HistoriqueOffre;
 import marche.traitement.Marche.Offre;
@@ -124,7 +128,7 @@ public class AffichageTerminal
 
     public static void affichageParticipants()
     {
-        System.out.println(Initialisation.listeProducteur);
+        System.out.println(Initialisation.listeVendeurAcheteur);
     }
 
     public static void affichageCatalogue()
@@ -345,6 +349,69 @@ public class AffichageTerminal
         return elements;
     }
 
+    public static String menuCreationCentral()
+    {
+        String choix = "";
+        System.out.println("Entrez le nom de la centrale d'achat que vous voulez créer");
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            choix = in.readLine();
+        } catch (IOException e) {
+            System.out.println("Problème de saisie");
+        }
+        return choix;
+    }
+
+    public static String menuCreationNewsLetter()
+    {
+        String choix = "";
+        System.out.println("Entrez le nom de la centrale d'achat que vous voulez créer");
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            choix = in.readLine();
+        } catch (IOException e) {
+            System.out.println("Problème de saisie");
+        }
+        return choix;
+    }
+
+    public static String menuAjouterAbonner(int avancement)
+    {
+        String choix = "";
+        if (avancement == 1)
+            System.out.println("Entrez le nom de la personne que vous voulez abonner");
+        if (avancement == 2)
+            System.out.println("Entrez le nom de la NewsLetter");
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            choix = in.readLine();
+        } catch (IOException e) {
+            System.out.println("Problème de saisie");
+        }
+        return choix;
+    }
+
+    public static ArrayList<String> gestionAjouterAbonner()
+    {
+        ArrayList<String> elements = new ArrayList<>();
+        String temp = "";
+        String nomAbo = "";
+        String nomNews = "";
+        int avancement = 1;
+        while (avancement != 3)
+        {
+            temp = menuAjouterAbonner(avancement);
+            if (avancement == 1)
+                nomAbo = temp;
+            else if (avancement == 2)
+                nomNews = temp;
+            ++avancement;
+        }
+        elements.add(nomAbo);
+        elements.add(nomNews);
+        return elements;
+    }
+
     public static void gestionMenuPricipal()
     {
         ArrayList<String> parametre;
@@ -368,10 +435,10 @@ public class AffichageTerminal
             for (UniteDeProduction unite: Initialisation.listeUniteDeProduction)
             {
                 if (unite.getNom().equals(nom2))
-                    for (Producteur p: Initialisation.listeProducteur)
+                    for (VendeurAcheteur va: Initialisation.listeVendeurAcheteur)
                     {
-                        if (p.getNom().equals(nom1))
-                            unite.ajouterMembre(p);
+                        if (va.getNom().equals(nom1))
+                            unite.ajouterMembre((Producteur) va);
                     }
             }
         }
@@ -423,11 +490,11 @@ public class AffichageTerminal
             }
             else if (parametre.get(3).equals("producteur bio"))
             {
-                for (Producteur p: Initialisation.listeProducteur)
+                for (VendeurAcheteur va: Initialisation.listeVendeurAcheteur)
                 {
-                    if (p.getNom().equals(parametre.get(0)))
+                    if (va.getNom().equals(parametre.get(0)))
                     {
-                        Producteur pBio = new ProducteurBio(p);
+                        Producteur pBio = new ProducteurBio((Producteur) va);
                     }
                 }
             }
@@ -464,13 +531,33 @@ public class AffichageTerminal
                     }
                 }
             }
-        }/*
+        }
         else if (tempInt == 10)
-
+        {
+            tempString = menuCreationCentral();
+            Acteur central = new CentraleAchat(tempString);
+        }
         else if (tempInt == 11)
-
+        {
+            tempString = menuCreationNewsLetter();
+            FluxInformation news = new NewsLetter(tempString);
+        }
         else if (tempInt == 12)
-    */
+        {
+            parametre = gestionAjouterAbonner();
+            for (FluxInformation fi: Initialisation.listeNewsLetter)
+            {
+                if (fi.getNom().equals(parametre.get(1)))
+                {
+                    for (VendeurAcheteur va: Initialisation.listeVendeurAcheteur)
+                    {
+                        if (va.getNom().equals(parametre.get(0)))
+                            fi.ajouterAbonne(va);
+                    }
+                }
+            }
+        }
+
     }
 
 

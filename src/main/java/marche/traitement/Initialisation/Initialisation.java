@@ -2,7 +2,9 @@ package marche.traitement.Initialisation;
 
 import marche.traitement.Acteurs.ChoixAcheteur.ChoixParOrdreArrivee;
 import marche.traitement.Acteurs.Tradeur;
+import marche.traitement.Acteurs.VendeurAcheteur;
 import marche.traitement.Acteurs.controleur.ControleurAMF;
+import marche.traitement.FluxInformation.FluxInformation;
 import marche.traitement.Marche.LivreDuMarche;
 import marche.traitement.Producteurs.*;
 import marche.traitement.UnitedeProduction.*;
@@ -12,9 +14,10 @@ import java.util.ArrayList;
 
 public final class Initialisation
 {
-    public static ArrayList<Producteur> listeProducteur = new ArrayList<>();
+    public static ArrayList<VendeurAcheteur> listeVendeurAcheteur = new ArrayList<>();
     public static ArrayList<UniteDeProduction> listeUniteDeProduction = new ArrayList<>();
     public static LivreDuMarche livreDuMarche = new LivreDuMarche("livre du Marché", new ControleurAMF(new ArrayList<String>()));
+    public static ArrayList<FluxInformation> listeNewsLetter = new ArrayList<>();
 
 
 

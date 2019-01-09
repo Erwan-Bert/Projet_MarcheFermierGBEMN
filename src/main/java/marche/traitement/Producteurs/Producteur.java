@@ -2,7 +2,6 @@ package marche.traitement.Producteurs;
 
 
 import marche.traitement.Acteurs.VendeurAcheteur;
-import marche.traitement.Initialisation.Initialisation;
 import marche.traitement.Produit.Produit;
 
 import java.time.LocalDate;
@@ -31,7 +30,6 @@ public abstract class Producteur extends VendeurAcheteur
     {
         super(solde,nom);
         this.limiteDeCapacite = limite;
-        Initialisation.listeProducteur.add(this);
     }
 
 
