@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 
+ * Le controleur est chargé de valider les offres, de controler la blaclist qui va être imposé au marché auquel le
+ * controleur appartient, il est aussi chargé de choisir l'acheteur parmis un offre et géré la cloture de l'offre
  */
 public abstract class Controleur {
     protected List<String> blaclistProduit ;
@@ -33,17 +34,17 @@ public abstract class Controleur {
     }
 
     /**
-     * valide l'offre si les conditions sont respectés
      *
-     * @return bool
+     * @param o offre à valider
+     * @return retourne si l'offre a été validé
      */
     public abstract boolean validerOffre(Offre o);
     public abstract String getNom();
 
     /**
-     *
-     *  choisis a qui attribuer l'offre en fonction de la liste des acheteurs potentiels
+     * choisis a qui attribuer l'offre en fonction de la liste des acheteurs potentiels
      *  Effectue la transaction, enlève l'offre du livre du marché et archivre l'offre
+     * @param offre
      */
     public void choisirAcheteur(Offre offre) {
         if(offre.getAcheteurPotentiel().size() != 0) {

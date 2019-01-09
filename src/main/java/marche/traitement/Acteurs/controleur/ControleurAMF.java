@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 public class ControleurAMF extends Controleur{
 
-
     public ControleurAMF( ArrayList<String> blacklistProduit) {
         super(blacklistProduit);
     }
