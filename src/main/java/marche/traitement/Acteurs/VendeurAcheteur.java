@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 
  */
-public abstract class VendeurAcheteur extends Acteur {
+public  class VendeurAcheteur extends Acteur {
 
 
     protected List<Produit> stocks = new ArrayList<Produit>();
