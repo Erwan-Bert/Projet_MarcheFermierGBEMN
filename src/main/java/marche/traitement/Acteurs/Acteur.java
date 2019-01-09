@@ -65,19 +65,12 @@ public class Acteur {
         return (this.dateFinCotisation.isAfter(LocalDate.now()));
     }
 
-	/**
-	 * Initialise la date de fin de cotisation
-	 * @param  dateFinCotisation  nouvelle date de fin de cotisation
-     */
-    protected void setDateFinCotisation(LocalDate dateFinCotisation) {
-        this.dateFinCotisation = dateFinCotisation;
-    }
 
 	/**
 	 * Ajoute un nombrede jour passe en paramètre a la date de fin de cotisation
-	 * @param  nbjours
+	 * @param  nbjours nombre de jour à ajouter
      */
-    public void ajouterJoursDateFinCotisation(int nbjours) {
+    private void ajouterJoursDateFinCotisation(int nbjours) {
         this.dateFinCotisation = dateFinCotisation.plusDays(nbjours);
     }
 
@@ -133,7 +126,7 @@ public class Acteur {
 
 	/**
 	 * Initialise la centrale d'achat a un membre passer en paramètre
-	 * @param  ca
+	 * @param  ca nouvelle centrale
      */
     protected void setCentraleAchat(CentraleAchat ca) {
         membre = ca;
