@@ -41,11 +41,19 @@ public abstract class DecorateurProduit extends Produit {
         return produit.getUnite();
     }
 
+    /**
+     * permet d'enlever une certaine quantite au produit correspondant
+     * @param  quantite int
+     */
     @Override
     public void enleverQuantite(int quantite) {
         produit.enleverQuantite(quantite);
     }
 
+    /**
+     * permet d'ajouter une quantité au produit correspondant
+     * @param  quantite int
+     */
     @Override
     public void ajouterQuantite(int quantite) {
         produit.ajouterQuantite(quantite);

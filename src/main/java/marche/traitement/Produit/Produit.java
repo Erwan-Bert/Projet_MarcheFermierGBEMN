@@ -10,8 +10,13 @@ public abstract class Produit implements  Cloneable{
     protected LocalDate dateDePeremption;
     protected String unite;
 
+
     protected Produit(){}
 
+    /**
+     *
+     * @return une copie d'un Produit mais pas par référence
+     */
     public Produit clone() {
         Produit produit = null;
         try
@@ -42,7 +47,7 @@ public abstract class Produit implements  Cloneable{
 	
 	/**
      * Initialise la quantité d'un produit
-     * @param  quantite
+     * @param  quantite int
      */
     public void setQuantite(int quantite) {
         this.quantite = quantite;
@@ -73,7 +78,7 @@ public abstract class Produit implements  Cloneable{
 	
 	/**
      * Enleve une quantité passée en paramètre a un produit
-     * @param  quantite
+     * @param  quantite int
      */
     public void enleverQuantite(int quantite){
         this.quantite -= quantite;
@@ -81,7 +86,7 @@ public abstract class Produit implements  Cloneable{
 	
 	/**
      * Ajoute une quantité passée en paramètre a un produit
-     * @param  quantite
+     * @param  quantite int
      */
     public void ajouterQuantite(int quantite){
         this.quantite += quantite;
