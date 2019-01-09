@@ -2,6 +2,7 @@ package marche.traitement;
 
 
 import marche.affichage.AffichageTerminal;
+import marche.traitement.Initialisation.Initialisation;
 import marche.traitement.Producteurs.Producteur;
 import marche.traitement.Producteurs.ProducteurLaitier;
 
@@ -24,18 +25,11 @@ public class MainMarche {
 
     public static void main(String[] args)
     {
-        /*Producteur grop =new ProducteurLaitier(800,"bite",500);
-        Producteur boloss = new ProducteurBio(new ProducteurLaitier(400,"yolo",500));
-        UniteDeProductionLaitier up1 = new UniteDeProductionLaitier("yolo");
-        UniteDeProductionBio up =new UniteDeProductionBio(up1);
-        System.out.println(boloss.getClass());
-        up.ajouterMembre(boloss);*/
-        Producteur bob = new ProducteurLaitier(100, "bob", 200);
-        AffichageTerminal.affichageParticipants();
-        AffichageTerminal.affichageCatalogue();
-        AffichageTerminal.affichageHistorique();
-        AffichageTerminal.affichageCotation();
-
+        Producteur laitier = new ProducteurLaitier(200, "Maurice", 500);
+        while (true) {
+            System.out.println(Initialisation.listeUniteDeProduction.get(4).getMembre());
+            AffichageTerminal.gestionMenuPricipal();
+        }
     }
 
 

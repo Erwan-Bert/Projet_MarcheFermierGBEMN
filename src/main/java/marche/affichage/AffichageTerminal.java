@@ -3,11 +3,16 @@ package marche.affichage;
 import marche.traitement.Initialisation.Initialisation;
 import marche.traitement.Marche.HistoriqueOffre;
 import marche.traitement.Marche.Offre;
+import marche.traitement.Producteurs.Producteur;
+import marche.traitement.UnitedeProduction.UniteDeProduction;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.time.LocalDate;
 import java.util.ArrayList;
+
+import static java.lang.Integer.parseInt;
 
 public class AffichageTerminal
 {
@@ -19,8 +24,12 @@ public class AffichageTerminal
         else if (avancement == 2)
             System.out.println("Entrez la quantite produite (en litre ou kilo selon votre produit)");
         else if (avancement == 3)
-            System.out.println("Entrez la date de péremption du produit sous la forme jj/mm/aaaa");
+            System.out.println("Dans combien de jour votre produit se périme?");
         else if (avancement == 4)
+            System.out.println("Entrez le nom du producteur");
+        else if (avancement == 5)
+            System.out.println("Entrez le nom de l'unité de production");
+        else if (avancement == 6)
             System.out.println("Entrez fini si vous avez fini ou autre produit si vous avez d'autres produits à enregistrer");
 
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -32,18 +41,28 @@ public class AffichageTerminal
         return choix;
     }
 
-    public static String menuPrincipal()
+    public static int menuPrincipal()
     {
         String choix = "";
-        System.out.println("Entrez ajouter membre si vous voulez ajouter un membre à une unité de production.\n" +
-                    "Entrez produire si vous voulez ajouter des produits à votre compte.\n");
+        System.out.println("Entrez 1 pour ajouter membre à une unité de production.\n" +
+                    "Entrez 2 si vous voulez produire des produits.\n" +
+                "Entrez 3 si vous voulez voir la liste des producteurs.\n" +
+                "Entrez 4 si vous voulez voir toutes les offres.\n" +
+                "Entrez 5 si vous voulez voir l'historique des offres.\n" +
+                "Entrez 6 si vous voulez voir le prix moyen de tous les produits du marché.\n"+
+                "Entrez 7 si vous voulez créer de nouveaux producteurs.\n" +
+                "Entrez 8 si vous voulez créer de nouveaux traders.\n" +
+                "Entrez 9 si vous voulez créer de nouvelles unité de production.\n" +
+                "Entrez 10 si vous voulez créer des centrales d'achat\n" +
+                "Entrez 11 si vous voulez créer des NewsLetter\n" +
+                "Entrez 12 si vous voulez abonner quelqu'un à une newsLetter");
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         try {
             choix = in.readLine();
         } catch (IOException e) {
             System.out.println("Problème de saisie");
         }
-        return choix;
+        return parseInt(choix);
     }
 
     public static String menuAjouterMembre(int avancement)
@@ -69,6 +88,8 @@ public class AffichageTerminal
         String produit = "";
         String quantite = "";
         String peremption = "";
+        String unite = "";
+        String producteur = "";
         int avancement = 1;
         while (!temp.equals("fini"))
         {
@@ -78,8 +99,12 @@ public class AffichageTerminal
             else if (avancement == 2)
                 quantite = temp;
             else if (avancement == 3)
-                System.out.println("date = temp");
-            else if (avancement == 4 && temp.equals("autre produit"))
+                peremption = temp;
+            else if (avancement == 4)
+                producteur = temp;
+            else if (avancement == 5)
+                unite = temp;
+            else if (avancement == 6 && temp.equals("autre produit"))
             {
                 avancement = 0;
             }
@@ -88,6 +113,8 @@ public class AffichageTerminal
         elements.add(produit);
         elements.add(quantite);
         elements.add(peremption);
+        elements.add(unite);
+        elements.add(producteur);
         return elements;
     }
 
@@ -191,24 +218,121 @@ public class AffichageTerminal
         System.out.println(affichagePrix.toString());
     }
 
+    public static String menuCreationProducteur(int avancement)
+    {
+            String choix = "";
+            if (avancement == 1)
+                System.out.println("Entrez le nom du producteur que vous voulez créer");
+            else if (avancement == 2)
+                System.out.println("Entrez son solde");
+            else if (avancement == 3)
+                System.out.println("Entrez sa limite de stockage");
+            else if (avancement == 4)
+                System.out.println("Entrez le type de sa production");
+            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+            try {
+                choix = in.readLine();
+            } catch (IOException e) {
+                System.out.println("Problème de saisie");
+            }
+            return choix;
+    }
+
+    public static ArrayList<String> gestionCreationProducteur()
+    {
+        ArrayList<String> elements = new ArrayList<>();
+        String temp = "";
+        String solde = "";
+        String nom = "";
+        String limite = "";
+        String type = "";
+        int avancement = 1;
+        while (avancement != 5)
+        {
+            temp = menuProduire(avancement);
+            if (avancement == 1)
+                nom = temp;
+            else if (avancement == 2)
+                solde = temp;
+            else if (avancement == 3)
+                limite = temp;
+            else if (avancement == 4)
+                type = temp;
+        }
+        elements.add(nom);
+        elements.add(solde);
+        elements.add(limite);
+        elements.add(type);
+        return elements;
+    }
+
     public static void gestionMenuPricipal()
     {
-        ArrayList<String> parametreProduit;
-        String temp = "";
+        ArrayList<String> parametre;
+        int tempInt;
+        String tempString = "pas vide";
         int avancement = 1;
-        while (!temp.equals("ajouter membre") || !temp.equals("produire"))
+        tempInt = menuPrincipal();
+        if (tempInt == 1)
         {
-            temp = menuPrincipal();
+            String nom1 = "";
+            String nom2 = "";
+            while (!tempString.equals("") && avancement != 3)
+            {
+                tempString = menuAjouterMembre(avancement);
+                if (avancement == 1)
+                    nom1 = tempString;
+                if (avancement == 2)
+                    nom2 = tempString;
+                ++avancement;
+            }
+            for (UniteDeProduction unite: Initialisation.listeUniteDeProduction)
+            {
+                if (unite.getNom().equals(nom2))
+                    for (Producteur p: Initialisation.listeProducteur)
+                    {
+                        if (p.getNom().equals(nom1))
+                            unite.ajouterMembre(p);
+                    }
+            }
         }
-        if (temp.equals("ajouter membre"))
+        else if (tempInt == 2)
         {
-            while (!temp.equals(""))
-                temp = menuAjouterMembre(avancement);
-
+            parametre = new ArrayList<>(gestionMenuProduire());
+            System.out.println(parametre);
+            for (UniteDeProduction unite: Initialisation.listeUniteDeProduction)
+            {
+                if (unite.getNom().equals(parametre.get(3)))
+                {
+                    for (Producteur p : unite.getMembre()) {
+                        if (p.getNom().equals(parametre.get(4)))
+                            unite.produire(parseInt(parametre.get(1)), parametre.get(0), LocalDate.now().plusDays(parseInt(parametre.get(2))), p);
+                    }
+                }
+            }
         }
-        else
-            parametreProduit = new ArrayList<>(gestionMenuProduire());
+        else if (tempInt == 3)
+            affichageParticipants();
+        else if (tempInt == 4)
+            affichageCatalogue();
+        else if (tempInt == 5)
+            affichageHistorique();
+        else if (tempInt == 6)
+            affichageCotation();
+        else if (tempInt == 7)
+        {
+            parametre = gestionCreationProducteur();
+            
+        }
+        else if (tempInt == 8)
 
+        else if (tempInt == 9)
+
+        else if (tempInt == 10)
+
+        else if (tempInt == 11)
+
+        else if (tempInt == 12)
 
     }
 

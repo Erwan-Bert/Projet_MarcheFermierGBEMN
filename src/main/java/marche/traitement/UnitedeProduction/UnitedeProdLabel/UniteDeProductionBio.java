@@ -8,6 +8,7 @@ import marche.traitement.Produit.ProduitBio;
 import marche.traitement.UnitedeProduction.UniteDeProduction;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class UniteDeProductionBio extends UniteDeProductionLabelise
 {
@@ -36,7 +37,7 @@ public class UniteDeProductionBio extends UniteDeProductionLabelise
 
 
     @Override
-    public void produire(int quantite, String type, LocalDate peremption, Producteur producteur) throws ClassCastException
+    public void produire(Integer quantite, String type, LocalDate peremption, Producteur producteur) throws ClassCastException
     {   try{
         if (this.porducteursLabelises.contains(producteur))
         {
@@ -58,7 +59,11 @@ public class UniteDeProductionBio extends UniteDeProductionLabelise
     }
 
     }
-
+    @Override
+    public ArrayList<Producteur> getMembre()
+    {
+        return new ArrayList<>(up.getMembre());
+    }
 
 }
 

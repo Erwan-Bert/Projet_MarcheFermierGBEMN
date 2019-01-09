@@ -40,7 +40,7 @@ public class UniteDeProductionHorticulteur extends UniteDeProduction {
      * Produit un produit issu de l'Horticulture avec a quantite le type la date de peremption et le producteur
      */
     @Override
-    public void produire(int quantite, String type, LocalDate peremption,Producteur producteur) {
+    public void produire(Integer quantite, String type, LocalDate peremption,Producteur producteur) {
         // TODO implement here
         if (producteurs.contains(producteur))
         {
@@ -58,7 +58,12 @@ public class UniteDeProductionHorticulteur extends UniteDeProduction {
         {
             System.out.println("Vous n'appartenez pas à une unité de production");
         }
+    }
 
+    @Override
+    public ArrayList<Producteur> getMembre()
+    {
+        return new ArrayList<>(producteurs);
     }
 
 }

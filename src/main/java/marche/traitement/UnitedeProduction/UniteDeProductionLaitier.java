@@ -47,7 +47,7 @@ public class UniteDeProductionLaitier extends UniteDeProduction
      * Produit un produit issu du lait avec la quantite le type la date de peremption et le producteur
      */
     @Override
-    public void produire(int quantite, String type, LocalDate peremption,Producteur producteur)
+    public void produire(Integer quantite, String type, LocalDate peremption,Producteur producteur)
     {
         if (producteurs.contains(producteur))
         {
@@ -72,4 +72,9 @@ public class UniteDeProductionLaitier extends UniteDeProduction
 
     }
 
+    @Override
+    public ArrayList<Producteur> getMembre()
+    {
+        return new ArrayList<>(producteurs);
+    }
 }

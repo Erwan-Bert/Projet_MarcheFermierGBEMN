@@ -5,6 +5,7 @@ import marche.traitement.Producteurs.Producteur;
 import marche.traitement.Produit.Produit;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  * 
@@ -41,7 +42,7 @@ public abstract class UniteDeProduction {
      * Produit un protuit ,avec sa quantite son type sa date et le producteur qui l'a réalisé
      * @param quantite type peremption producteur
      */
-    public abstract void produire(int quantite, String type, LocalDate peremption, Producteur producteur);
+    public abstract void produire(Integer quantite, String type, LocalDate peremption, Producteur producteur);
 
     /**
      * sépare un produit en deux produit
@@ -58,4 +59,8 @@ public abstract class UniteDeProduction {
         return nouveauProduit;
     }
 
+    public String getNom() {
+        return nom;
+    }
+    public abstract ArrayList<Producteur> getMembre();
 }

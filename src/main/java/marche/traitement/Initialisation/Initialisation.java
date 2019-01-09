@@ -14,7 +14,7 @@ public class Initialisation
 {
     public static ArrayList<Producteur> listeProducteur = new ArrayList<>();
     public static ArrayList<UniteDeProduction> listeUniteDeProduction = new ArrayList<>();
-    public static LivreDuMarche livreDuMarche = new LivreDuMarche("livre du Marché", new ControleurAMF(null));
+    public static LivreDuMarche livreDuMarche = new LivreDuMarche("livre du Marché", new ControleurAMF(new ArrayList<String>()));
 
     static
     {
@@ -25,51 +25,42 @@ public class Initialisation
         ProducteurLaitier producteurLaitier = new ProducteurLaitier(500, "Philippe", 90);
 
 
-        UniteDeProduction uniteDeProductionApiculteur = new UniteDeProductionApiculteur("les abeilles");
+        UniteDeProduction uniteDeProductionApiculteur = new UniteDeProductionApiculteur("abeilles");
         uniteDeProductionApiculteur.ajouterMembre(apiculteur);
         uniteDeProductionApiculteur.produire(20, "miel", LocalDate.of(2019,2,12),apiculteur);
-        UniteDeProduction uniteDeProductionArboriculteur = new UniteDeProductionArboriculteur("les pommes");
+        UniteDeProduction uniteDeProductionArboriculteur = new UniteDeProductionArboriculteur("pommes");
         uniteDeProductionArboriculteur.ajouterMembre(arboriculteur);
         uniteDeProductionArboriculteur.produire(30, "pomme", LocalDate.of(2019,3,13),arboriculteur);
-        UniteDeProduction uniteDeProductionHoriculteur = new UniteDeProductionHorticulteur("les épinards");
+        UniteDeProduction uniteDeProductionHoriculteur = new UniteDeProductionHorticulteur("épinards");
         uniteDeProductionHoriculteur.ajouterMembre(horticulteur);
         uniteDeProductionHoriculteur.produire(40, "epinard", LocalDate.of(2019,4,14),horticulteur);
-        UniteDeProduction uniteDeProductionViande = new UniteDeProductionProducteurDeViande("les viandes");
+        UniteDeProduction uniteDeProductionViande = new UniteDeProductionProducteurDeViande("viandes");
         uniteDeProductionViande.ajouterMembre(producteurDeViande);
         uniteDeProductionViande.produire(20, "cochon", LocalDate.of(2019,5,15),producteurDeViande);
         uniteDeProductionViande.produire(30, "vache", LocalDate.of(2019,5,15),producteurDeViande);
-        UniteDeProduction uniteDeProductionLaitiere = new UniteDeProductionLaitier("le lait");
+        UniteDeProduction uniteDeProductionLaitiere = new UniteDeProductionLaitier("lait");
         uniteDeProductionLaitiere.ajouterMembre(producteurLaitier);
         uniteDeProductionLaitiere.produire(60, "lait", LocalDate.of(2019,6,16),producteurLaitier);
+        uniteDeProductionLaitiere.produire(20, "fromage", LocalDate.of(2019,6,16),producteurLaitier);
 
 
-        apiculteur.creerUneOffre(100, apiculteur.getElementStock(1), new ChoixParOrdreArrivee(), Initialisation.livreDuMarche, 20);
-        /*Offre venteMiel1 = new Offre(100, new Miel(5, apiculteur.getElementStock(1).getDateDePeremption(), apiculteur.getElementStock(1).getUnite()), apiculteur, new ChoixParOrdreArrivee(), livreDuMarche);
-        Offre venteMiel2 = new Offre(100, new Miel(5, apiculteur.getElementStock(1).getDateDePeremption(), apiculteur.getElementStock(1).getUnite()), apiculteur, new ChoixParOrdreArrivee(), livreDuMarche);
-        Offre venteMiel3 = new Offre(100, new Miel(5, apiculteur.getElementStock(1).getDateDePeremption(), apiculteur.getElementStock(1).getUnite()), apiculteur, new ChoixParOrdreArrivee(), livreDuMarche);
-        Offre venteMiel4 = new Offre(100, new Miel(5, apiculteur.getElementStock(1).getDateDePeremption(), apiculteur.getElementStock(1).getUnite()), apiculteur, new ChoixParOrdreArrivee(), livreDuMarche);
-        Offre ventePomme = new Offre(200, new Pomme(20, arboriculteur.getElementStock(1).getDateDePeremption(), arboriculteur.getElementStock(1).getUnite()), arboriculteur, new ChoixParOrdreArrivee(), livreDuMarche);
-        Offre venteEpinard = new Offre(300, new Epinards(30, horticulteur.getElementStock(1).getDateDePeremption(), horticulteur.getElementStock(1).getUnite()), horticulteur, new ChoixParPlusPetitSolde(), livreDuMarche);
-        Offre venteCochon = new Offre(400, new Cochon(10, producteurDeViande.getElementStock(1).getDateDePeremption(), producteurDeViande.getElementStock(1).getUnite()), producteurDeViande, new ChoixParOrdreArrivee(), livreDuMarche);
-        Offre venteVache = new Offre(500, new Vache(10, producteurDeViande.getElementStock(2).getDateDePeremption(), producteurDeViande.getElementStock(2).getUnite()), producteurDeViande, new ChoixParPlusPetitSolde(), livreDuMarche);
-        Offre venteLait = new Offre(600, new Lait(producteurLaitier.getElementStock(1).getQuantite(), producteurLaitier.getElementStock(1).getDateDePeremption(), producteurLaitier.getElementStock(1).getUnite()), producteurLaitier, new ChoixParPlusPetitSolde(), livreDuMarche);
-        livreDuMarche.ajouterOffre(venteMiel1);
-        livreDuMarche.ajouterOffre(venteMiel2);
-        livreDuMarche.ajouterOffre(venteMiel3);
-        livreDuMarche.ajouterOffre(venteMiel4);
-        livreDuMarche.ajouterOffre(ventePomme);
-        livreDuMarche.ajouterOffre(venteEpinard);
-        livreDuMarche.ajouterOffre(venteCochon);
-        livreDuMarche.ajouterOffre(venteVache);
-        livreDuMarche.ajouterOffre(venteLait);*/
+        apiculteur.creerUneOffre(100, apiculteur.getElementStock(1), new ChoixParOrdreArrivee(), Initialisation.livreDuMarche, 10);
+        arboriculteur.creerUneOffre(200, arboriculteur.getElementStock(1), new ChoixParOrdreArrivee(), Initialisation.livreDuMarche, 20);
+        horticulteur.creerUneOffre(300, horticulteur.getElementStock(1), new ChoixParOrdreArrivee(), Initialisation.livreDuMarche, 20);
+        producteurDeViande.creerUneOffre(400, producteurDeViande.getElementStock(1), new ChoixParOrdreArrivee(), Initialisation.livreDuMarche, 10);
+        producteurDeViande.creerUneOffre(500, producteurDeViande.getElementStock(2), new ChoixParOrdreArrivee(), Initialisation.livreDuMarche, 20);
+        producteurLaitier.creerUneOffre(600, producteurLaitier.getElementStock(1), new ChoixParOrdreArrivee(), Initialisation.livreDuMarche, 30);
+        producteurLaitier.creerUneOffre(700, producteurLaitier.getElementStock(2), new ChoixParOrdreArrivee(), Initialisation.livreDuMarche, 10);
+        apiculteur.creerUneOffre(800, apiculteur.getElementStock(1), new ChoixParOrdreArrivee(), Initialisation.livreDuMarche, 5);
+
 
         Tradeur tradeur = new Tradeur("Jean-Edward", 15000);
-        //tradeur.acheter(venteMiel1);
-        //tradeur.acheter(venteMiel2);
-        //tradeur.acheter(venteMiel3);
-        //livreDuMarche.getControleur().choisirAcheteur(venteMiel1);
-        //livreDuMarche.getControleur().choisirAcheteur(venteMiel2);
-        //livreDuMarche.getControleur().choisirAcheteur(venteMiel3);
+        tradeur.acheter(Initialisation.livreDuMarche.getLivre().get(0));
+        tradeur.acheter(Initialisation.livreDuMarche.getLivre().get(1));
+        tradeur.acheter(Initialisation.livreDuMarche.getLivre().get(2));
+        livreDuMarche.getControleur().choisirAcheteur(Initialisation.livreDuMarche.getLivre().get(0));
+        livreDuMarche.getControleur().choisirAcheteur(Initialisation.livreDuMarche.getLivre().get(0));
+        livreDuMarche.getControleur().choisirAcheteur(Initialisation.livreDuMarche.getLivre().get(0));
 
 
 
