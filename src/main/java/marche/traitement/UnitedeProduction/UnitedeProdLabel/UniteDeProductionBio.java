@@ -3,6 +3,8 @@ package marche.traitement.UnitedeProduction.UnitedeProdLabel;
 
 import marche.traitement.Producteurs.DecorateurProducteur.ProducteurBio;
 import marche.traitement.Producteurs.Producteur;
+import marche.traitement.Produit.Produit;
+import marche.traitement.Produit.ProduitBio;
 import marche.traitement.UnitedeProduction.UniteDeProduction;
 
 import java.time.LocalDate;
@@ -23,7 +25,7 @@ public class UniteDeProductionBio extends UniteDeProductionLabelise
         try
         {
             this.porducteursLabelises.add((ProducteurBio)producteur);
-            up.ajouterMembre(producteur);
+            up.ajouterMembre(((ProducteurBio) producteur).getProducteur());
         }
         catch (ClassCastException e)
         {
@@ -34,13 +36,27 @@ public class UniteDeProductionBio extends UniteDeProductionLabelise
 
 
     @Override
-    public void produire(int quantite, String type, LocalDate peremption, Producteur producteur)
-    {
+    public void produire(int quantite, String type, LocalDate peremption, Producteur producteur) throws ClassCastException
+    {   try{
         if (this.porducteursLabelises.contains(producteur))
         {
-            up.produire(quantite,type,peremption,producteur);
+            ProducteurBio producteurBio = (ProducteurBio) producteur;
+            up.produire(quantite,type,peremption, producteurBio.getProducteur());
+            Produit produit = producteurBio.getProducteur().getProduitDansStock(quantite,type,peremption);
+            if(produit != null){
+                ProduitBio produitBio = new ProduitBio(produit);
+                producteur.ajouterAuStock(produitBio);
+            }else
+            System.out.println("La production a échoué");
 
+
+        }else{
+            System.out.println("le producteur n'appartient pas à l'unité");
         }
+    }catch (ClassCastException e){
+        System.out.println("Le producteur ne convient pas à l'unité de production");
+    }
+
     }
 
 
