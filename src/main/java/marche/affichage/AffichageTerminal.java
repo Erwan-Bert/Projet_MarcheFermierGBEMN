@@ -28,7 +28,7 @@ public class AffichageTerminal
 
         String choix = "";
         if (avancement == 1)
-            System.out.println("Entrez le nom de votre produit");
+            System.out.println("Entrez le nom de votre produit(miel , pomme , epinnard ,vache ,cochon,lait,frommage");
         else if (avancement == 2)
             System.out.println("Entrez la quantite produite (en litre ou kilo selon votre produit)");
         else if (avancement == 3)
@@ -52,17 +52,18 @@ public class AffichageTerminal
     public static int menuPrincipal()
     {
         String choix = "";
-        System.out.println("Entrez 1 pour ajouter membre à une unité de production.\n" +
-                    "Entrez 2 si vous voulez produire des produits.\n" +
-                "Entrez 3 si vous voulez voir la liste des producteurs.\n" +
-                "Entrez 4 si vous voulez voir toutes les offres.\n" +
-                "Entrez 5 si vous voulez voir l'historique des offres.\n" +
-                "Entrez 6 si vous voulez voir le prix moyen de tous les produits du marché.\n"+
-                "Entrez 7 si vous voulez créer de nouveaux producteurs.\n" +
-                "Entrez 8 si vous voulez créer de nouveaux traders.\n" +
-                "Entrez 9 si vous voulez créer de nouvelles unité de production.\n" +
-                "Entrez 10 si vous voulez créer des centrales d'achat\n" +
-                "Entrez 11 si vous voulez créer des NewsLetter\n" +
+        String espace = "------------------------------------------------------------------------------------\n";
+        System.out.println("Entrez 1 pour ajouter membre à une unité de production.\n" + espace+
+                    "Entrez 2 si vous voulez produire des produits.\n" + espace+
+                "Entrez 3 si vous voulez voir la liste des producteurs.\n" + espace+
+                "Entrez 4 si vous voulez voir toutes les offres.\n" + espace+
+                "Entrez 5 si vous voulez voir l'historique des offres.\n" + espace+
+                "Entrez 6 si vous voulez voir le prix moyen de tous les produits du marché.\n"+ espace+
+                "Entrez 7 si vous voulez créer de nouveaux producteurs.\n" + espace+
+                "Entrez 8 si vous voulez créer de nouveaux traders.\n" + espace+
+                "Entrez 9 si vous voulez créer de nouvelles unité de production.\n" + espace+
+                "Entrez 10 si vous voulez créer des centrales d'achat\n" + espace+
+                "Entrez 11 si vous voulez créer des NewsLetter\n" + espace+
                 "Entrez 12 si vous voulez abonner quelqu'un à une newsLetter");
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         try {
@@ -77,9 +78,22 @@ public class AffichageTerminal
     {
         String choix = "";
         if (avancement == 1)
-            System.out.println("Entrez le nom du producteur que vous voulez ajouter");
+        {
+            System.out.println("Entrez le nom du producteur que vous voulez ajouter. Voici la liste \n");
+            for (VendeurAcheteur v:Initialisation.listeVendeurAcheteur)
+            {
+                System.out.println(v.getNom() + "\n");
+            }
+        }
         else if (avancement == 2)
-            System.out.println("Entrez le nom de l'unité de production dans laquelle vous voulez l'ajouter, puis réappuyer sur entrer");
+        {
+            System.out.println("Entrez le nom de l'unité de production dans laquelle vous voulez l'ajouter, puis réappuyer sur entrer. Voici la liste des unité de production \n");
+            for (UniteDeProduction up: Initialisation.listeUniteDeProduction)
+            {
+                System.out.println(up.getNom()+"\n");
+            }
+        }
+
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         try {
             choix = in.readLine();
