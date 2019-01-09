@@ -1,10 +1,14 @@
 package marche.affichage;
 
+import marche.traitement.Acteurs.Tradeur;
+import marche.traitement.Acteurs.VendeurAcheteur;
 import marche.traitement.Initialisation.Initialisation;
 import marche.traitement.Marche.HistoriqueOffre;
 import marche.traitement.Marche.Offre;
-import marche.traitement.Producteurs.Producteur;
-import marche.traitement.UnitedeProduction.UniteDeProduction;
+import marche.traitement.Producteurs.*;
+import marche.traitement.Producteurs.DecorateurProducteur.ProducteurBio;
+import marche.traitement.UnitedeProduction.*;
+import marche.traitement.UnitedeProduction.UnitedeProdLabel.UniteDeProductionBio;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -222,7 +226,7 @@ public class AffichageTerminal
     {
             String choix = "";
             if (avancement == 1)
-                System.out.println("Entrez le nom du producteur que vous voulez créer");
+                System.out.println("Entrez le nom du producteur que vous voulez créer (pour créer un producteur bio il faut d'abord créer un producteur normal)");
             else if (avancement == 2)
                 System.out.println("Entrez son solde");
             else if (avancement == 3)
@@ -238,6 +242,43 @@ public class AffichageTerminal
             return choix;
     }
 
+    public static String menuCreationTrader(int avancement)
+    {
+        String choix = "";
+        if (avancement == 1)
+            System.out.println("Entrez le nom du Trader que vous voulez créer");
+        else if (avancement == 2)
+            System.out.println("Entrez son solde");
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            choix = in.readLine();
+        } catch (IOException e) {
+            System.out.println("Problème de saisie");
+        }
+        return choix;
+    }
+
+    public static ArrayList<String> gestionCreationTrader()
+    {
+        ArrayList<String> elements = new ArrayList<>();
+        String temp = "";
+        String solde = "";
+        String nom = "";
+        int avancement = 1;
+        while (avancement != 3)
+        {
+            temp = menuCreationTrader(avancement);
+            if (avancement == 1)
+                nom = temp;
+            else if (avancement == 2)
+                solde = temp;
+            ++avancement;
+        }
+        elements.add(nom);
+        elements.add(solde);
+        return elements;
+    }
+
     public static ArrayList<String> gestionCreationProducteur()
     {
         ArrayList<String> elements = new ArrayList<>();
@@ -249,7 +290,7 @@ public class AffichageTerminal
         int avancement = 1;
         while (avancement != 5)
         {
-            temp = menuProduire(avancement);
+            temp = menuCreationProducteur(avancement);
             if (avancement == 1)
                 nom = temp;
             else if (avancement == 2)
@@ -258,10 +299,48 @@ public class AffichageTerminal
                 limite = temp;
             else if (avancement == 4)
                 type = temp;
+            ++avancement;
         }
         elements.add(nom);
         elements.add(solde);
         elements.add(limite);
+        elements.add(type);
+        return elements;
+    }
+
+    public static String menuCreationUniteProduction(int avancement)
+    {
+        String choix = "";
+        if (avancement == 1)
+            System.out.println("Entrez le nom de l'unité de production que vous voulez créer (pour faire une unité de production bio il faut d'abord en créer une normale)");
+        if (avancement == 2)
+            System.out.println("Entrez le type de ses productions");
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            choix = in.readLine();
+        } catch (IOException e) {
+            System.out.println("Problème de saisie");
+        }
+        return choix;
+    }
+
+    public static ArrayList<String> gestionCreationUniteProduction()
+    {
+        ArrayList<String> elements = new ArrayList<>();
+        String temp = "";
+        String nom = "";
+        String type = "";
+        int avancement = 1;
+        while (avancement != 3)
+        {
+            temp = menuCreationUniteProduction(avancement);
+            if (avancement == 1)
+                nom = temp;
+            else if (avancement == 2)
+                type = temp;
+            ++avancement;
+        }
+        elements.add(nom);
         elements.add(type);
         return elements;
     }
@@ -322,12 +401,70 @@ public class AffichageTerminal
         else if (tempInt == 7)
         {
             parametre = gestionCreationProducteur();
-            
-        }/*
+            if (parametre.get(3).equals("apiculteur"))
+            {
+                Producteur p = new Apiculteur(parseInt(parametre.get(1)), parametre.get(0), parseInt(parametre.get(2)));
+            }
+            else if (parametre.get(3).equals("arboriculteur"))
+            {
+                Producteur p = new Arboriculteur(parseInt(parametre.get(1)), parametre.get(0), parseInt(parametre.get(2)));
+            }
+            else if (parametre.get(3).equals("horticulteur"))
+            {
+                Producteur p = new Horticulteur(parseInt(parametre.get(1)), parametre.get(0), parseInt(parametre.get(2)));
+            }
+            else if (parametre.get(3).equals("producteur de viande"))
+            {
+                Producteur p = new ProducteurDeViande(parseInt(parametre.get(1)), parametre.get(0), parseInt(parametre.get(2)));
+            }
+            else if (parametre.get(3).equals("producteur laitier"))
+            {
+                Producteur p = new ProducteurLaitier(parseInt(parametre.get(1)), parametre.get(0), parseInt(parametre.get(2)));
+            }
+            else if (parametre.get(3).equals("producteur bio"))
+            {
+                for (Producteur p: Initialisation.listeProducteur)
+                {
+                    if (p.getNom().equals(parametre.get(0)))
+                    {
+                        Producteur pBio = new ProducteurBio(p);
+                    }
+                }
+            }
+        }
         else if (tempInt == 8)
-
+        {
+            parametre = gestionCreationTrader();
+            VendeurAcheteur trader = new Tradeur(parametre.get(0), parseInt(parametre.get(1)));
+        }
         else if (tempInt == 9)
-
+        {
+            parametre = gestionCreationUniteProduction();
+            if (parametre.get(1).equals("apiculteur")){
+                UniteDeProduction up = new UniteDeProductionApiculteur(parametre.get(0));
+            }
+            else if (parametre.get(1).equals("arboriculteur")){
+                UniteDeProduction up = new UniteDeProductionArboriculteur(parametre.get(0));
+            }
+            else if (parametre.get(1).equals("horticulteur")){
+                UniteDeProduction up = new UniteDeProductionHorticulteur(parametre.get(0));
+            }
+            else if (parametre.get(1).equals("viande")){
+                UniteDeProduction up = new UniteDeProductionProducteurDeViande(parametre.get(0));
+            }
+            else if (parametre.get(1).equals("laitier")){
+                UniteDeProduction up = new UniteDeProductionLaitier(parametre.get(0));
+            }
+            else if (parametre.get(1).equals("bio")){
+                for (UniteDeProduction up: Initialisation.listeUniteDeProduction)
+                {
+                    if (up.getNom().equals(parametre.get(0)))
+                    {
+                        UniteDeProduction upBio = new UniteDeProductionBio(up);
+                    }
+                }
+            }
+        }
         else if (tempInt == 10)
 
         else if (tempInt == 11)
