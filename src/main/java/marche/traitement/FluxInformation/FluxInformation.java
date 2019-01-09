@@ -16,7 +16,7 @@ public abstract class FluxInformation {
 	
 	/**
      *  Initialise un flux d'information (Constructeur)
-	 * @param String nom
+	 * @param nom nom du flux
      */
     public FluxInformation(String nom) {
         this.nom = nom;
@@ -24,24 +24,24 @@ public abstract class FluxInformation {
 
 	/**
      *  Met a jour une offre
-	 * @param Offre offre
+	 * @param offre l'offre mise à jour
      */
     public abstract void  update(Offre offre);
 
 	/**
      * Ajoute un abonne a la liste des abonnes
-	 * @param Acteur a
+	 * @param acteur acteur correspondant à l'abonné
      */
-    public void ajouterAbonne(Acteur a){
-        abonnes.add(a);
+    public void ajouterAbonne(Acteur acteur){
+        abonnes.add(acteur);
     }
 	
 	/**
      * Enleve un abonne a la liste des abonnes
-	 * @param Acteur a
+	 * @param acteur retire cet acteur de la liste
      */
-    public void enleverAbonne(Acteur a){
-        abonnes.remove(a);
+    public void enleverAbonne(Acteur acteur){
+        abonnes.remove(acteur);
     }
 
 }
