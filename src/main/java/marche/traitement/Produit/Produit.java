@@ -10,23 +10,7 @@ public abstract class Produit implements  Cloneable{
     protected LocalDate dateDePeremption;
     protected String unite;
 
-<<<<<<< HEAD
-    protected Produit(){}
 
-    public Produit clone() {
-        Produit produit = null;
-        try
-        {
-            produit = (Produit) super.clone();
-        }catch(CloneNotSupportedException c){
-            System.out.println("erreur dans la segmentation du produit");
-        }
-
-        return produit;
-    }
-
-=======
->>>>>>> develop
 
     protected Produit(){}
 
