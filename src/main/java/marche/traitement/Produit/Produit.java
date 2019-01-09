@@ -42,7 +42,7 @@ public abstract class Produit implements  Cloneable{
 	
 	/**
      * Initialise la quantité d'un produit
-     * @param int quantite
+     * @param  quantite
      */
     public void setQuantite(int quantite) {
         this.quantite = quantite;
@@ -73,7 +73,7 @@ public abstract class Produit implements  Cloneable{
 	
 	/**
      * Enleve une quantité passée en paramètre a un produit
-     * @param int quantite
+     * @param  quantite
      */
     public void enleverQuantite(int quantite){
         this.quantite -= quantite;
@@ -81,7 +81,7 @@ public abstract class Produit implements  Cloneable{
 	
 	/**
      * Ajoute une quantité passée en paramètre a un produit
-     * @param int quantite
+     * @param  quantite
      */
     public void ajouterQuantite(int quantite){
         this.quantite += quantite;

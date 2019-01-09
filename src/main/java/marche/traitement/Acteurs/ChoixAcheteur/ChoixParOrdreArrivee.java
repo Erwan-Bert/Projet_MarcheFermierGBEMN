@@ -5,7 +5,7 @@ import marche.traitement.Acteurs.Acteur;
 import java.util.ArrayList;
 
 	/**
-     *  Classe permettant de choisir l'ordre des Acheteur selon leur date d'arrivée
+     *  Classe permettant de choisir l'ordre des Acheteur selon leur date d'arrivee
      */
 public class ChoixParOrdreArrivee implements StrategyChoixAcheteur {
     @Override

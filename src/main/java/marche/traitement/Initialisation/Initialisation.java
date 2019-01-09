@@ -92,7 +92,7 @@ public class Initialisation
         HistoriqueOffre.addOffresArchives(archiveVenteMiel1);
         HistoriqueOffre.addOffresArchives(archiveVenteMiel2);
         HistoriqueOffre.addOffresArchives(archiveVenteMiel3);
-        
+
 
 
     }

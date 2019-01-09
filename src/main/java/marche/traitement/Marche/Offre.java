@@ -106,7 +106,7 @@ public class Offre
 
 	/**
      * Ajoute un acheteur a la liste des acheteurs potentiels
-	 * @param Acteur acheteurPotentiel
+	 * @param  acheteurPotentiel
      */
     public void addAcheteurPotentiel(Acteur acheteurPotentiel) {
         this.acheteurPotentiel.add(acheteurPotentiel);

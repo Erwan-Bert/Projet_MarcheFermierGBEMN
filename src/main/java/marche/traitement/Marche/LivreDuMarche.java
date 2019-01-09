@@ -37,7 +37,7 @@ public class LivreDuMarche {
 
     /**
      * Ajoute une offre au livre du marche
-	 * @param Offre o
+	 * @param  o
      */
     public void ajouterOffre(Offre o)
     {
@@ -92,7 +92,7 @@ public class LivreDuMarche {
 
 	/**
      * Ajoute une information passee en parametre au flux d'information
-	 * @param FluxInformation f
+	 * @param  f
      */
     public void ajouterFluxInformation(FluxInformation f){
         fluxInformations.add(f);
@@ -100,7 +100,7 @@ public class LivreDuMarche {
 
 	/**
      * Enleve une information passee en parametre au flux d'information
-	 * @param FluxInformation f
+	 * @param  f
      */
     public void enleverFluxInformation(FluxInformation f){
         fluxInformations.remove(f);
@@ -108,7 +108,7 @@ public class LivreDuMarche {
 
 	/**
      * Notifie lorsque le flux d'information est mis a jour
-	 * @param Offre offre
+	 * @param  offre
      */
     public void notifierFluxInformations(Offre offre){
         for(FluxInformation f : fluxInformations){

@@ -59,7 +59,7 @@ public class Acteur {
 
 	/**
 	 * Initialise la date de fin de cotisation
-	 * @param LocalDate dateFinCotisation
+	 * @param  dateFinCotisation
      */
     protected void setDateFinCotisation(LocalDate dateFinCotisation) {
         this.dateFinCotisation = dateFinCotisation;
@@ -67,7 +67,7 @@ public class Acteur {
 
 	/**
 	 * Ajoute un nombrede jour passe en paramètre a la date de fin de cotisation
-	 * @param int nbjours
+	 * @param  nbjours
      */
     public void ajouterJoursDateFinCotisation(int nbjours) {
         this.dateFinCotisation = dateFinCotisation.plusDays(nbjours);
@@ -76,7 +76,7 @@ public class Acteur {
 
     /**
 	 * Permet a un utilisateur d'acheter et de l'ajouter a la liste des achetteur possibles
-     * @param Offre o
+     * @param  o
      */
     public void acheter(Offre o) {
         if(o.getPrix()<=solde)
@@ -109,7 +109,7 @@ public class Acteur {
 	
 	/**
 	 * Credite l'Acheteur d'un montant qu'on lui met en paramètre
-	 * @param double montant
+	 * @param  montant
      */
     public void crediter(double montant) {
         this.solde += montant;
@@ -117,7 +117,7 @@ public class Acteur {
 
 	/**
 	 * Debite l'Acheteur d'un montant qu'on lui met en parametre
-	 * @param double montant
+	 * @param  montant
      */
     public void debiter(double montant) {
         this.solde -= montant;
@@ -125,7 +125,7 @@ public class Acteur {
 
 	/**
 	 * Initialise la centrale d'achat a un membre passer en paramètre
-	 * @param CentraleAchat ca
+	 * @param  ca
      */
     protected void setCentraleAchat(CentraleAchat ca) {
         membre = ca;
@@ -141,7 +141,7 @@ public class Acteur {
 
 	/**
 	 * Modifie la strategie de cotisation des utilisateurs suivant la strategie passe en paramètre
-	 * @param StrategyCotisation strategy
+	 * @param  strategy
      */
     public void switchStrategyCotisation(StrategyCotisation strategy)
     {
@@ -150,7 +150,7 @@ public class Acteur {
 
 	/**
 	 * Genere la transation d'une offre passée en paramètre
-	 * @param Offre o
+	 * @param  o
      */
     public void transaction(Offre o){
         if (getCentraleAchat() != null)

@@ -27,9 +27,9 @@ public class HistoriqueOffre {
 
 	/**
      * Ajoute une offre a la liste des archives
-	 * @param Archive archive
+	 * @param  archive
      */
-    public static void addOffresArchives(Archive Archive) {
-        historiqueOffres .add(Archive);
+    public static void addOffresArchives(Archive archive) {
+        historiqueOffres .add(archive);
     }
 }

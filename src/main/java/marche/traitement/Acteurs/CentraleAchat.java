@@ -17,7 +17,7 @@ public class CentraleAchat extends Acteur
 
 	/**
 	 * Initialise une centrale d'achat (Constructeur)
-	 * @param String nom
+	 * @param  nom
      */
     public CentraleAchat (String nom)
     {
@@ -27,7 +27,7 @@ public class CentraleAchat extends Acteur
 
 	/**
 	 * Initialise le pourcentage passe en paramètre
-	 * @param int pourcentage
+	 * @param  pourcentage
      */
     public void setPourcentage(int pourcentage) {
         this.pourcentage = pourcentage;
@@ -43,7 +43,7 @@ public class CentraleAchat extends Acteur
 
 	/**
 	 * Ajoute un membre passer en paramètre a la centrale d'achat
-	 * @param Acteur membre
+	 * @param  membre
      */
     public void ajouterMembres(Acteur membre)
     {
@@ -53,7 +53,7 @@ public class CentraleAchat extends Acteur
 
 	/**
 	 * Enleve un membre passer en paramètre a la centrale d'achat
-	 * @param Acteur membre
+	 * @param  membre
      */
     public void enleverMembre(Acteur membre)
     {
