@@ -1,20 +1,10 @@
 package marche.traitement.Initialisation;
 
 import marche.traitement.Acteurs.ChoixAcheteur.ChoixParOrdreArrivee;
-import marche.traitement.Acteurs.ChoixAcheteur.ChoixParPlusPetitSolde;
 import marche.traitement.Acteurs.Tradeur;
 import marche.traitement.Acteurs.controleur.ControleurAMF;
-import marche.traitement.Marche.Archive;
-import marche.traitement.Marche.HistoriqueOffre;
 import marche.traitement.Marche.LivreDuMarche;
-import marche.traitement.Marche.Offre;
 import marche.traitement.Producteurs.*;
-import marche.traitement.Produit.Epinards;
-import marche.traitement.Produit.Fruit.Pomme;
-import marche.traitement.Produit.Miel;
-import marche.traitement.Produit.ProduitsLaitiers.Lait;
-import marche.traitement.Produit.Viande.Cochon;
-import marche.traitement.Produit.Viande.Vache;
 import marche.traitement.UnitedeProduction.*;
 
 import java.time.LocalDate;
@@ -33,11 +23,7 @@ public class Initialisation
         Horticulteur horticulteur = new Horticulteur(300, "Jacques", 70);
         ProducteurDeViande producteurDeViande = new ProducteurDeViande(400, "Bernard", 80);
         ProducteurLaitier producteurLaitier = new ProducteurLaitier(500, "Philippe", 90);
-        listeProducteur.add(apiculteur);
-        listeProducteur.add(arboriculteur);
-        listeProducteur.add(horticulteur);
-        listeProducteur.add(producteurDeViande);
-        listeProducteur.add(producteurLaitier);
+
 
         UniteDeProduction uniteDeProductionApiculteur = new UniteDeProductionApiculteur("les abeilles");
         uniteDeProductionApiculteur.ajouterMembre(apiculteur);
@@ -56,14 +42,9 @@ public class Initialisation
         uniteDeProductionLaitiere.ajouterMembre(producteurLaitier);
         uniteDeProductionLaitiere.produire(60, "lait", LocalDate.of(2019,6,16),producteurLaitier);
 
-        listeUniteDeProduction.add(uniteDeProductionApiculteur);
-        listeUniteDeProduction.add(uniteDeProductionArboriculteur);
-        listeUniteDeProduction.add(uniteDeProductionHoriculteur);
-        listeUniteDeProduction.add(uniteDeProductionViande);
-        listeUniteDeProduction.add(uniteDeProductionLaitiere);
 
-
-        Offre venteMiel1 = new Offre(100, new Miel(5, apiculteur.getElementStock(1).getDateDePeremption(), apiculteur.getElementStock(1).getUnite()), apiculteur, new ChoixParOrdreArrivee(), livreDuMarche);
+        apiculteur.creerUneOffre(100, apiculteur.getElementStock(1), new ChoixParOrdreArrivee(), Initialisation.livreDuMarche, 20);
+        /*Offre venteMiel1 = new Offre(100, new Miel(5, apiculteur.getElementStock(1).getDateDePeremption(), apiculteur.getElementStock(1).getUnite()), apiculteur, new ChoixParOrdreArrivee(), livreDuMarche);
         Offre venteMiel2 = new Offre(100, new Miel(5, apiculteur.getElementStock(1).getDateDePeremption(), apiculteur.getElementStock(1).getUnite()), apiculteur, new ChoixParOrdreArrivee(), livreDuMarche);
         Offre venteMiel3 = new Offre(100, new Miel(5, apiculteur.getElementStock(1).getDateDePeremption(), apiculteur.getElementStock(1).getUnite()), apiculteur, new ChoixParOrdreArrivee(), livreDuMarche);
         Offre venteMiel4 = new Offre(100, new Miel(5, apiculteur.getElementStock(1).getDateDePeremption(), apiculteur.getElementStock(1).getUnite()), apiculteur, new ChoixParOrdreArrivee(), livreDuMarche);
@@ -80,18 +61,16 @@ public class Initialisation
         livreDuMarche.ajouterOffre(venteEpinard);
         livreDuMarche.ajouterOffre(venteCochon);
         livreDuMarche.ajouterOffre(venteVache);
-        livreDuMarche.ajouterOffre(venteLait);
+        livreDuMarche.ajouterOffre(venteLait);*/
 
         Tradeur tradeur = new Tradeur("Jean-Edward", 15000);
-        tradeur.acheter(venteMiel1);
-        tradeur.acheter(venteMiel2);
-        tradeur.acheter(venteMiel3);
-        Archive archiveVenteMiel1 = new Archive(tradeur,venteMiel1,LocalDate.of(2019,1,1));
-        Archive archiveVenteMiel2 = new Archive(tradeur,venteMiel2,LocalDate.of(2019,1,2));
-        Archive archiveVenteMiel3 = new Archive(tradeur,venteMiel3,LocalDate.of(2019,1,3));
-        HistoriqueOffre.addOffresArchives(archiveVenteMiel1);
-        HistoriqueOffre.addOffresArchives(archiveVenteMiel2);
-        HistoriqueOffre.addOffresArchives(archiveVenteMiel3);
+        //tradeur.acheter(venteMiel1);
+        //tradeur.acheter(venteMiel2);
+        //tradeur.acheter(venteMiel3);
+        //livreDuMarche.getControleur().choisirAcheteur(venteMiel1);
+        //livreDuMarche.getControleur().choisirAcheteur(venteMiel2);
+        //livreDuMarche.getControleur().choisirAcheteur(venteMiel3);
+
 
 
 

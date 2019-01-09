@@ -54,7 +54,7 @@ public class UniteDeProductionLaitier extends UniteDeProduction
             if (producteur.getQuantiteStock() + quantite <= producteur.getLimite())
             {
                 if (type.equals("lait"))
-                producteur.ajouterAuStock(new Lait(quantite,peremption,"Kilogrammes"));
+                producteur.ajouterAuStock(new Lait(quantite,peremption,"Litres"));
                 else
                 producteur.ajouterAuStock(new Fromage(quantite,peremption,"Kilogrammes"));
 

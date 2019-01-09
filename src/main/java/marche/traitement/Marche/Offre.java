@@ -53,7 +53,10 @@ public class Offre
         this.marche = marche;
         }
 
-
+    public void retirerOffre()
+    {
+        marche.getLivre().remove(this);
+    }
 
 
 
@@ -61,7 +64,8 @@ public class Offre
      * Ajoute a la liste des archives une archive avec l'offre et la date du jour 
      */
     public void archiver() {
-        HistoriqueOffre.addOffresArchives( new Archive(null, this,LocalDate.now()));
+        HistoriqueOffre.addOffresArchives( new Archive(null, this, LocalDate.now()));
+        retirerOffre();
     }
 	
 	/**
@@ -118,7 +122,7 @@ public class Offre
      */
     @Override
     public String toString() {
-        StringBuilder s = new StringBuilder(" Offre : " + produit.getQuantite() + " " +produit.getUnite() + " ");
+        StringBuilder s = new StringBuilder(" Offre : " + produit.getQuantite() + " " + produit.getUnite() + " ");
         s.append(produit.getNom());
         s.append(" à ");
         s.append(prix + "€");
