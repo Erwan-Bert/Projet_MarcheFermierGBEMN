@@ -335,6 +335,7 @@ public class AffichageTerminal
         String nom = "";
         String type = "";
         int avancement = 1;
+        System.out.println("Les producteurs que vous pouvez créer sont : apiculteur|arboriculteur|horticulteur|viande|laitier|bio  ");
         while (avancement != 3)
         {
             temp = menuCreationUniteProduction(avancement);
