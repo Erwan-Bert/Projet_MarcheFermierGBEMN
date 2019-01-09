@@ -1,24 +1,45 @@
 package marche.traitement.Produit;
 
 public class ProduitBio extends DecorateurProduit {
+    private boolean certification = false; // Certification du produit , valeur de base nulle
 
     /**
-     *Instancie un produit bio à partir d'un produit basique
-     * @param produit est le produit basique
+     * Constructeur lorsque qu'on veut initialiser la certification aussi
+     * @param produit
+     * @param certification
+     */
+    public ProduitBio( Produit produit, boolean certification ) {
+        super( produit);
+        this.certification = certification;
+    }
+
+
+    /**
+     *
+     * @param produit
      */
     public ProduitBio( Produit produit) {
         super( produit);
     }
 
-
     /**
-     * Permet d'ajouter Bio au nom du produit et de le renvoyer
-     * @return String + bio
+     *
+     * @return boolean
      */
+    public boolean isCertifie() {
+        return certification;
+    }
+
+    public void certifier(){
+        certification = true;
+    }
+
+    public void decertifier(){
+        certification = false;
+    }
+
     @Override
     public String getNom() {
-        String result = produit.getNom();
-        result+= " bio";
-        return result;
+        return produit.getNom() + "bio";
     }
 }

@@ -1,7 +1,6 @@
 package marche.traitement.FluxInformation;
 
 import marche.traitement.Acteurs.Acteur;
-import marche.traitement.Initialisation.Initialisation;
 import marche.traitement.Marche.Offre;
 
 import java.util.ArrayList;
@@ -14,37 +13,18 @@ public abstract class FluxInformation {
 
     protected String nom;
     protected List<Acteur> abonnes = new ArrayList<Acteur>(); //abonnés
-	
-	/**
-     *  Initialise un flux d'information (Constructeur)
-	 * @param nom nom du flux
-     */
-    public FluxInformation(String nom)
-    {
+
+    public FluxInformation(String nom) {
         this.nom = nom;
-        Initialisation.listeNewsLetter.add(this);
     }
 
-	/**
-     *  Met a jour une offre
-	 * @param offre l'offre mise à jour
-     */
     public abstract void  update(Offre offre);
 
-	/**
-     * Ajoute un abonne a la liste des abonnes
-	 * @param acteur acteur correspondant à l'abonné
-     */
-    public void ajouterAbonne(Acteur acteur){
-        abonnes.add(acteur);
+    public void ajouterAbonne(Acteur a){
+        abonnes.add(a);
     }
-	
-	/**
-     * Enleve un abonne a la liste des abonnes
-	 * @param acteur retire cet acteur de la liste
-     */
-    public void enleverAbonne(Acteur acteur){
-        abonnes.remove(acteur);
+    public void enleverAbonne(Acteur a){
+        abonnes.remove(a);
     }
 
 }

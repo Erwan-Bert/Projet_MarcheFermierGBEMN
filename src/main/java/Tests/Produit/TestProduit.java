@@ -6,11 +6,6 @@ import marche.traitement.Produit.Produit;
 import java.time.LocalDate;
 
 public class TestProduit {
-<<<<<<< HEAD
-=======
-
-
->>>>>>> develop
     @org.junit.jupiter.api.Test
     public void test()
     {
@@ -23,7 +18,3 @@ public class TestProduit {
 
     }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> develop

@@ -4,26 +4,22 @@ import marche.traitement.Producteurs.Producteur;
 
 public class ProducteurBio extends DecorateurProducteur
 {
+    //prend un attribut producteur
+    private Producteur producteur;
 
-
-    /**
-     * Permet d'instancier un producteur bio à partir d'un producteur basique
-     * @param producteur Producteur de base
-     */
-    public ProducteurBio (Producteur producteur)
+    //constructeur
+    public ProducteurBio (Producteur prod)
     {
-        super(producteur);
+        super(prod);
+
     }
 
-    /**
-     * retourne le producteur de base encapsulé dans le producteurbio
-     * @return le producteur contenu dans le producteur bio
-     */
-    public Producteur getProducteur()
-    {
-        return prod;
-    }
 
+    //méthode spécifique au producteur bio
+    public void certifierBio ()
+    {
+        System.out.println(this.producteur + " est un producteur bio");
+    }
 
 
 }

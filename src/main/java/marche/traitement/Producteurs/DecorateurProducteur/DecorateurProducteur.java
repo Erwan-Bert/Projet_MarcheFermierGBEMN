@@ -6,13 +6,8 @@ public abstract class DecorateurProducteur extends Producteur {
 
     protected Producteur prod;
 
-    /**
-     * Permet de decorer un producteur
-     * @param producteur Producteur à décorer
-     */
-    public DecorateurProducteur (Producteur producteur)
+    public DecorateurProducteur (Producteur prod)
     {
-        super();
-        prod = producteur;
+        this.prod = prod;
     }
 }

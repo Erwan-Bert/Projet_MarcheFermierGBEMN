@@ -16,50 +16,27 @@ public class UniteDeProductionLaitier extends UniteDeProduction
 
 
     public ArrayList<ProducteurLaitier> producteurs = new ArrayList<>();
-
+    private String nom;
 
     public UniteDeProductionLaitier(String nom)
     {
         super(nom);
     }
 
-    /**
-     * Ajoute un producteur a la liste des producteurs de viandes
-     * @param producteur Producteur que l'on ajoute à l'unité de production correspondante de la classe
-     */
     @Override
-    public void ajouterMembre(Producteur producteur)throws ClassCastException {
-        try
-        {
+    protected void ajouterMembre(Producteur producteur)throws ClassCastException {
             producteurs.add((ProducteurLaitier) producteur);
-
-        }
-
-        catch (ClassCastException e)
-
-        {
-            System.out.println("Le producteur que vous tentez d'ajouter n'est pas du bon type");
-
-        }
-
     }
 
-    /**
-     * Produit un produit issu de la viande avec la quantite le type la date de peremption et le producteur
-     * @param  quantite  correspond à la quantité à produire
-     * @param type correspond au type d'aliment à produire
-     * @param peremption désine la date de peremption du produit
-     * @param producteur est le producteur qui produit à travers l'unité de production
-     */
     @Override
-    public void produire(Integer quantite, String type, LocalDate peremption,Producteur producteur)
+    public void produire(int quantite, String type, LocalDate peremption,Producteur producteur)
     {
-        if (producteurs.contains((producteur)))
+        if (producteurs.contains(producteur))
         {
             if (producteur.getQuantiteStock() + quantite <= producteur.getLimite())
             {
                 if (type.equals("lait"))
-                producteur.ajouterAuStock(new Lait(quantite,peremption,"Litres"));
+                producteur.ajouterAuStock(new Lait(quantite,peremption,"Kilogrammes"));
                 else
                 producteur.ajouterAuStock(new Fromage(quantite,peremption,"Kilogrammes"));
 
@@ -77,20 +54,4 @@ public class UniteDeProductionLaitier extends UniteDeProduction
 
     }
 
-    /**
-     *
-     * @return les membres appartenant à l'unité de production
-     */
-    @Override
-    public ArrayList<Producteur> getMembre()
-    {
-        return new ArrayList<>(producteurs);
-    }
-
-    @Override
-    public String toString() {
-        return "nom= " + getNom() +
-                ", producteurs=" + getMembre() +
-                '}';
-    }
 }
