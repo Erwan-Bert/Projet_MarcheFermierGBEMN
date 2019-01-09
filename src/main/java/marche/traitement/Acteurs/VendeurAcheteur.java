@@ -93,7 +93,7 @@ public  class VendeurAcheteur extends Acteur {
             }
             else
             {
-                throw new IllegalArgumentException("rentrez un produit valide");
+                throw new IllegalArgumentException("rentrez un produit vali");
             }
         }
         catch (Exception e)

@@ -16,7 +16,9 @@ public class Initialisation
     public static ArrayList<UniteDeProduction> listeUniteDeProduction = new ArrayList<>();
     public static LivreDuMarche livreDuMarche = new LivreDuMarche("livre du Marché", new ControleurAMF(new ArrayList<String>()));
 
-    static
+
+
+    static 
     {
         Apiculteur apiculteur = new Apiculteur(100, "Jean", 50);
         Arboriculteur arboriculteur = new Arboriculteur(200, "Pierre", 60);

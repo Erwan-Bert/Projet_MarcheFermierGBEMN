@@ -323,7 +323,7 @@ public class AffichageTerminal
         {
             parametre = gestionCreationProducteur();
             
-        }
+        }/*
         else if (tempInt == 8)
 
         else if (tempInt == 9)
@@ -333,7 +333,7 @@ public class AffichageTerminal
         else if (tempInt == 11)
 
         else if (tempInt == 12)
-
+    */
     }
 
 
