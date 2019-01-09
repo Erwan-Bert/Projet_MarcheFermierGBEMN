@@ -8,6 +8,12 @@ import java.util.List;
      *  Classe permettant de choisir l'ordre des Acheteur par ordre croissant du solde (plus petit solde)
      */
 public class ChoixParPlusPetitSolde implements StrategyChoixAcheteur {
+
+    /**
+     *
+     * @param acheteurPotentiel liste des acheteurs potentiels
+     * @return retourne l'acheteur ayant le plus petit solde dans acheteurPotentiel
+     */
     @Override
     public Acteur choixAcheteur(List<Acteur> acheteurPotentiel) {
         Acteur acheteurChoisi = acheteurPotentiel.get(0);

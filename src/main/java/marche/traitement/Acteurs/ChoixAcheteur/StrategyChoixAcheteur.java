@@ -9,5 +9,10 @@ import java.util.List;
      */
 public interface StrategyChoixAcheteur
 {
+    /**
+     *
+     * @param acheteurPotentiel
+     * @return retourne l'acheteur choisis parmis le vecteur
+     */
     Acteur choixAcheteur(List<Acteur> acheteurPotentiel);
 }

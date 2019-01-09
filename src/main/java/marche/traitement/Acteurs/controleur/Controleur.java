@@ -5,20 +5,32 @@ import marche.traitement.Marche.HistoriqueOffre;
 import marche.traitement.Marche.Offre;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 
  */
 public abstract class Controleur {
-
-    /**
-     * Default constructor
-     */
+    protected List<String> blaclistProduit ;
 
 
-    public Controleur() {
+    public Controleur(ArrayList<String> blaclistProduit) {
+        this.blaclistProduit = blaclistProduit;
     }
-
+    public void ajouterALABlacklist(String nom){
+        blaclistProduit.add(nom);
+    }
+    public void retirerALABlacklist(String nom){
+        blaclistProduit.remove(nom);
+    }
+    public String afficherBlacklist(){
+        StringBuilder s = new StringBuilder();
+        for(String produit : blaclistProduit){
+            s.append(produit);
+        }
+        return s.toString();
+    }
 
     /**
      * valide l'offre si les conditions sont respectés

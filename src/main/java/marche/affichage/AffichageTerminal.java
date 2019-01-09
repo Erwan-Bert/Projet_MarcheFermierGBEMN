@@ -464,7 +464,7 @@ public class AffichageTerminal
                     }
                 }
             }
-        }
+        }/*
         else if (tempInt == 10)
 
         else if (tempInt == 11)
