@@ -32,7 +32,6 @@ public class MainMarche {
         UniteDeProductionBio up =new UniteDeProductionBio(up1);
         System.out.println(boloss.getClass());
         up.ajouterMembre(boloss);
-        up.ajouterMembre(grop);
 
     }
 
